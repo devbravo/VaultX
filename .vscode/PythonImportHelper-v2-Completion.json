@@ -1,0 +1,548 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Fernet",
+        "importPath": "cryptography.fernet",
+        "description": "cryptography.fernet",
+        "isExtraImport": true,
+        "detail": "cryptography.fernet",
+        "documentation": {}
+    },
+    {
+        "label": "sha256",
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "isExtraImport": true,
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "importPath": "encryption",
+        "description": "encryption",
+        "isExtraImport": true,
+        "detail": "encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "encryption",
+        "description": "encryption",
+        "isExtraImport": true,
+        "detail": "encryption",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "detect_all_pii",
+        "importPath": "pii_detection",
+        "description": "pii_detection",
+        "isExtraImport": true,
+        "detail": "pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyRotationManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "unittest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "based on your project structure",
+        "importPath": "src.core.pii_detection import detect_emails  # Adjust",
+        "description": "src.core.pii_detection import detect_emails  # Adjust",
+        "isExtraImport": true,
+        "detail": "src.core.pii_detection import detect_emails  # Adjust",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "src.app.main",
+        "description": "src.app.main",
+        "peekOfCode": "app = FastAPI() \n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}",
+        "detail": "src.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "kind": 6,
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "peekOfCode": "class EncryptionUtils:\n    @staticmethod\n    def generate_key() -> bytes:\n        return Fernet.generate_key()\n    @staticmethod\n    def encrypt_data(key: bytes, data: str) -> bytes:\n        f = Fernet(key)\n        return f.encrypt(data.encode())\n    @staticmethod\n    def decrypt_data(key: bytes, encrypted_data: bytes) -> str:",
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "kind": 6,
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "peekOfCode": "class KeyManager:\n    KEYS_METADATA_FILE = \"src/db/keys_metadata.json\"\n    @staticmethod\n    def save_key(key: bytes, file_path: str) -> None:\n        with open(file_path, \"wb\") as f:\n            f.write(key)\n    @staticmethod\n    def load_key(key_version: str, metadata_file: str = KEYS_METADATA_FILE) -> bytes:\n        \"\"\"Load a specific key by version from metadata.\"\"\"\n        try:",
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyRotationManager",
+        "kind": 6,
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "peekOfCode": "class KeyRotationManager:\n    @staticmethod\n    def should_rotate_key(key_info: dict, days_threshold: int = 30, usage_threshold: int = 1000) -> bool:\n        created_date = datetime.strptime(key_info[\"created\"], \"%Y-%m-%d %H:%M:%S\")\n        days_since_creation = (datetime.now() - created_date).days\n        return days_since_creation >= days_threshold or key_info[\"usage\"] >= usage_threshold\n    @classmethod\n    def rotate_keys(cls, days_threshold: int = 30, usage_threshold: int = 1000) -> None:\n        metadata = KeyManager.load_keys_metadata()\n        for key_version, key_info in metadata.items():",
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "detect_emails",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)\ndef detect_ssns(text: str) -> List[str]:\n    return re.findall(SSN_REGEX, text)\ndef detect_credit_cards(text: str) -> List[str]:\n    return re.findall(CREDIT_CARD_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_emails",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)\ndef detect_ssns(text: str) -> List[str]:\n    return re.findall(SSN_REGEX, text)\ndef detect_credit_cards(text: str) -> List[str]:\n    return re.findall(CREDIT_CARD_REGEX, text)\ndef detect_dates(text: str) -> List[str]:\n    return re.findall(DATE_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_phone_numbers",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)\ndef detect_ssns(text: str) -> List[str]:\n    return re.findall(SSN_REGEX, text)\ndef detect_credit_cards(text: str) -> List[str]:\n    return re.findall(CREDIT_CARD_REGEX, text)\ndef detect_dates(text: str) -> List[str]:\n    return re.findall(DATE_REGEX, text)\ndef detect_ips(text: str) -> List[str]:\n    ipv4 = re.findall(IPV4_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_ssns",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_ssns(text: str) -> List[str]:\n    return re.findall(SSN_REGEX, text)\ndef detect_credit_cards(text: str) -> List[str]:\n    return re.findall(CREDIT_CARD_REGEX, text)\ndef detect_dates(text: str) -> List[str]:\n    return re.findall(DATE_REGEX, text)\ndef detect_ips(text: str) -> List[str]:\n    ipv4 = re.findall(IPV4_REGEX, text)\n    ipv6 = re.findall(IPV6_REGEX, text)\n    return ipv4 + ipv6",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_credit_cards",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_credit_cards(text: str) -> List[str]:\n    return re.findall(CREDIT_CARD_REGEX, text)\ndef detect_dates(text: str) -> List[str]:\n    return re.findall(DATE_REGEX, text)\ndef detect_ips(text: str) -> List[str]:\n    ipv4 = re.findall(IPV4_REGEX, text)\n    ipv6 = re.findall(IPV6_REGEX, text)\n    return ipv4 + ipv6\ndef detect_passport_numbers(text: str) -> List[str]:\n    return re.findall(PASSPORT_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_dates",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_dates(text: str) -> List[str]:\n    return re.findall(DATE_REGEX, text)\ndef detect_ips(text: str) -> List[str]:\n    ipv4 = re.findall(IPV4_REGEX, text)\n    ipv6 = re.findall(IPV6_REGEX, text)\n    return ipv4 + ipv6\ndef detect_passport_numbers(text: str) -> List[str]:\n    return re.findall(PASSPORT_REGEX, text)\ndef detect_all_pii(text: str) -> dict:\n    results = {",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_ips",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_ips(text: str) -> List[str]:\n    ipv4 = re.findall(IPV4_REGEX, text)\n    ipv6 = re.findall(IPV6_REGEX, text)\n    return ipv4 + ipv6\ndef detect_passport_numbers(text: str) -> List[str]:\n    return re.findall(PASSPORT_REGEX, text)\ndef detect_all_pii(text: str) -> dict:\n    results = {\n        \"emails\": detect_emails(text),\n        \"phone_numbers\": detect_phone_numbers(text),",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_passport_numbers",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_passport_numbers(text: str) -> List[str]:\n    return re.findall(PASSPORT_REGEX, text)\ndef detect_all_pii(text: str) -> dict:\n    results = {\n        \"emails\": detect_emails(text),\n        \"phone_numbers\": detect_phone_numbers(text),\n        \"ssns\": detect_ssns(text),\n        \"credit_cards\": detect_credit_cards(text),\n        \"ips\": detect_ips(text),\n        \"passport_numbers\": detect_passport_numbers(text),",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "detect_all_pii",
+        "kind": 2,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "def detect_all_pii(text: str) -> dict:\n    results = {\n        \"emails\": detect_emails(text),\n        \"phone_numbers\": detect_phone_numbers(text),\n        \"ssns\": detect_ssns(text),\n        \"credit_cards\": detect_credit_cards(text),\n        \"ips\": detect_ips(text),\n        \"passport_numbers\": detect_passport_numbers(text),\n    }\n    return {key: value for key, value in results.items() if value}",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "EMAIL_REGEX = r\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\"\nPHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "PHONE_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "PHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "SSN_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "SSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "CREDIT_CARD_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "CREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "DATE_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "DATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "IPV4_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "IPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "IPV6_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "IPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "PASSPORT_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "PASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)\ndef detect_ssns(text: str) -> List[str]:",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "NATIONAL_ID_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "NATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)\ndef detect_ssns(text: str) -> List[str]:\n    return re.findall(SSN_REGEX, text)",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "POSTAL_CODE_REGEX",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "POSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_emails(text: str) -> List[str]:\n    return re.findall(EMAIL_REGEX, text)\ndef detect_phone_numbers(text: str) -> List[str]:\n    return re.findall(PHONE_REGEX, text)\ndef detect_ssns(text: str) -> List[str]:\n    return re.findall(SSN_REGEX, text)\ndef detect_credit_cards(text: str) -> List[str]:",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "peekOfCode": "text = \"Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789.\"\nprint(detect_all_pii(text))",
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_pii",
+        "kind": 2,
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "peekOfCode": "def encrypt_pii(pii_data: Dict[str, List[str]], \n                key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:\n    encrypted_pii = {}\n    with ThreadPoolExecutor() as executor:\n        for pii_type, values in pii_data.items():\n            encrypted_pii[pii_type] = [\n                {\"encrypted\": encrypted.decode(), \"key_version\": key_version}\n                for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)\n            ]\n    return encrypted_pii",
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "compile_pii_pattern",
+        "kind": 2,
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "peekOfCode": "def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:\n    pii_values = [value for values in pii_data.values() for value in values]\n    return re.compile(r\"|\".join(re.escape(value) for value in pii_values))\ndef replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:",
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "replace_pii_with_hash",
+        "kind": 2,
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "peekOfCode": "def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:\n    decoded_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decoded_pii[pii_type] = [item[\"encrypted\"] for item in items]",
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "decode_encrypted_pii",
+        "kind": 2,
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "peekOfCode": "def decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:\n    decoded_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decoded_pii[pii_type] = [item[\"encrypted\"] for item in items]\n    return decoded_pii\ndef process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:\n    # Step 1: Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")",
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "process_text_and_store_in_file",
+        "kind": 2,
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "peekOfCode": "def process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:\n    # Step 1: Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Step 2: Encrypt PII with the latest key\n    latest_metadata = KeyManager.load_keys_metadata()\n    print('Metadata', latest_metadata)\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    encryption_key = KeyManager.get_key(latest_version)\n    encrypted_pii = encrypt_pii(pii_data, encryption_key, latest_version)",
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "peekOfCode": "text = \"Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789.\"\nrecord_id, processed_text = process_text_and_store_in_file(text, \"src/db/pii_storage.json\")\nprint(\"Record ID:\", record_id)\nprint(\"Processed Text:\", processed_text)",
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "retrieve_and_decrypt_pii",
+        "kind": 2,
+        "importPath": "src.core.pii_retrieval",
+        "description": "src.core.pii_retrieval",
+        "peekOfCode": "def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Retrieve and decrypt PII from a JSON file.\"\"\"\n    # Load the JSON file\n    try:\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        raise ValueError(\"Storage file not found.\")\n    # Find the record by ID\n    record = storage_data.get(str(record_id))",
+        "detail": "src.core.pii_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 5,
+        "importPath": "src.core.pii_retrieval",
+        "description": "src.core.pii_retrieval",
+        "peekOfCode": "uuid = \"2e61d4f5-8187-4a46-959c-efc448b55fd9\"\nfile_path = \"src/db/pii_storage.json\"\nkey_file_path = \"src/db/keys_metadata.json\"\nprint(retrieve_and_decrypt_pii(uuid, file_path, key_file_path ))",
+        "detail": "src.core.pii_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "file_path",
+        "kind": 5,
+        "importPath": "src.core.pii_retrieval",
+        "description": "src.core.pii_retrieval",
+        "peekOfCode": "file_path = \"src/db/pii_storage.json\"\nkey_file_path = \"src/db/keys_metadata.json\"\nprint(retrieve_and_decrypt_pii(uuid, file_path, key_file_path ))",
+        "detail": "src.core.pii_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "key_file_path",
+        "kind": 5,
+        "importPath": "src.core.pii_retrieval",
+        "description": "src.core.pii_retrieval",
+        "peekOfCode": "key_file_path = \"src/db/keys_metadata.json\"\nprint(retrieve_and_decrypt_pii(uuid, file_path, key_file_path ))",
+        "detail": "src.core.pii_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "simulate_reencrypt_data",
+        "kind": 2,
+        "importPath": "src.simulation.simulate_key_rotation",
+        "description": "src.simulation.simulate_key_rotation",
+        "peekOfCode": "def simulate_reencrypt_data(old_key: bytes, new_key: bytes):\n    # Example data to simulate re-encryption\n    test_data = [\n        \"john.doe@example.com\",\n        \"+1-123-456-7890\",\n        \"123-45-6789\"\n    ]\n    # Encrypt with the old key\n    encrypted_data = [\n        EncryptionUtils.encrypt_data(old_key, item) for item in test_data",
+        "detail": "src.simulation.simulate_key_rotation",
+        "documentation": {}
+    },
+    {
+        "label": "TestPIIDetection",
+        "kind": 6,
+        "importPath": "tests.unit.test_pii_detection",
+        "description": "tests.unit.test_pii_detection",
+        "peekOfCode": "class TestPIIDetection(unittest.TestCase):\n    def test_detect_emails(self):\n        # Test cases\n        test_cases = [\n            (\"My email is john.doe@example.com\", [\"john.doe@example.com\"]),\n            (\"Contact me at jane_doe123@mail.org\", [\"jane_doe123@mail.org\"]),\n            (\"Send it to admin+support@company.co.uk\", [\"admin+support@company.co.uk\"]),\n            (\"No emails here!\", []),  # No email in text\n            (\"Invalid email like john.doe@.com\", []),  # Invalid email format\n        ]",
+        "detail": "tests.unit.test_pii_detection",
+        "documentation": {}
+    }
+]

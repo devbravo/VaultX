@@ -1,9 +1,6 @@
 import json
 from src.core.encryption import EncryptionUtils, KeyManager
 from typing import Dict
-import base64
-import cryptography
-import binascii
 
 def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str) -> Dict[str, str]:
     """Retrieve and decrypt PII from a JSON file."""
@@ -24,6 +21,8 @@ def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str)
     text_with_hashes = record.get("text_with_hashes")
     if not encrypted_pii or not text_with_hashes:
         raise ValueError(f"Record {record_id} does not contain valid data.")
+      
+    # encryption_key = KeyManager.get_key(key_version)
 
     # Decrypt the PII using correct keys
     decrypted_pii = {}
@@ -35,11 +34,14 @@ def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str)
               encryption_key = KeyManager.load_key(key_version, metadata_file)
               print(f"Using key version {key_version}: {encryption_key}")
               decrypted_value = EncryptionUtils.decrypt_data(encryption_key, item["encrypted"])
+              print('Encryption key', encryption_key)
             except Exception as e:
                 print(f"Decryption failed for {pii_type}: {e}")
                 raise ValueError(f"Decryption failed. Invalid token for {item['encrypted']}")
           
             decrypted_pii[pii_type].append(decrypted_value)
+            
+    KeyManager.increment_key_usage(key_version)
 
     # Reconstruct the original text
     original_text = text_with_hashes
@@ -49,7 +51,7 @@ def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str)
 
     return {"original_text": original_text, "decrypted_pii": decrypted_pii}
   
-uuid = "e283924d-2ec7-44dd-bc5a-46989957b366"
+uuid = "2e61d4f5-8187-4a46-959c-efc448b55fd9"
 file_path = "src/db/pii_storage.json"
 key_file_path = "src/db/keys_metadata.json"
 
