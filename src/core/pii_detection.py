@@ -1,4 +1,5 @@
 import re
+from typing import List
 
 EMAIL_REGEX = r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
 PHONE_REGEX = r"\+?\d{1,4}[\s-]?\(?\d{2,4}\)?[\s-]?\d{3}[\s-]?\d{4}"
@@ -11,34 +12,33 @@ PASSPORT_REGEX = r"\b[A-PR-WY][1-9]\d\s?\d{4}[1-9]\b"
 NATIONAL_ID_REGEX = r"\b\d{2}-\d{4}-\d{4}\b"
 POSTAL_CODE_REGEX = r"\b\d{5}(-\d{4})?\b"
 
-def detect_emails(text):
+def detect_emails(text: str) -> List[str]:
     return re.findall(EMAIL_REGEX, text)
 
-
-def detect_emails(text):
+def detect_emails(text: str) -> List[str]:
     return re.findall(EMAIL_REGEX, text)
   
-def detect_phone_numbers(text):
+def detect_phone_numbers(text: str) -> List[str]:
     return re.findall(PHONE_REGEX, text)
   
-def detect_ssns(text):
+def detect_ssns(text: str) -> List[str]:
     return re.findall(SSN_REGEX, text)
   
-def detect_credit_cards(text):
+def detect_credit_cards(text: str) -> List[str]:
     return re.findall(CREDIT_CARD_REGEX, text)
   
-def detect_dates(text):
+def detect_dates(text: str) -> List[str]:
     return re.findall(DATE_REGEX, text)
   
-def detect_ips(text):
+def detect_ips(text: str) -> List[str]:
     ipv4 = re.findall(IPV4_REGEX, text)
     ipv6 = re.findall(IPV6_REGEX, text)
     return ipv4 + ipv6
   
-def detect_passport_numbers(text):
+def detect_passport_numbers(text: str) -> List[str]:
     return re.findall(PASSPORT_REGEX, text)
   
-def detect_all_pii(text):
+def detect_all_pii(text: str) -> dict:
     results = {
         "emails": detect_emails(text),
         "phone_numbers": detect_phone_numbers(text),
