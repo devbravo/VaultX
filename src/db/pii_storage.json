@@ -1,0 +1,94 @@
+{
+    "0305aed1-3ccf-4560-ab23-f7c171bf8340": {
+        "text_with_hashes": "Contact me at 836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f or c5d818339e54853b26998bd02d1a393cd9e688858f72fe9538a382d85937efc0. My SSN is 01a54629efb952287e554eb23ef69c52097a75aecc0e3a93ca0855ab6d7a31a0.",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnitBe1GIoGU3Y-uHA4h-vvQaIRUyROWn0ypexQbxM_Z9lvPPll9e2EQAxBftWBWnF4aFIdFWoqRnuHL715M8WqIFzCpKHaU7w5CJwrcqzikply9Q=",
+                    "key_version": "key_2"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnitBeW2zeokApOAWN2g2W8C-1OQKMHp0KDrRbvNQ4zqK2sm-YDHVxg19X2yrRUFFXN1fSFceBaXQRXYJRzI7aN0xCzw==",
+                    "key_version": "key_2"
+                }
+            ],
+            "ssns": [
+                {
+                    "encrypted": "gAAAAABnitBev1Iqw3UWvdIliQF2d2f-AGZhvbowroTWgMaO5EtuO9uVaiqyTj5yLjs58P8Cb6uNKwVVbs-jCDy-GXZluLno4g==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "0786d9bc-b62d-40ca-a01c-2e495b000137": {
+        "text_with_hashes": "Contact me at 836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f or c5d818339e54853b26998bd02d1a393cd9e688858f72fe9538a382d85937efc0. My SSN is 01a54629efb952287e554eb23ef69c52097a75aecc0e3a93ca0855ab6d7a31a0.",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnit2ZLSiHc4o6wLOSTWIw7NWHUYR_FX4SF2H2v5QXU1WOGHq10isTaKPOpnglZZST7L1OcDe6cJJaGnqVbPaUv4sXLGyPrY3hfY1iSf4GXzD7GFI=",
+                    "key_version": "key_2"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnit2ZPub1R9wlw-uz3ILs2sel29XlMqWDaRwI-5LVjmL_YjcMM0L_x5ny0WLD9tL33g1VuBPwCh2d7avkn8IrZB_Jwg==",
+                    "key_version": "key_2"
+                }
+            ],
+            "ssns": [
+                {
+                    "encrypted": "gAAAAABnit2ZOLievd1Dlq0NlBCFv7YK4CWfiLOOAzd0OoqyVCcOzLysxtzsDTwVVas5HYi8tt9AJQmTpf39Co_GeGcQ3aOMFQ==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "7b4b3daa-c067-40cd-8a30-c393f6b1f1ff": {
+        "text_with_hashes": "Contact me at 836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f or c5d818339e54853b26998bd02d1a393cd9e688858f72fe9538a382d85937efc0. My SSN is 01a54629efb952287e554eb23ef69c52097a75aecc0e3a93ca0855ab6d7a31a0.",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnit5ZbYYHHV0DiBB_Alj01FtlM6b_Iep215K3JOj0T9e5mY6fbaNb-YAI0VJOyqwd05FZYWeYDNxe7yrAJHhj2Iy0vzTN-dzQp1aSul-70ya13SI=",
+                    "key_version": "key_2"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnit5ZUobdz4RrPIOrcLlpwMxhsWwVXMWu5GLgI06jpq6Ee3Q41V_DIlEQubFZNS5fDkABC7xGpQSZOagMi9lGQBQ64g==",
+                    "key_version": "key_2"
+                }
+            ],
+            "ssns": [
+                {
+                    "encrypted": "gAAAAABnit5ZGB1tBOtfWew6LBUYtNmiixwKwWClQ0BgH1vOk7XBR-dFUGjDEEvo0kHamm2_0ne2qNu95-QxjOmkIKM0QHyCZQ==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "a94d752e-7302-4321-9617-03073d9627bf": {
+        "text_with_hashes": "Contact me at 836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f or c5d818339e54853b26998bd02d1a393cd9e688858f72fe9538a382d85937efc0. My SSN is 01a54629efb952287e554eb23ef69c52097a75aecc0e3a93ca0855ab6d7a31a0.",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnit9onlns7RFIUuM4XzYHeCQzmgPMURK6DGhIVD1NmGe1_JwXzrmGxwWaR_CqEQ9dsoEEgxbDdRfcCAZehs2hzWDLzURMyFdYHG6w6fjn8ns8zws=",
+                    "key_version": "key_2"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnit9ol3HUg09AMqTWs23pcY1b4O6YifrSjeYtBgaqwttrMLe5l0-iHyk-CVGYbtLmESYE1GatIhgdP95ltAcLntHZ3w==",
+                    "key_version": "key_2"
+                }
+            ],
+            "ssns": [
+                {
+                    "encrypted": "gAAAAABnit9o_erxS73cyStryeUSfwrEeucTOiFQAKu3h7LCI2fqqIDEAseSjq93RwImQc-R3amlb3o7Skz3gleIvRmsOJ31vQ==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    }
+}
