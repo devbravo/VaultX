@@ -51,11 +51,27 @@ def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str)
 
     return {"original_text": original_text, "decrypted_pii": decrypted_pii}
   
-uuid = "2e61d4f5-8187-4a46-959c-efc448b55fd9"
-file_path = "src/db/pii_storage.json"
-key_file_path = "src/db/keys_metadata.json"
+  
+  
+if __name__ == "__main__":
+  uuid = ""
 
-print(retrieve_and_decrypt_pii(uuid, file_path, key_file_path ))
+  # Open the JSON file
+  with open("src/db/pii_storage.json", "r") as f:
+      data = json.load(f)
+
+  # Dynamically retrieve the first UUID key
+  if data:
+      uuid = next(iter(data))  # Get the first key from the dictionary
+      print(f"Retrieved UUID: {uuid}")
+      print("Record for UUID:", data[uuid])
+  else:
+      print("No data found in the JSON file.")
+      
+      
+  file_path = "src/db/pii_storage.json"
+  key_file_path = "src/db/keys_metadata.json"
+  print(retrieve_and_decrypt_pii(uuid, file_path, key_file_path ))
 
 
 
