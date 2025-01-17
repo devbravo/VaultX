@@ -8,6 +8,38 @@
         "documentation": {}
     },
     {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_pii",
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "isExtraImport": true,
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
+        "label": "process_text_and_store_in_file",
+        "importPath": "src.core.pii_processing",
+        "description": "src.core.pii_processing",
+        "isExtraImport": true,
+        "detail": "src.core.pii_processing",
+        "documentation": {}
+    },
+    {
         "label": "Fernet",
         "importPath": "cryptography.fernet",
         "description": "cryptography.fernet",
@@ -134,34 +166,18 @@
     },
     {
         "label": "EncryptionUtils",
-        "importPath": "encryption",
-        "description": "encryption",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
         "isExtraImport": true,
-        "detail": "encryption",
+        "detail": "src.core.encryption",
         "documentation": {}
     },
     {
         "label": "KeyManager",
-        "importPath": "encryption",
-        "description": "encryption",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
         "isExtraImport": true,
-        "detail": "encryption",
-        "documentation": {}
-    },
-    {
-        "label": "ThreadPoolExecutor",
-        "importPath": "concurrent.futures",
-        "description": "concurrent.futures",
-        "isExtraImport": true,
-        "detail": "concurrent.futures",
-        "documentation": {}
-    },
-    {
-        "label": "detect_all_pii",
-        "importPath": "pii_detection",
-        "description": "pii_detection",
-        "isExtraImport": true,
-        "detail": "pii_detection",
+        "detail": "src.core.encryption",
         "documentation": {}
     },
     {
@@ -205,6 +221,22 @@
         "documentation": {}
     },
     {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "detect_all_pii",
+        "importPath": "src.core.pii_detection",
+        "description": "src.core.pii_detection",
+        "isExtraImport": true,
+        "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
         "label": "unittest",
         "kind": 6,
         "isExtraImport": true,
@@ -222,11 +254,47 @@
         "documentation": {}
     },
     {
+        "label": "PiiRequest",
+        "kind": 6,
+        "importPath": "src.app.main",
+        "description": "src.app.main",
+        "peekOfCode": "class PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')\nasync def encrypt_pii(request: PiiRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
+        "detail": "src.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "DecryptRequest",
+        "kind": 6,
+        "importPath": "src.app.main",
+        "description": "src.app.main",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')\nasync def encrypt_pii(request: PiiRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    record_id, processed_text = process_text_and_store_in_file(request.text, PII_STORAGE_FILE)",
+        "detail": "src.app.main",
+        "documentation": {}
+    },
+    {
         "label": "app",
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "app = FastAPI() \n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}",
+        "peekOfCode": "app = FastAPI() \nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}",
+        "detail": "src.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "PII_STORAGE_FILE",
+        "kind": 5,
+        "importPath": "src.app.main",
+        "description": "src.app.main",
+        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')",
+        "detail": "src.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "KEY_METADATA_FILE",
+        "kind": 5,
+        "importPath": "src.app.main",
+        "description": "src.app.main",
+        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')\nasync def encrypt_pii(request: PiiRequest):",
         "detail": "src.app.main",
         "documentation": {}
     },

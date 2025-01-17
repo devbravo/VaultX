@@ -3,9 +3,9 @@ import json
 import uuid
 import logging
 from typing import Tuple, Dict, List
-from encryption import EncryptionUtils, KeyManager
+from src.core.encryption import EncryptionUtils, KeyManager
 from concurrent.futures import ThreadPoolExecutor
-from pii_detection import detect_all_pii
+from src.core.pii_detection import detect_all_pii
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
