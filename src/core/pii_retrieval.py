@@ -1,11 +1,5 @@
 import json
-from cryptography.fernet import Fernet
-from src.core.encryption import decrypt_data, hash_data
-
-# Define your encryption key (ideally retrieve from secure storage)
-def load_encryption_key(file_path="encryption_key.txt"):
-    with open(file_path, "rb") as f:
-        return f.read()
+from src.core.encryption import EncryptionManager
 
 def retrieve_and_decrypt_pii(record_id, file_path="pii_storage.json"):
     """Retrieve and decrypt PII from a JSON file."""
@@ -28,12 +22,12 @@ def retrieve_and_decrypt_pii(record_id, file_path="pii_storage.json"):
         raise ValueError(f"Record {record_id} does not contain valid data.")
 
     # Decrypt the PII
-    decrypted_pii = {key: [decrypt_data(load_encryption_key(), value) for value in values]
+    decrypted_pii = {key: [EncryptionManager.decrypt_data(EncryptionManager.load_key("encryption_key.txt"), value) for value in values]
                      for key, values in encrypted_pii.items()}
     
     original_text = text_with_hashes
     for key, values in decrypted_pii.items():
-        for value, hash_value in zip(values, [hash_data(v) for v in values]):
+        for value, hash_value in zip(values, [EncryptionManager.hash_data(v) for v in values]):
             original_text = original_text.replace(hash_value, value)
 
     return {"original_text": original_text, "decrypted_pii": decrypted_pii}

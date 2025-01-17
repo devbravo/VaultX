@@ -1,31 +1,26 @@
 import json
 import uuid
-from encryption import encrypt_data, generate_key
+from encryption import EncryptionManager
 from pii_detection import detect_all_pii
-from hashlib import sha256
 
 # Generate a predefined encryption key for simplicity
-ENCRYPTION_KEY = generate_key()
-with open("encryption_key.txt", "wb") as f:
-    f.write(ENCRYPTION_KEY)
+ENCRYPTION_KEY = EncryptionManager.generate_key()
+EncryptionManager.save_key(ENCRYPTION_KEY, "encryption_key.txt")
 
-def hash_data(data):
-    """Hash data using SHA-256."""
-    return sha256(data.encode()).hexdigest()
 
 def process_text_and_store_in_file(text, file_path="pii_storage.json"):
     # Step 1: Detect PII
     pii_data = detect_all_pii(text)
 
     # Step 2: Encrypt PII
-    encrypted_pii = {key: [encrypt_data(ENCRYPTION_KEY, value) for value in values]
+    encrypted_pii = {key: [EncryptionManager.encrypt_data(ENCRYPTION_KEY, value) for value in values]
                      for key, values in pii_data.items()}
 
     # Step 3: Replace PII with hashes
     text_with_hashes = text
     for key, values in pii_data.items():
         for value in values:
-            hashed_value = hash_data(value)
+            hashed_value = EncryptionManager.hash_data(value)
             text_with_hashes = text_with_hashes.replace(value, hashed_value)
 
     # Step 4: Store in a JSON file
