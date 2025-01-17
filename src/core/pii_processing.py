@@ -1,51 +1,113 @@
+import re
 import json
 import uuid
-from encryption import EncryptionManager
+import logging
+from typing import Tuple, Dict, List
+from encryption import EncryptionUtils, KeyManager
+from concurrent.futures import ThreadPoolExecutor
 from pii_detection import detect_all_pii
 
-# Generate a predefined encryption key for simplicity
-ENCRYPTION_KEY = EncryptionManager.generate_key()
-EncryptionManager.save_key(ENCRYPTION_KEY, "encryption_key.txt")
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 
+# Load or generate encryption key
+try:
+    metadata = KeyManager.load_keys_metadata()
+    if not metadata:  # Check if metadata is empty
+        new_version = KeyManager.add_new_key()
+        ENCRYPTION_KEY = KeyManager.get_key(new_version)
+        logging.info(f"Initialized with new key: {new_version}")
+    else:
+        latest_version = max(metadata.keys())  # Get the latest key version
+        ENCRYPTION_KEY = KeyManager.get_key(latest_version)
+        logging.info(f"Using key version: {latest_version}")
+except FileNotFoundError:
+    # No metadata file exists; create the first key
+    new_version = KeyManager.add_new_key()
+    ENCRYPTION_KEY = KeyManager.get_key(new_version)
+    logging.info(f"Initialized with new key: {new_version}")
+    
+    
+def encrypt_pii(pii_data: Dict[str, List[str]], 
+                key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:
+    encrypted_pii = {}
+    with ThreadPoolExecutor() as executor:
+        for pii_type, values in pii_data.items():
+            encrypted_pii[pii_type] = [
+                {"encrypted": encrypted.decode(), "key_version": key_version}
+                for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)
+            ]
+    return encrypted_pii
+      
 
-def process_text_and_store_in_file(text, file_path="pii_storage.json"):
+def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:
+    pii_values = [value for values in pii_data.values() for value in values]
+    return re.compile(r"|".join(re.escape(value) for value in pii_values))
+  
+
+def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:
+    pattern = compile_pii_pattern(pii_data)
+
+    def replacer(match):
+        return EncryptionUtils.hash_data(match.group(0))
+
+    return pattern.sub(replacer, text)
+  
+
+def decode_encrypted_pii(
+  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:
+    decoded_pii = {}
+    for pii_type, items in encrypted_pii.items():
+        decoded_pii[pii_type] = [item["encrypted"] for item in items]
+    return decoded_pii
+  
+
+def process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:
     # Step 1: Detect PII
     pii_data = detect_all_pii(text)
+    logging.info(f"Detected PII: {pii_data}")
 
-    # Step 2: Encrypt PII
-    encrypted_pii = {key: [EncryptionManager.encrypt_data(ENCRYPTION_KEY, value) for value in values]
-                     for key, values in pii_data.items()}
+    # Step 2: Encrypt PII with the latest key
+    latest_metadata = KeyManager.load_keys_metadata()
+    print('Metadata', latest_metadata)
+    latest_version = max(latest_metadata.keys())  # Get the latest key version
+    encryption_key = KeyManager.get_key(latest_version)
+    encrypted_pii = encrypt_pii(pii_data, encryption_key, latest_version)
 
     # Step 3: Replace PII with hashes
-    text_with_hashes = text
-    for key, values in pii_data.items():
-        for value in values:
-            hashed_value = EncryptionManager.hash_data(value)
-            text_with_hashes = text_with_hashes.replace(value, hashed_value)
+    text_with_hashes = replace_pii_with_hash(text, pii_data)
 
     # Step 4: Store in a JSON file
     record_id = str(uuid.uuid4())
     new_record = {
         "text_with_hashes": text_with_hashes,
-        "encrypted_pii": {key: [encrypted.decode() for encrypted in values] for key, values in encrypted_pii.items()}
+        "encrypted_pii": encrypted_pii  # Store with key versions
     }
 
     try:
         with open(file_path, "r") as f:
             storage_data = json.load(f)
     except FileNotFoundError:
-        storage_data = {}  # Initialize if file doesn't exist
+        storage_data = {}
+    except json.JSONDecodeError:
+        raise ValueError(f"Invalid JSON format in {file_path}")
 
-    # Step 6: Add the new record
     storage_data[record_id] = new_record
 
-    # Step 7: Write back to the JSON file
-    with open(file_path, "w") as f:
+    try:
+      with open(file_path, "w") as f:
         json.dump(storage_data, f, indent=4)
+        logging.info(f"Stored record with ID: {record_id}")
+    except Exception as e:
+        logging.error(f"Failed to store record with ID: {record_id}")
+        raise e
+        
 
+    logging.info(f"Processed text stored with Record ID: {record_id}")
     return record_id, text_with_hashes
-  
-text = "Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789."
-processed_text = process_text_and_store_in_file(text)
 
+# Example usage
+text = "Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789."
+record_id, processed_text = process_text_and_store_in_file(text, "src/db/pii_storage.json")
+print("Record ID:", record_id)
 print("Processed Text:", processed_text)
