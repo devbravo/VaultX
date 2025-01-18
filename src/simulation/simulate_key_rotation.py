@@ -1,7 +1,8 @@
 import json
 import logging
 from datetime import datetime
-from src.core.encryption import KeyManager, KeyRotationManager, EncryptionUtils
+from src.core.encryption import KeyManager, EncryptionUtils
+from src.core.key_rotation import KeyRotationManager
 
 logging.basicConfig(level=logging.INFO)
 
@@ -42,13 +43,7 @@ def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_ver
 
 if __name__ == "__main__":
     def rotation_with_reencryption():
-        metadata = KeyManager.load_keys_metadata()
-        for key_version, key_info in metadata.items():
-            if KeyRotationManager.should_rotate_key(key_info, days_threshold=30, usage_threshold=1):
-                old_key = KeyManager.get_key(key_version)
-                new_version = KeyManager.add_new_key()
-                new_key = KeyManager.get_key(new_version)
-                logging.info(f"Rotating key: {key_version} -> {new_version}")
-                update_storage_with_reencryption(old_key, new_key, new_version, "src/db/pii_storage.json")
+        old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
+        update_storage_with_reencryption(old_key, new_key, new_version, "src/db/pii_storage.json")
 
     rotation_with_reencryption()
