@@ -6,18 +6,64 @@ Works with a chat model with tool calling support.
 from datetime import datetime, timezone
 from typing import Dict, List, Literal, cast
 
-from langchain_core.messages import AIMessage
+import httpx
+from langchain_core.messages import AIMessage, HumanMessage, RemoveMessage
 from langchain_core.runnables import RunnableConfig
-from langgraph.constants import START
+from langgraph.constants import START, END
 from langgraph.graph import StateGraph
-from langgraph.prebuilt import ToolNode
+
 from react_agent.configuration import Configuration
 from react_agent.state import InputState, State
-from react_agent.tools import TOOLS, encrypt
+from react_agent.tools import TOOLS
 from react_agent.utils import load_chat_model
 
 
 # Define the function that calls the model
+def summarize_conversation(state):
+    # First, we summarize the conversation
+    summary = state.summary if state.summary else ""
+    if summary:
+        # If a summary already exists, we use a different system prompt
+        # to summarize it than if one didn't
+        summary_message = (
+            f"This is summary of the conversation to date: {summary}\n\n"
+            "Extend the summary by taking into account the new messages above:"
+        )
+    else:
+        summary_message = "Create a summary of the conversation above:"
+
+    messages = state.messages + [HumanMessage(content=summary_message)]
+    llm = load_chat_model("openai/gpt-4o-mini")
+    response = llm.invoke(messages)
+    # We now need to delete messages that we no longer want to show up
+    # I will delete all but the last two messages, but you can change this
+    delete_messages = [RemoveMessage(id=m.id) for m in state.messages[:-2]]
+    return {"summary": response.content, "messages": delete_messages}
+
+
+async def encrypt(state):
+    async with httpx.AsyncClient() as client:
+        data = {"text": state.messages[-1].content}
+        print(data)
+        response = await client.post("http://localhost:8000/encrypt/", json=data)
+        data = response.json()
+
+    return {
+        "encrypted_pii": data if "message" not in data else None,
+        "message": data["processed_text"] if "message" not in data else state.messages[-1].content
+    }
+
+
+async def decrypt(state):
+    if state.encrypted_pii:
+        async with httpx.AsyncClient() as client:
+            data = {"record_id": state.encrypted_pii['record_id']}
+            response = await client.post("http://localhost:8000/decrypt/", json=data)
+            data = response.json()
+
+        return {"decrypted_pii": data}
+
+    return {}
 
 
 async def call_model(
@@ -48,7 +94,10 @@ async def call_model(
     response = cast(
         AIMessage,
         await model.ainvoke(
-            [{"role": "system", "content": system_message}, {"role": "human", "content": state.message}], config
+            [
+                {"role": "system", "content": system_message},
+                {"role": "ai", "content": state.summary},
+                {"role": "human", "content": state.message}], config
         ),
     )
 
@@ -73,13 +122,17 @@ builder = StateGraph(State, input=InputState, config_schema=Configuration)
 
 # Define the two nodes we will cycle between
 builder.add_node(call_model)
+builder.add_node("summarize", summarize_conversation)
 builder.add_node("encrypt", encrypt)
-builder.add_node("tools", ToolNode(TOOLS))
+builder.add_node("decrypt", decrypt)
 
 # Set the entrypoint as `call_model`
 # This means that this node is the first one called
 builder.add_edge(START, "encrypt")
 builder.add_edge("encrypt", "call_model")
+builder.add_edge("call_model", "decrypt")
+builder.add_edge("call_model", "summarize")
+builder.add_edge("decrypt", END)
 
 
 def route_model_output(state: State) -> Literal["__end__", "tools"]:
@@ -105,14 +158,6 @@ def route_model_output(state: State) -> Literal["__end__", "tools"]:
     return "tools"
 
 
-# Add a conditional edge to determine the next step after `call_model`
-builder.add_conditional_edges(
-    "call_model",
-    # After call_model finishes running, the next node(s) are scheduled
-    # based on the output from route_model_output
-    route_model_output,
-)
-
 # Add a normal edge from `tools` to `call_model`
 # This creates a cycle: after using tools, we always return to the model
 
@@ -122,4 +167,4 @@ graph = builder.compile(
     interrupt_before=[],  # Add node names here to update state before they're called
     interrupt_after=[],  # Add node names here to update state after they're called
 )
-graph.name = "ReAct Agent"  # This customizes the name in LangSmith
+graph.name = "VaultX Agent"  # This customizes the name in LangSmith
