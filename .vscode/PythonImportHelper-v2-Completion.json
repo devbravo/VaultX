@@ -813,7 +813,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    # record_id, processed_text = encrypt_data(request.text)",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    text_with_hashes, encrypted_pii = encrypt_pii(request.text)",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -1092,7 +1092,7 @@
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    print(\"PII_detection\")\n    # Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version",
+        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    print(\"PII_detection\", pii_data)\n    if not pii_data:\n      logging.info(\"No PII detected. Skipping encryption.\")\n      return None, None\n    # Load or generate the latest encryption key",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },

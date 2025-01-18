@@ -41,7 +41,12 @@ def encrypt_pii(text: str) -> Tuple[str, Dict]:
     # Detect PII
     pii_data = detect_all_pii(text)
     logging.info(f"Detected PII: {pii_data}")
-    print("PII_detection")
+    print("PII_detection", pii_data)
+    
+    if not pii_data:
+      logging.info("No PII detected. Skipping encryption.")
+      return None, None
+      
 
     # Load or generate the latest encryption key
     encryption_key = load_generate_encryption_key()
