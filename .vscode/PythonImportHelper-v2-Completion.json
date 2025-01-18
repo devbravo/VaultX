@@ -24,19 +24,59 @@
         "documentation": {}
     },
     {
-        "label": "encrypt_pii",
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
+        "label": "decrypt_pii",
+        "importPath": "src.core.pii_decryption",
+        "description": "src.core.pii_decryption",
         "isExtraImport": true,
-        "detail": "src.core.pii_processing",
+        "detail": "src.core.pii_decryption",
         "documentation": {}
     },
     {
-        "label": "process_text_and_store_in_file",
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
+        "label": "get_record_by_id",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
         "isExtraImport": true,
-        "detail": "src.core.pii_processing",
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "store_record_by_id",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_records",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_pii",
+        "importPath": "src.core.pii_encryption",
+        "description": "src.core.pii_encryption",
+        "isExtraImport": true,
+        "detail": "src.core.pii_encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyRotationManager",
+        "importPath": "src.core.key_rotation",
+        "description": "src.core.key_rotation",
+        "isExtraImport": true,
+        "detail": "src.core.key_rotation",
+        "documentation": {}
+    },
+    {
+        "label": "KeyRotationManager",
+        "importPath": "src.core.key_rotation",
+        "description": "src.core.key_rotation",
+        "isExtraImport": true,
+        "detail": "src.core.key_rotation",
         "documentation": {}
     },
     {
@@ -89,6 +129,14 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -98,12 +146,84 @@
         "documentation": {}
     },
     {
-        "label": "re",
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptionUtils",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -147,77 +267,12 @@
         "documentation": {}
     },
     {
-        "label": "uuid",
+        "label": "re",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "uuid",
-        "description": "uuid",
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
-        "documentation": {}
-    },
-    {
-        "label": "EncryptionUtils",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "KeyManager",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "EncryptionUtils",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "KeyManager",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "KeyManager",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "KeyRotationManager",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "EncryptionUtils",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -234,6 +289,23 @@
         "description": "src.core.pii_detection",
         "isExtraImport": true,
         "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "load_generate_encryption_key",
+        "importPath": "src.db.key_repository",
+        "description": "src.db.key_repository",
+        "isExtraImport": true,
+        "detail": "src.db.key_repository",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -254,11 +326,11 @@
         "documentation": {}
     },
     {
-        "label": "PiiRequest",
+        "label": "EncryptRequest",
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')\nasync def encrypt_pii(request: PiiRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
+        "peekOfCode": "class EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -267,7 +339,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')\nasync def encrypt_pii(request: PiiRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    record_id, processed_text = process_text_and_store_in_file(request.text, PII_STORAGE_FILE)",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    # record_id, processed_text = encrypt_data(request.text)",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -276,7 +348,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "app = FastAPI() \nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}",
+        "peekOfCode": "app = FastAPI() \nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -285,7 +357,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')",
+        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -294,7 +366,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass PiiRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt')\nasync def encrypt_pii(request: PiiRequest):",
+        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -319,10 +391,19 @@
     {
         "label": "KeyRotationManager",
         "kind": 6,
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
+        "importPath": "src.core.key_rotation",
+        "description": "src.core.key_rotation",
         "peekOfCode": "class KeyRotationManager:\n    @staticmethod\n    def should_rotate_key(key_info: dict, days_threshold: int = 30, usage_threshold: int = 1000) -> bool:\n        created_date = datetime.strptime(key_info[\"created\"], \"%Y-%m-%d %H:%M:%S\")\n        days_since_creation = (datetime.now() - created_date).days\n        return days_since_creation >= days_threshold or key_info[\"usage\"] >= usage_threshold\n    @classmethod\n    def rotate_keys(cls, days_threshold: int = 30, usage_threshold: int = 1000) -> None:\n        metadata = KeyManager.load_keys_metadata()\n        for key_version, key_info in metadata.items():",
-        "detail": "src.core.encryption",
+        "detail": "src.core.key_rotation",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt_pii",
+        "kind": 2,
+        "importPath": "src.core.pii_decryption",
+        "description": "src.core.pii_decryption",
+        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_hashes = record.get(\"text_with_hashes\")\n    if not encrypted_pii or not text_with_hashes:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
+        "detail": "src.core.pii_decryption",
         "documentation": {}
     },
     {
@@ -506,66 +587,84 @@
         "documentation": {}
     },
     {
-        "label": "encrypt_pii",
+        "label": "encryption",
         "kind": 2,
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
-        "peekOfCode": "def encrypt_pii(pii_data: Dict[str, List[str]], \n                key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:\n    encrypted_pii = {}\n    with ThreadPoolExecutor() as executor:\n        for pii_type, values in pii_data.items():\n            encrypted_pii[pii_type] = [\n                {\"encrypted\": encrypted.decode(), \"key_version\": key_version}\n                for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)\n            ]\n    return encrypted_pii",
-        "detail": "src.core.pii_processing",
+        "importPath": "src.core.pii_encryption",
+        "description": "src.core.pii_encryption",
+        "peekOfCode": "def encryption(pii_data: Dict[str, List[str]], \n                key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:\n    encrypted_pii = {}\n    with ThreadPoolExecutor() as executor:\n        for pii_type, values in pii_data.items():\n            encrypted_pii[pii_type] = [\n                {\"encrypted\": encrypted.decode(), \"key_version\": key_version}\n                for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)\n            ]\n    return encrypted_pii",
+        "detail": "src.core.pii_encryption",
         "documentation": {}
     },
     {
         "label": "compile_pii_pattern",
         "kind": 2,
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
-        "peekOfCode": "def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:\n    pii_values = [value for values in pii_data.values() for value in values]\n    return re.compile(r\"|\".join(re.escape(value) for value in pii_values))\ndef replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:",
-        "detail": "src.core.pii_processing",
+        "importPath": "src.core.pii_encryption",
+        "description": "src.core.pii_encryption",
+        "peekOfCode": "def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:\n    pii_values = [value for values in pii_data.values() for value in values]\n    return re.compile(r\"|\".join(re.escape(value) for value in pii_values))\ndef replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"",
+        "detail": "src.core.pii_encryption",
         "documentation": {}
     },
     {
         "label": "replace_pii_with_hash",
         "kind": 2,
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
-        "peekOfCode": "def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:\n    decoded_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decoded_pii[pii_type] = [item[\"encrypted\"] for item in items]",
-        "detail": "src.core.pii_processing",
+        "importPath": "src.core.pii_encryption",
+        "description": "src.core.pii_encryption",
+        "peekOfCode": "def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")",
+        "detail": "src.core.pii_encryption",
         "documentation": {}
     },
     {
-        "label": "decode_encrypted_pii",
+        "label": "encrypt_pii",
         "kind": 2,
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
-        "peekOfCode": "def decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:\n    decoded_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decoded_pii[pii_type] = [item[\"encrypted\"] for item in items]\n    return decoded_pii\ndef process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:\n    # Step 1: Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")",
-        "detail": "src.core.pii_processing",
+        "importPath": "src.core.pii_encryption",
+        "description": "src.core.pii_encryption",
+        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    # Encrypt PII",
+        "detail": "src.core.pii_encryption",
         "documentation": {}
     },
     {
-        "label": "process_text_and_store_in_file",
+        "label": "load_generate_encryption_key",
         "kind": 2,
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
-        "peekOfCode": "def process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:\n    # Step 1: Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Step 2: Encrypt PII with the latest key\n    latest_metadata = KeyManager.load_keys_metadata()\n    print('Metadata', latest_metadata)\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    encryption_key = KeyManager.get_key(latest_version)\n    encrypted_pii = encrypt_pii(pii_data, encryption_key, latest_version)",
-        "detail": "src.core.pii_processing",
+        "importPath": "src.db.key_repository",
+        "description": "src.db.key_repository",
+        "peekOfCode": "def load_generate_encryption_key() -> bytes:\n    \"\"\"\n    Load the latest encryption key or generate a new one if none exists.\n    Returns the encryption key as bytes.\n    \"\"\"\n    try:\n        metadata = KeyManager.load_keys_metadata()\n        if not metadata:  # Check if metadata is empty\n            logging.info(\"No metadata found. Generating a new key.\")\n            new_version = KeyManager.add_new_key()",
+        "detail": "src.db.key_repository",
         "documentation": {}
     },
     {
-        "label": "text",
-        "kind": 5,
-        "importPath": "src.core.pii_processing",
-        "description": "src.core.pii_processing",
-        "peekOfCode": "text = \"Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789.\"\nrecord_id, processed_text = process_text_and_store_in_file(text, \"src/db/pii_storage.json\")\nprint(\"Record ID:\", record_id)\nprint(\"Processed Text:\", processed_text)",
-        "detail": "src.core.pii_processing",
-        "documentation": {}
-    },
-    {
-        "label": "retrieve_and_decrypt_pii",
+        "label": "store_record_by_id",
         "kind": 2,
-        "importPath": "src.core.pii_retrieval",
-        "description": "src.core.pii_retrieval",
-        "peekOfCode": "def retrieve_and_decrypt_pii(record_id: str, file_path: str, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Retrieve and decrypt PII from a JSON file.\"\"\"\n    # Load the JSON file\n    try:\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        raise ValueError(\"Storage file not found.\")\n    # Find the record by ID\n    record = storage_data.get(str(record_id))",
-        "detail": "src.core.pii_retrieval",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "peekOfCode": "def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict) -> str:\n  \"\"\"Store a new record in the storage file.\"\"\"\n  record_id = str(uuid.uuid4())\n  new_record = {\n        \"text_with_hashes\": text_with_hashes,\n        \"encrypted_pii\": encrypted_pii  # Store with key versions\n    }\n  # Since we are using json as a storage format, we need to load the existing data first\n  try:\n    with open(file_path, \"r\") as f:",
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_record_by_id",
+        "kind": 2,
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "peekOfCode": "def get_record_by_id(record_id: str, file_path: str) -> Dict:\n    \"\"\"Retrieve a specific record by ID from the storage file.\"\"\"\n    try:\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        raise ValueError(\"Storage file not found.\")\n    # Find the record by ID\n    record = storage_data.get(str(record_id))\n    if not record:",
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_records",
+        "kind": 2,
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "peekOfCode": "def get_all_records(file_path: str) -> Dict:\n  \"\"\"Retrieve all records from the storage file.\"\"\"\n  try:\n    with open(file_path, \"r\") as f:\n      storage_data = json.load(f)\n  except FileNotFoundError:\n    raise ValueError(\"Storage file not found.\")\n  except json.JSONDecodeError:\n    raise ValueError(f\"Invalid JSON format in {file_path}\")\n  return storage_data",
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "update_all_records",
+        "kind": 2,
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "peekOfCode": "def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:\n  pass",
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
@@ -573,7 +672,7 @@
         "kind": 2,
         "importPath": "src.simulation.simulate_key_rotation",
         "description": "src.simulation.simulate_key_rotation",
-        "peekOfCode": "def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, file_path: str):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    try:\n        # Load the current storage file\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        logging.error(\"Storage file not found.\")\n        return\n    # Iterate through records and re-encrypt PII",
+        "peekOfCode": "def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, file_path: str):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    storage_data = get_all_records(file_path)\n    # Iterate through records and re-encrypt PII\n    for record_id, record in storage_data.items():\n        encrypted_pii = record.get(\"encrypted_pii\")\n        if not encrypted_pii:\n            continue\n        for pii_type, items in encrypted_pii.items():\n            for item in items:",
         "detail": "src.simulation.simulate_key_rotation",
         "documentation": {}
     },

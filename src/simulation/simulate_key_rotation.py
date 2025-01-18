@@ -1,19 +1,15 @@
 import json
 import logging
 from datetime import datetime
-from src.core.encryption import KeyManager, KeyRotationManager, EncryptionUtils
+from src.core.encryption import KeyManager, EncryptionUtils
+from src.core.key_rotation import KeyRotationManager
+from src.db.record_repository import get_all_records
 
 logging.basicConfig(level=logging.INFO)
 
 def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, file_path: str):
     """Re-encrypt data in storage and update the key version."""
-    try:
-        # Load the current storage file
-        with open(file_path, "r") as f:
-            storage_data = json.load(f)
-    except FileNotFoundError:
-        logging.error("Storage file not found.")
-        return
+    storage_data = get_all_records(file_path)
 
     # Iterate through records and re-encrypt PII
     for record_id, record in storage_data.items():
@@ -41,14 +37,5 @@ def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_ver
 
 
 if __name__ == "__main__":
-    def rotation_with_reencryption():
-        metadata = KeyManager.load_keys_metadata()
-        for key_version, key_info in metadata.items():
-            if KeyRotationManager.should_rotate_key(key_info, days_threshold=30, usage_threshold=1):
-                old_key = KeyManager.get_key(key_version)
-                new_version = KeyManager.add_new_key()
-                new_key = KeyManager.get_key(new_version)
-                logging.info(f"Rotating key: {key_version} -> {new_version}")
-                update_storage_with_reencryption(old_key, new_key, new_version, "src/db/pii_storage.json")
-
-    rotation_with_reencryption()
+    old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
+    update_storage_with_reencryption(old_key, new_key, new_version, "src/db/pii_storage.json")
