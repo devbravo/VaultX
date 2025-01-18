@@ -145,6 +145,22 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -275,6 +291,110 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -330,6 +450,336 @@
         "importPath": "uuid",
         "description": "uuid",
         "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "anthropic",
+        "description": "anthropic",
+        "isExtraImport": true,
+        "detail": "anthropic",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "RunnableConfig",
+        "importPath": "langchain_core.runnables",
+        "description": "langchain_core.runnables",
+        "isExtraImport": true,
+        "detail": "langchain_core.runnables",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_config",
+        "importPath": "langchain_core.runnables",
+        "description": "langchain_core.runnables",
+        "isExtraImport": true,
+        "detail": "langchain_core.runnables",
+        "documentation": {}
+    },
+    {
+        "label": "RunnableConfig",
+        "importPath": "langchain_core.runnables",
+        "description": "langchain_core.runnables",
+        "isExtraImport": true,
+        "detail": "langchain_core.runnables",
+        "documentation": {}
+    },
+    {
+        "label": "RunnableConfig",
+        "importPath": "langchain_core.runnables",
+        "description": "langchain_core.runnables",
+        "isExtraImport": true,
+        "detail": "langchain_core.runnables",
+        "documentation": {}
+    },
+    {
+        "label": "prompts",
+        "importPath": "react_agent",
+        "description": "react_agent",
+        "isExtraImport": true,
+        "detail": "react_agent",
+        "documentation": {}
+    },
+    {
+        "label": "graph",
+        "importPath": "react_agent",
+        "description": "react_agent",
+        "isExtraImport": true,
+        "detail": "react_agent",
+        "documentation": {}
+    },
+    {
+        "label": "AIMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "AnyMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "BaseMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "START",
+        "importPath": "langgraph.constants",
+        "description": "langgraph.constants",
+        "isExtraImport": true,
+        "detail": "langgraph.constants",
+        "documentation": {}
+    },
+    {
+        "label": "StateGraph",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "add_messages",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "ToolNode",
+        "importPath": "langgraph.prebuilt",
+        "description": "langgraph.prebuilt",
+        "isExtraImport": true,
+        "detail": "langgraph.prebuilt",
+        "documentation": {}
+    },
+    {
+        "label": "Configuration",
+        "importPath": "react_agent.configuration",
+        "description": "react_agent.configuration",
+        "isExtraImport": true,
+        "detail": "react_agent.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "Configuration",
+        "importPath": "react_agent.configuration",
+        "description": "react_agent.configuration",
+        "isExtraImport": true,
+        "detail": "react_agent.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "Configuration",
+        "importPath": "react_agent.configuration",
+        "description": "react_agent.configuration",
+        "isExtraImport": true,
+        "detail": "react_agent.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "InputState",
+        "importPath": "react_agent.state",
+        "description": "react_agent.state",
+        "isExtraImport": true,
+        "detail": "react_agent.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "react_agent.state",
+        "description": "react_agent.state",
+        "isExtraImport": true,
+        "detail": "react_agent.state",
+        "documentation": {}
+    },
+    {
+        "label": "TOOLS",
+        "importPath": "react_agent.tools",
+        "description": "react_agent.tools",
+        "isExtraImport": true,
+        "detail": "react_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt",
+        "importPath": "react_agent.tools",
+        "description": "react_agent.tools",
+        "isExtraImport": true,
+        "detail": "react_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "load_chat_model",
+        "importPath": "react_agent.utils",
+        "description": "react_agent.utils",
+        "isExtraImport": true,
+        "detail": "react_agent.utils",
+        "documentation": {}
+    },
+    {
+        "label": "IsLastStep",
+        "importPath": "langgraph.managed",
+        "description": "langgraph.managed",
+        "isExtraImport": true,
+        "detail": "langgraph.managed",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptedPii",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptedPii",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing_extensions",
+        "description": "typing_extensions",
+        "isExtraImport": true,
+        "detail": "typing_extensions",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "TavilySearchResults",
+        "importPath": "langchain_community.tools.tavily_search",
+        "description": "langchain_community.tools.tavily_search",
+        "isExtraImport": true,
+        "detail": "langchain_community.tools.tavily_search",
+        "documentation": {}
+    },
+    {
+        "label": "InjectedToolArg",
+        "importPath": "langchain_core.tools",
+        "description": "langchain_core.tools",
+        "isExtraImport": true,
+        "detail": "langchain_core.tools",
+        "documentation": {}
+    },
+    {
+        "label": "init_chat_model",
+        "importPath": "langchain.chat_models",
+        "description": "langchain.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "BaseChatModel",
+        "importPath": "langchain_core.language_models",
+        "description": "langchain_core.language_models",
+        "isExtraImport": true,
+        "detail": "langchain_core.language_models",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "unit",
+        "importPath": "langsmith",
+        "description": "langsmith",
+        "isExtraImport": true,
+        "detail": "langsmith",
         "documentation": {}
     },
     {
@@ -698,6 +1148,123 @@
         "description": "src.db.record_repository",
         "peekOfCode": "def get_all_records(file_path: str) -> Dict:\n  \"\"\"Retrieve all records from the storage file.\"\"\"\n  try:\n    with open(file_path, \"r\") as f:\n      storage_data = json.load(f)\n  except FileNotFoundError:\n    raise ValueError(\"Storage file not found.\")\n  except json.JSONDecodeError:\n    raise ValueError(f\"Invalid JSON format in {file_path}\")\n  return storage_data",
         "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "EncryptedPii",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.models.pii",
+        "description": "src.vaultx_agent.src.react_agent.models.pii",
+        "peekOfCode": "class EncryptedPii(BaseModel):\n    record_id: Optional[dict] | None\n    processed_text: Optional[str] | None\nclass DecryptedPii(BaseModel):\n    original_text: str\n    decrypted_pii: dict",
+        "detail": "src.vaultx_agent.src.react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "DecryptedPii",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.models.pii",
+        "description": "src.vaultx_agent.src.react_agent.models.pii",
+        "peekOfCode": "class DecryptedPii(BaseModel):\n    original_text: str\n    decrypted_pii: dict",
+        "detail": "src.vaultx_agent.src.react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Configuration",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.configuration",
+        "description": "src.vaultx_agent.src.react_agent.configuration",
+        "peekOfCode": "class Configuration:\n    \"\"\"The configuration for the agent.\"\"\"\n    system_prompt: str = field(\n        default=prompts.SYSTEM_PROMPT,\n        metadata={\n            \"description\": \"The system prompt to use for the agent's interactions. \"\n            \"This prompt sets the context and behavior for the agent.\"\n        },\n    )\n    model: Annotated[str, {\"__template_metadata__\": {\"kind\": \"llm\"}}] = field(",
+        "detail": "src.vaultx_agent.src.react_agent.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "route_model_output",
+        "kind": 2,
+        "importPath": "src.vaultx_agent.src.react_agent.graph",
+        "description": "src.vaultx_agent.src.react_agent.graph",
+        "peekOfCode": "def route_model_output(state: State) -> Literal[\"__end__\", \"tools\"]:\n    \"\"\"Determine the next node based on the model's output.\n    This function checks if the model's last message contains tool calls.\n    Args:\n        state (State): The current state of the conversation.\n    Returns:\n        str: The name of the next node to call (\"__end__\" or \"tools\").\n    \"\"\"\n    last_message = state.messages[-1]\n    if not isinstance(last_message, AIMessage):",
+        "detail": "src.vaultx_agent.src.react_agent.graph",
+        "documentation": {}
+    },
+    {
+        "label": "builder",
+        "kind": 5,
+        "importPath": "src.vaultx_agent.src.react_agent.graph",
+        "description": "src.vaultx_agent.src.react_agent.graph",
+        "peekOfCode": "builder = StateGraph(State, input=InputState, config_schema=Configuration)\n# Define the two nodes we will cycle between\nbuilder.add_node(call_model)\nbuilder.add_node(\"encrypt\", encrypt)\nbuilder.add_node(\"tools\", ToolNode(TOOLS))\n# Set the entrypoint as `call_model`\n# This means that this node is the first one called\nbuilder.add_edge(START, \"encrypt\")\nbuilder.add_edge(\"encrypt\", \"call_model\")\ndef route_model_output(state: State) -> Literal[\"__end__\", \"tools\"]:",
+        "detail": "src.vaultx_agent.src.react_agent.graph",
+        "documentation": {}
+    },
+    {
+        "label": "graph",
+        "kind": 5,
+        "importPath": "src.vaultx_agent.src.react_agent.graph",
+        "description": "src.vaultx_agent.src.react_agent.graph",
+        "peekOfCode": "graph = builder.compile(\n    interrupt_before=[],  # Add node names here to update state before they're called\n    interrupt_after=[],  # Add node names here to update state after they're called\n)\ngraph.name = \"ReAct Agent\"  # This customizes the name in LangSmith",
+        "detail": "src.vaultx_agent.src.react_agent.graph",
+        "documentation": {}
+    },
+    {
+        "label": "graph.name",
+        "kind": 5,
+        "importPath": "src.vaultx_agent.src.react_agent.graph",
+        "description": "src.vaultx_agent.src.react_agent.graph",
+        "peekOfCode": "graph.name = \"ReAct Agent\"  # This customizes the name in LangSmith",
+        "detail": "src.vaultx_agent.src.react_agent.graph",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "src.vaultx_agent.src.react_agent.prompts",
+        "description": "src.vaultx_agent.src.react_agent.prompts",
+        "peekOfCode": "SYSTEM_PROMPT = \"\"\"\n    You are a helpful AI assistant. that can handle annonymized text in the message you will \n    find hashes don't respond to this try to understand the underlying intent of the message \n    even with the missing information\n    System time: {system_time}\n\"\"\"",
+        "detail": "src.vaultx_agent.src.react_agent.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "InputState",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.state",
+        "description": "src.vaultx_agent.src.react_agent.state",
+        "peekOfCode": "class InputState:\n    \"\"\"Defines the input state for the agent, representing a narrower interface to the outside world.\n    This class is used to define the initial state and structure of incoming data.\n    \"\"\"\n    messages: Annotated[Sequence[AnyMessage], add_messages] = field(\n        default_factory=list\n    )\n    \"\"\"\n    Messages tracking the primary execution state of the agent.\n    Typically accumulates a pattern of:",
+        "detail": "src.vaultx_agent.src.react_agent.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.state",
+        "description": "src.vaultx_agent.src.react_agent.state",
+        "peekOfCode": "class State(InputState):\n    \"\"\"Represents the complete state of the agent, extending InputState with additional attributes.\n    This class can be used to store any information needed throughout the agent's lifecycle.\n    \"\"\"\n    encrypted_pii: EncryptedPii = field(default_factory=EncryptedPii)\n    message: str = field(default=None)\n    is_last_step: IsLastStep = field(default=False)\n    \"\"\"\n    Indicates whether the current step is the last one before the graph raises an error.\n    This is a 'managed' variable, controlled by the state machine rather than user code.",
+        "detail": "src.vaultx_agent.src.react_agent.state",
+        "documentation": {}
+    },
+    {
+        "label": "get_message_text",
+        "kind": 2,
+        "importPath": "src.vaultx_agent.src.react_agent.utils",
+        "description": "src.vaultx_agent.src.react_agent.utils",
+        "peekOfCode": "def get_message_text(msg: BaseMessage) -> str:\n    \"\"\"Get the text content of a message.\"\"\"\n    content = msg.content\n    if isinstance(content, str):\n        return content\n    elif isinstance(content, dict):\n        return content.get(\"text\", \"\")\n    else:\n        txts = [c if isinstance(c, str) else (c.get(\"text\") or \"\") for c in content]\n        return \"\".join(txts).strip()",
+        "detail": "src.vaultx_agent.src.react_agent.utils",
+        "documentation": {}
+    },
+    {
+        "label": "load_chat_model",
+        "kind": 2,
+        "importPath": "src.vaultx_agent.src.react_agent.utils",
+        "description": "src.vaultx_agent.src.react_agent.utils",
+        "peekOfCode": "def load_chat_model(fully_specified_name: str) -> BaseChatModel:\n    \"\"\"Load a chat model from a fully specified name.\n    Args:\n        fully_specified_name (str): String in the format 'provider/model'.\n    \"\"\"\n    provider, model = fully_specified_name.split(\"/\", maxsplit=1)\n    return init_chat_model(model, model_provider=provider)",
+        "detail": "src.vaultx_agent.src.react_agent.utils",
+        "documentation": {}
+    },
+    {
+        "label": "test_configuration_empty",
+        "kind": 2,
+        "importPath": "src.vaultx_agent.tests.unit_tests.test_configuration",
+        "description": "src.vaultx_agent.tests.unit_tests.test_configuration",
+        "peekOfCode": "def test_configuration_empty() -> None:\n    Configuration.from_runnable_config({})",
+        "detail": "src.vaultx_agent.tests.unit_tests.test_configuration",
         "documentation": {}
     },
     {
