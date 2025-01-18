@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel 
 from src.core.pii_decryption import decrypt_pii
-from src.db.pii_repository import get_record_by_id
-from src.core.pii_encryption import process_text_and_store_in_file
+from src.db.record_repository import get_record_by_id, store_record_by_id
+from src.core.pii_encryption import encrypt_pii
 from src.core.key_rotation import KeyRotationManager
 
 app = FastAPI() 
@@ -22,17 +22,19 @@ async def root():
 
 
 @app.post('/encrypt/')
-async def encrypt_data(request: EncryptRequest):
+async def encrypt_data_endpoint(request: EncryptRequest):
   """Encrypt PII data and store it with metadata."""
   try:
-    record_id, processed_text = process_text_and_store_in_file(request.text, PII_STORAGE_FILE)
-    return {"record_id": record_id, "processed_text": processed_text}
+    # record_id, processed_text = encrypt_data(request.text)
+    text_with_hashes, encrypted_pii = encrypt_pii(request.text)
+    record_id = store_record_by_id(PII_STORAGE_FILE, text_with_hashes, encrypted_pii )
+    return {"record_id": record_id, "processed_text": text_with_hashes}
   except Exception as e:
     raise HTTPException(status_code=500, detail=f'Error processing PII: {e}')
   
   
 @app.post('/decrypt/')
-async def decrypt_data(request: DecryptRequest):
+async def decrypt_data_endpoint(request: DecryptRequest):
   """Decrypt PII data."""
   try:
     record = get_record_by_id(request.record_id, PII_STORAGE_FILE)
@@ -45,4 +47,7 @@ async def decrypt_data(request: DecryptRequest):
 @app.post('rotate-keys/')
 async def rotate_keys():
   """Rotate encryption keys and re-encrypt data"""
+  old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
+  update_storage_with_reencryption(old_key, new_key, new_version, PII_STORAGE_FILE)
+  
   
