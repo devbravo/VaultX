@@ -33,26 +33,18 @@
     },
     {
         "label": "get_record_by_id",
-        "importPath": "src.db.pii_repository",
-        "description": "src.db.pii_repository",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
         "isExtraImport": true,
-        "detail": "src.db.pii_repository",
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
         "label": "store_record_by_id",
-        "importPath": "src.db.pii_repository",
-        "description": "src.db.pii_repository",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
         "isExtraImport": true,
-        "detail": "src.db.pii_repository",
-        "documentation": {}
-    },
-    {
-        "label": "get_record_by_id",
-        "importPath": "src.db.pii_repository",
-        "description": "src.db.pii_repository",
-        "isExtraImport": true,
-        "detail": "src.db.pii_repository",
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
@@ -194,6 +186,14 @@
         "documentation": {}
     },
     {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
         "label": "EncryptionUtils",
         "importPath": "src.core.encryption",
         "description": "src.core.encryption",
@@ -281,6 +281,14 @@
         "description": "src.core.pii_detection",
         "isExtraImport": true,
         "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "load_generate_encryption_key",
+        "importPath": "src.db.key_repository",
+        "description": "src.db.key_repository",
+        "isExtraImport": true,
+        "detail": "src.db.key_repository",
         "documentation": {}
     },
     {
@@ -571,15 +579,6 @@
         "documentation": {}
     },
     {
-        "label": "load_generate_encryption_key",
-        "kind": 2,
-        "importPath": "src.core.pii_encryption",
-        "description": "src.core.pii_encryption",
-        "peekOfCode": "def load_generate_encryption_key() -> bytes:\n    \"\"\"\n    Load the latest encryption key or generate a new one if none exists.\n    Returns the encryption key as bytes.\n    \"\"\"\n    try:\n        metadata = KeyManager.load_keys_metadata()\n        if not metadata:  # Check if metadata is empty\n            logging.info(\"No metadata found. Generating a new key.\")\n            new_version = KeyManager.add_new_key()",
-        "detail": "src.core.pii_encryption",
-        "documentation": {}
-    },
-    {
         "label": "encryption",
         "kind": 2,
         "importPath": "src.core.pii_encryption",
@@ -616,30 +615,39 @@
         "documentation": {}
     },
     {
+        "label": "load_generate_encryption_key",
+        "kind": 2,
+        "importPath": "src.db.key_repository",
+        "description": "src.db.key_repository",
+        "peekOfCode": "def load_generate_encryption_key() -> bytes:\n    \"\"\"\n    Load the latest encryption key or generate a new one if none exists.\n    Returns the encryption key as bytes.\n    \"\"\"\n    try:\n        metadata = KeyManager.load_keys_metadata()\n        if not metadata:  # Check if metadata is empty\n            logging.info(\"No metadata found. Generating a new key.\")\n            new_version = KeyManager.add_new_key()",
+        "detail": "src.db.key_repository",
+        "documentation": {}
+    },
+    {
         "label": "store_record_by_id",
         "kind": 2,
-        "importPath": "src.db.pii_repository",
-        "description": "src.db.pii_repository",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
         "peekOfCode": "def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict) -> str:\n  \"\"\"Store a new record in the storage file.\"\"\"\n  record_id = str(uuid.uuid4())\n  new_record = {\n        \"text_with_hashes\": text_with_hashes,\n        \"encrypted_pii\": encrypted_pii  # Store with key versions\n    }\n  # Since we are using json as a storage format, we need to load the existing data first\n  try:\n    with open(file_path, \"r\") as f:",
-        "detail": "src.db.pii_repository",
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
         "label": "get_record_by_id",
         "kind": 2,
-        "importPath": "src.db.pii_repository",
-        "description": "src.db.pii_repository",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
         "peekOfCode": "def get_record_by_id(record_id: str, file_path: str) -> Dict:\n    \"\"\"Retrieve a specific record by ID from the storage file.\"\"\"\n    try:\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        raise ValueError(\"Storage file not found.\")\n    # Find the record by ID\n    record = storage_data.get(str(record_id))\n    if not record:",
-        "detail": "src.db.pii_repository",
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
         "label": "updte_record",
         "kind": 2,
-        "importPath": "src.db.pii_repository",
-        "description": "src.db.pii_repository",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
         "peekOfCode": "def updte_record(record_id: str, updated_record: dict, file_path: str) -> str:\n  pass",
-        "detail": "src.db.pii_repository",
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {

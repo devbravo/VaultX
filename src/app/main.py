@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel 
 from src.core.pii_decryption import decrypt_pii
-from src.db.pii_repository import get_record_by_id, store_record_by_id
+from src.db.record_repository import get_record_by_id, store_record_by_id
 from src.core.pii_encryption import encrypt_pii
 from src.core.key_rotation import KeyRotationManager
 

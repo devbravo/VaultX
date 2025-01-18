@@ -4,37 +4,11 @@ from typing import Tuple, Dict, List
 from src.core.encryption import EncryptionUtils, KeyManager
 from concurrent.futures import ThreadPoolExecutor
 from src.core.pii_detection import detect_all_pii
+from src.db.key_repository import load_generate_encryption_key
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-# Load or generate encryption key
-def load_generate_encryption_key() -> bytes:
-    """
-    Load the latest encryption key or generate a new one if none exists.
-    Returns the encryption key as bytes.
-    """
-    try:
-        metadata = KeyManager.load_keys_metadata()
-        
-        if not metadata:  # Check if metadata is empty
-            logging.info("No metadata found. Generating a new key.")
-            new_version = KeyManager.add_new_key()
-            encryption_key = KeyManager.get_key(new_version)
-            logging.info(f"Initialized with new key: {new_version}")
-        else:
-            latest_version = max(metadata.keys())  # Get the latest key version
-            encryption_key = KeyManager.get_key(latest_version)
-            logging.info(f"Using key version: {latest_version}")
-    except FileNotFoundError:
-        # No metadata file exists; create the first key
-        logging.info("Metadata file not found. Generating the first key.")
-        new_version = KeyManager.add_new_key()
-        encryption_key = KeyManager.get_key(new_version)
-        logging.info(f"Initialized with new key: {new_version}")
-
-    return encryption_key
-    
     
 def encryption(pii_data: Dict[str, List[str]], 
                 key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:
