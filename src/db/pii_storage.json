@@ -274,5 +274,16 @@
                 }
             ]
         }
+    },
+    "6fca5d5b-47b4-42f1-a989-cb771611401a": {
+        "text_with_hashes": "telefoon nummer b68353d30b7569884538541954f6eaca23cfeab7f170e16e43198adfe74d0d6d\n",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABni9x9PzOufII1JHULwRW60nL0pPAxzzcaV_Lz2PHxUDjIM7lLVAigIXbi4cVSk_7BUPyF_w4t1k17z1Jgkc6RX0DIRg==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }
