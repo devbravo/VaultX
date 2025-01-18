@@ -1,12 +1,17 @@
-from typing import Optional
+from typing import Optional, List
 
 from anthropic import BaseModel
 
 
-class EncryptedPii(BaseModel):
-    record_id: Optional[dict] | None
-    processed_text: Optional[str] | None
+class Encrypted(BaseModel):
+    record_id: Optional[str] = None
+    processed_text: Optional[str] = None
 
-class DecryptedPii(BaseModel):
-    original_text: str
-    decrypted_pii: dict
+
+class Pii(BaseModel):
+    phone_numbers: Optional[List[str]] = None
+
+
+class Decrypted(BaseModel):
+    original_text: Optional[str] = None
+    decrypted_pii: Optional[Pii] = None

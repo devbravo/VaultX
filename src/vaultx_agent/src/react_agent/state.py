@@ -8,8 +8,9 @@ from typing import Sequence
 from langchain_core.messages import AnyMessage
 from langgraph.graph import add_messages
 from langgraph.managed import IsLastStep
-from react_agent.models.pii import EncryptedPii
+from react_agent.models.pii import Encrypted, Decrypted
 from typing_extensions import Annotated
+
 
 @dataclass
 class InputState:
@@ -44,7 +45,8 @@ class State(InputState):
 
     This class can be used to store any information needed throughout the agent's lifecycle.
     """
-    encrypted_pii: EncryptedPii = field(default_factory=EncryptedPii)
+    encrypted_pii: Encrypted = field(default_factory=Encrypted)
+    decrypted_pii: dict = field(default_factory=dict)
     message: str = field(default=None)
     is_last_step: IsLastStep = field(default=False)
     """

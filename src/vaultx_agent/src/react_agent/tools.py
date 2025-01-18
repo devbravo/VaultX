@@ -5,7 +5,6 @@ It includes a basic Tavily search function (as an example)
 These tools are intended as free examples to get started. For production use,
 consider implementing more robust and specialized tools tailored to your needs.
 """
-import json
 from typing import Any, Callable, List, Optional, cast
 
 import httpx
@@ -13,9 +12,9 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import InjectedToolArg
 from react_agent.configuration import Configuration
+from react_agent.models.pii import Encrypted, Decrypted
 from typing_extensions import Annotated
 
-from react_agent.models.pii import EncryptedPii
 
 async def search(
         query: str, *, config: Annotated[RunnableConfig, InjectedToolArg]
@@ -37,13 +36,19 @@ async def encrypt(state):
         data = {"text": state.messages[-1].content}
         print(data)
         response = await client.post("http://localhost:8000/encrypt/", json=data)
-        encrypt_pii: EncryptedPii = EncryptedPii.model_validate(response.json())
+        encrypt_pii: Encrypted = Encrypted.model_validate(response.json())
+
     return {"encrypted_pii": encrypt_pii, "message": encrypt_pii.processed_text}
+
 
 async def decrypt(state):
     async with httpx.AsyncClient() as client:
         data = {"record_id": state.encrypted_pii.record_id}
         response = await client.post("http://localhost:8000/decrypt/", json=data)
-        return {"decrypted"}
+        print(response.json())
+        decrypted: Decrypted = Decrypted.model_validate(response.json())
+        print(decrypted.decrypted_pii.phone_numbers)
+        return {"decrypted_pii", decrypt_pii}
+
 
 TOOLS: List[Callable[..., Any]] = [search]
