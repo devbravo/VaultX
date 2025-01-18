@@ -6,18 +6,40 @@ Works with a chat model with tool calling support.
 from datetime import datetime, timezone
 from typing import Dict, List, Literal, cast
 
+import httpx
 from langchain_core.messages import AIMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.constants import START, END
 from langgraph.graph import StateGraph
 from react_agent.configuration import Configuration
 from react_agent.state import InputState, State
-from react_agent.tools import TOOLS, encrypt, decrypt
+from react_agent.tools import TOOLS
 from react_agent.utils import load_chat_model
 
 
 # Define the function that calls the model
 
+
+async def encrypt(state):
+    async with httpx.AsyncClient() as client:
+        data = {"text": state.messages[-1].content}
+        print(data)
+        response = await client.post("http://localhost:8000/encrypt/", json=data)
+        data = response.json()
+
+    return {
+        "encrypted_pii": data,
+        "message": data["processed_text"]
+    }
+
+
+async def decrypt(state):
+    async with httpx.AsyncClient() as client:
+        data = {"record_id": state.encrypted_pii['record_id']}
+        response = await client.post("http://localhost:8000/decrypt/", json=data)
+        data = response.json()
+
+    return {"decrypted_pii": data}
 
 async def call_model(
         state: State, config: RunnableConfig

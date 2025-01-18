@@ -7,13 +7,12 @@ consider implementing more robust and specialized tools tailored to your needs.
 """
 from typing import Any, Callable, List, Optional, cast
 
-import httpx
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import InjectedToolArg
-from react_agent.configuration import Configuration
-from react_agent.models.pii import Encrypted, Decrypted
 from typing_extensions import Annotated
+
+from react_agent.configuration import Configuration
 
 
 async def search(
@@ -29,26 +28,6 @@ async def search(
     wrapped = TavilySearchResults(max_results=configuration.max_search_results)
     result = await wrapped.ainvoke({"query": query})
     return cast(list[dict[str, Any]], result)
-
-
-async def encrypt(state):
-    async with httpx.AsyncClient() as client:
-        data = {"text": state.messages[-1].content}
-        print(data)
-        response = await client.post("http://localhost:8000/encrypt/", json=data)
-        encrypt_pii: Encrypted = Encrypted.model_validate(response.json())
-
-    return {"encrypted_pii": encrypt_pii, "message": encrypt_pii.processed_text}
-
-
-async def decrypt(state):
-    async with httpx.AsyncClient() as client:
-        data = {"record_id": state.encrypted_pii.record_id}
-        response = await client.post("http://localhost:8000/decrypt/", json=data)
-        print(response.json())
-        decrypted: Decrypted = Decrypted.model_validate(response.json())
-        print(decrypted.decrypted_pii.phone_numbers)
-        return {"decrypted_pii", decrypt_pii}
 
 
 TOOLS: List[Callable[..., Any]] = [search]
