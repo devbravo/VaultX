@@ -642,7 +642,7 @@
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    # Encrypt PII",
+        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    print(\"PII_detection\")\n    # Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
