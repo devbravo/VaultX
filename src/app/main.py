@@ -47,4 +47,7 @@ async def decrypt_data_endpoint(request: DecryptRequest):
 @app.post('rotate-keys/')
 async def rotate_keys():
   """Rotate encryption keys and re-encrypt data"""
+  old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
+  update_storage_with_reencryption(old_key, new_key, new_version, PII_STORAGE_FILE)
+  
   

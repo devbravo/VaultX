@@ -41,8 +41,7 @@ def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict
   
   return record_id
   
-
-
+  
 def get_record_by_id(record_id: str, file_path: str) -> Dict:
     """Retrieve a specific record by ID from the storage file."""
     try:
@@ -58,5 +57,20 @@ def get_record_by_id(record_id: str, file_path: str) -> Dict:
     
     return record
   
-def updte_record(record_id: str, updated_record: dict, file_path: str) -> str:
+def get_all_records(file_path: str) -> Dict:
+  """Retrieve all records from the storage file."""
+  try:
+    with open(file_path, "r") as f:
+      storage_data = json.load(f)
+  except FileNotFoundError:
+    raise ValueError("Storage file not found.")
+  except json.JSONDecodeError:
+    raise ValueError(f"Invalid JSON format in {file_path}")
+  
+  return storage_data
+
+
+
+  
+def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:
   pass

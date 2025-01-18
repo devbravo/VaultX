@@ -48,6 +48,14 @@
         "documentation": {}
     },
     {
+        "label": "get_all_records",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
         "label": "encrypt_pii",
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
@@ -642,11 +650,20 @@
         "documentation": {}
     },
     {
-        "label": "updte_record",
+        "label": "get_all_records",
         "kind": 2,
         "importPath": "src.db.record_repository",
         "description": "src.db.record_repository",
-        "peekOfCode": "def updte_record(record_id: str, updated_record: dict, file_path: str) -> str:\n  pass",
+        "peekOfCode": "def get_all_records(file_path: str) -> Dict:\n  \"\"\"Retrieve all records from the storage file.\"\"\"\n  try:\n    with open(file_path, \"r\") as f:\n      storage_data = json.load(f)\n  except FileNotFoundError:\n    raise ValueError(\"Storage file not found.\")\n  except json.JSONDecodeError:\n    raise ValueError(f\"Invalid JSON format in {file_path}\")\n  return storage_data",
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "update_all_records",
+        "kind": 2,
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "peekOfCode": "def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:\n  pass",
         "detail": "src.db.record_repository",
         "documentation": {}
     },
@@ -655,7 +672,7 @@
         "kind": 2,
         "importPath": "src.simulation.simulate_key_rotation",
         "description": "src.simulation.simulate_key_rotation",
-        "peekOfCode": "def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, file_path: str):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    try:\n        # Load the current storage file\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        logging.error(\"Storage file not found.\")\n        return\n    # Iterate through records and re-encrypt PII",
+        "peekOfCode": "def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, file_path: str):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    storage_data = get_all_records(file_path)\n    # Iterate through records and re-encrypt PII\n    for record_id, record in storage_data.items():\n        encrypted_pii = record.get(\"encrypted_pii\")\n        if not encrypted_pii:\n            continue\n        for pii_type, items in encrypted_pii.items():\n            for item in items:",
         "detail": "src.simulation.simulate_key_rotation",
         "documentation": {}
     },
