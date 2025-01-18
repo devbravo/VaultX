@@ -22,18 +22,6 @@ def encryption(pii_data: Dict[str, List[str]],
     return encrypted_pii
       
 
-# def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:
-#     pii_values = [value for values in pii_data.values() for value in values]
-#     return re.compile(r"|".join(re.escape(value) for value in pii_values))
-  
-
-# def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:
-#     pattern = compile_pii_pattern(pii_data)
-
-#     def replacer(match):
-#         return EncryptionUtils.hash_data(match.group(0))
-
-#     return pattern.sub(replacer, text)
 def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:
     """Replace PII with placeholders in the given text."""
     placeholders = {
@@ -76,14 +64,7 @@ def encrypt_pii(text: str) -> Tuple[str, Dict]:
     encrypted_pii = encryption(pii_data, encryption_key, latest_version)
 
     # Replace PII with hashes
-    # text_with_hashes = replace_pii_with_hash(text, pii_data)
     text_with_placeholder = replace_pii_with_placeholder(text, pii_data)
 
     return text_with_placeholder, encrypted_pii
   
-  
-# # Example usage
-# text = "Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789."
-# record_id, processed_text = encrypt_pii(text)
-# print("Record ID:", record_id)
-# print("Processed Text:", processed_text)

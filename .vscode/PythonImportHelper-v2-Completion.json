@@ -299,6 +299,14 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Annotated",
         "importPath": "typing",
         "description": "typing",
@@ -565,7 +573,32 @@
         "documentation": {}
     },
     {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
         "label": "AIMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "RemoveMessage",
         "importPath": "langchain_core.messages",
         "description": "langchain_core.messages",
         "isExtraImport": true,
@@ -597,6 +630,14 @@
         "documentation": {}
     },
     {
+        "label": "END",
+        "importPath": "langgraph.constants",
+        "description": "langgraph.constants",
+        "isExtraImport": true,
+        "detail": "langgraph.constants",
+        "documentation": {}
+    },
+    {
         "label": "StateGraph",
         "importPath": "langgraph.graph",
         "description": "langgraph.graph",
@@ -610,14 +651,6 @@
         "description": "langgraph.graph",
         "isExtraImport": true,
         "detail": "langgraph.graph",
-        "documentation": {}
-    },
-    {
-        "label": "ToolNode",
-        "importPath": "langgraph.prebuilt",
-        "description": "langgraph.prebuilt",
-        "isExtraImport": true,
-        "detail": "langgraph.prebuilt",
         "documentation": {}
     },
     {
@@ -669,14 +702,6 @@
         "documentation": {}
     },
     {
-        "label": "encrypt",
-        "importPath": "react_agent.tools",
-        "description": "react_agent.tools",
-        "isExtraImport": true,
-        "detail": "react_agent.tools",
-        "documentation": {}
-    },
-    {
         "label": "load_chat_model",
         "importPath": "react_agent.utils",
         "description": "react_agent.utils",
@@ -693,22 +718,6 @@
         "documentation": {}
     },
     {
-        "label": "EncryptedPii",
-        "importPath": "react_agent.models.pii",
-        "description": "react_agent.models.pii",
-        "isExtraImport": true,
-        "detail": "react_agent.models.pii",
-        "documentation": {}
-    },
-    {
-        "label": "EncryptedPii",
-        "importPath": "react_agent.models.pii",
-        "description": "react_agent.models.pii",
-        "isExtraImport": true,
-        "detail": "react_agent.models.pii",
-        "documentation": {}
-    },
-    {
         "label": "Annotated",
         "importPath": "typing_extensions",
         "description": "typing_extensions",
@@ -722,15 +731,6 @@
         "description": "typing_extensions",
         "isExtraImport": true,
         "detail": "typing_extensions",
-        "documentation": {}
-    },
-    {
-        "label": "httpx",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "httpx",
-        "description": "httpx",
-        "detail": "httpx",
         "documentation": {}
     },
     {
@@ -1052,15 +1052,6 @@
         "documentation": {}
     },
     {
-        "label": "text",
-        "kind": 5,
-        "importPath": "src.core.pii_detection",
-        "description": "src.core.pii_detection",
-        "peekOfCode": "text = \"Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789.\"\nprint(detect_all_pii(text))",
-        "detail": "src.core.pii_detection",
-        "documentation": {}
-    },
-    {
         "label": "encryption",
         "kind": 2,
         "importPath": "src.core.pii_encryption",
@@ -1142,20 +1133,29 @@
         "documentation": {}
     },
     {
-        "label": "EncryptedPii",
+        "label": "Encrypted",
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.models.pii",
         "description": "src.vaultx_agent.src.react_agent.models.pii",
-        "peekOfCode": "class EncryptedPii(BaseModel):\n    record_id: Optional[dict] | None\n    processed_text: Optional[str] | None\nclass DecryptedPii(BaseModel):\n    original_text: str\n    decrypted_pii: dict",
+        "peekOfCode": "class Encrypted(BaseModel):\n    record_id: Optional[str] = None\n    processed_text: Optional[str] = None\nclass Pii(BaseModel):\n    phone_numbers: Optional[List[str]] = None\nclass Decrypted(BaseModel):\n    original_text: Optional[str] = None\n    decrypted_pii: Optional[Pii] = None",
         "detail": "src.vaultx_agent.src.react_agent.models.pii",
         "documentation": {}
     },
     {
-        "label": "DecryptedPii",
+        "label": "Pii",
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.models.pii",
         "description": "src.vaultx_agent.src.react_agent.models.pii",
-        "peekOfCode": "class DecryptedPii(BaseModel):\n    original_text: str\n    decrypted_pii: dict",
+        "peekOfCode": "class Pii(BaseModel):\n    phone_numbers: Optional[List[str]] = None\nclass Decrypted(BaseModel):\n    original_text: Optional[str] = None\n    decrypted_pii: Optional[Pii] = None",
+        "detail": "src.vaultx_agent.src.react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Decrypted",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.models.pii",
+        "description": "src.vaultx_agent.src.react_agent.models.pii",
+        "peekOfCode": "class Decrypted(BaseModel):\n    original_text: Optional[str] = None\n    decrypted_pii: Optional[Pii] = None",
         "detail": "src.vaultx_agent.src.react_agent.models.pii",
         "documentation": {}
     },
@@ -1166,6 +1166,15 @@
         "description": "src.vaultx_agent.src.react_agent.configuration",
         "peekOfCode": "class Configuration:\n    \"\"\"The configuration for the agent.\"\"\"\n    system_prompt: str = field(\n        default=prompts.SYSTEM_PROMPT,\n        metadata={\n            \"description\": \"The system prompt to use for the agent's interactions. \"\n            \"This prompt sets the context and behavior for the agent.\"\n        },\n    )\n    model: Annotated[str, {\"__template_metadata__\": {\"kind\": \"llm\"}}] = field(",
         "detail": "src.vaultx_agent.src.react_agent.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "summarize_conversation",
+        "kind": 2,
+        "importPath": "src.vaultx_agent.src.react_agent.graph",
+        "description": "src.vaultx_agent.src.react_agent.graph",
+        "peekOfCode": "def summarize_conversation(state):\n    # First, we summarize the conversation\n    summary = state.summary if state.summary else \"\"\n    if summary:\n        # If a summary already exists, we use a different system prompt\n        # to summarize it than if one didn't\n        summary_message = (\n            f\"This is summary of the conversation to date: {summary}\\n\\n\"\n            \"Extend the summary by taking into account the new messages above:\"\n        )",
+        "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
     {
@@ -1182,7 +1191,7 @@
         "kind": 5,
         "importPath": "src.vaultx_agent.src.react_agent.graph",
         "description": "src.vaultx_agent.src.react_agent.graph",
-        "peekOfCode": "builder = StateGraph(State, input=InputState, config_schema=Configuration)\n# Define the two nodes we will cycle between\nbuilder.add_node(call_model)\nbuilder.add_node(\"encrypt\", encrypt)\nbuilder.add_node(\"tools\", ToolNode(TOOLS))\n# Set the entrypoint as `call_model`\n# This means that this node is the first one called\nbuilder.add_edge(START, \"encrypt\")\nbuilder.add_edge(\"encrypt\", \"call_model\")\ndef route_model_output(state: State) -> Literal[\"__end__\", \"tools\"]:",
+        "peekOfCode": "builder = StateGraph(State, input=InputState, config_schema=Configuration)\n# Define the two nodes we will cycle between\nbuilder.add_node(call_model)\nbuilder.add_node(\"summarize\", summarize_conversation)\nbuilder.add_node(\"encrypt\", encrypt)\nbuilder.add_node(\"decrypt\", decrypt)\n# Set the entrypoint as `call_model`\n# This means that this node is the first one called\nbuilder.add_edge(START, \"encrypt\")\nbuilder.add_edge(\"encrypt\", \"call_model\")",
         "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
@@ -1191,7 +1200,7 @@
         "kind": 5,
         "importPath": "src.vaultx_agent.src.react_agent.graph",
         "description": "src.vaultx_agent.src.react_agent.graph",
-        "peekOfCode": "graph = builder.compile(\n    interrupt_before=[],  # Add node names here to update state before they're called\n    interrupt_after=[],  # Add node names here to update state after they're called\n)\ngraph.name = \"ReAct Agent\"  # This customizes the name in LangSmith",
+        "peekOfCode": "graph = builder.compile(\n    interrupt_before=[],  # Add node names here to update state before they're called\n    interrupt_after=[],  # Add node names here to update state after they're called\n)\ngraph.name = \"VaultX Agent\"  # This customizes the name in LangSmith",
         "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
@@ -1200,7 +1209,7 @@
         "kind": 5,
         "importPath": "src.vaultx_agent.src.react_agent.graph",
         "description": "src.vaultx_agent.src.react_agent.graph",
-        "peekOfCode": "graph.name = \"ReAct Agent\"  # This customizes the name in LangSmith",
+        "peekOfCode": "graph.name = \"VaultX Agent\"  # This customizes the name in LangSmith",
         "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
@@ -1209,7 +1218,7 @@
         "kind": 5,
         "importPath": "src.vaultx_agent.src.react_agent.prompts",
         "description": "src.vaultx_agent.src.react_agent.prompts",
-        "peekOfCode": "SYSTEM_PROMPT = \"\"\"\n    You are a helpful AI assistant. that can handle annonymized text in the message you will \n    find hashes don't respond to this try to understand the underlying intent of the message \n    even with the missing information\n    System time: {system_time}\n\"\"\"",
+        "peekOfCode": "SYSTEM_PROMPT = \"\"\"\n    You are a helpful AI assistant. that can handle anonymized text in the message you will \n    find hashes don't respond to this try to understand the underlying intent of the message \n    even with the missing information\n    below is the conversation flow you need to follow\n    conversation example: \n    Human: Hi, I would like to sign up for the trip\n    AI: Hello! To better assist you, may I ask for your name?\n    Human: Sure, it's Alex.\n    AI: Nice to meet you, Alex. Can you tell me where you're from?",
         "detail": "src.vaultx_agent.src.react_agent.prompts",
         "documentation": {}
     },
@@ -1227,7 +1236,7 @@
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.state",
         "description": "src.vaultx_agent.src.react_agent.state",
-        "peekOfCode": "class State(InputState):\n    \"\"\"Represents the complete state of the agent, extending InputState with additional attributes.\n    This class can be used to store any information needed throughout the agent's lifecycle.\n    \"\"\"\n    encrypted_pii: EncryptedPii = field(default_factory=EncryptedPii)\n    message: str = field(default=None)\n    is_last_step: IsLastStep = field(default=False)\n    \"\"\"\n    Indicates whether the current step is the last one before the graph raises an error.\n    This is a 'managed' variable, controlled by the state machine rather than user code.",
+        "peekOfCode": "class State(InputState):\n    \"\"\"Represents the complete state of the agent, extending InputState with additional attributes.\n    This class can be used to store any information needed throughout the agent's lifecycle.\n    \"\"\"\n    encrypted_pii: dict = field(default=None)\n    decrypted_pii: dict = field(default=None)\n    message: str = field(default=None)\n    summary: str = field(default=None)\n    is_last_step: IsLastStep = field(default=False)\n    \"\"\"",
         "detail": "src.vaultx_agent.src.react_agent.state",
         "documentation": {}
     },

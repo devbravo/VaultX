@@ -55,28 +55,6 @@ def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:
     return {"reconstructed_text": reconstructed_text, "decrypted_pii": decrypted_pii}
 
 
-# if __name__ == "__main__":
-#   record_id = ""
-
-#   # Open the JSON file
-#   with open("src/db/pii_storage.json", "r") as f:
-#       data = json.load(f)
-
-#   # Dynamically retrieve the first UUID key
-#   if data:
-#       record_id = next(iter(data))  # Get the first key from the dictionary
-#       print(f"Retrieved UUID: {record_id}")
-#       print("Record for UUID:", data[record_id])
-#   else:
-#       print("No data found in the JSON file.")
-      
-      
-#   file_path = "src/db/pii_storage.json"
-#   metadata_file = "src/db/keys_metadata.json"
-#   record = get_record_by_id(record_id, file_path)
-#   print(decrypt_pii(record, metadata_file))
-
-
 
 
     

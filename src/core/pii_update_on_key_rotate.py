@@ -22,8 +22,3 @@ def update_pii_with_reencryption(old_key: bytes, new_key: bytes, new_key_version
                 except Exception as e:
                     logging.error(f"Failed to re-encrypt PII for record {record_id}: {e}")
     return records
-
-
-# if __name__ == "__main__":
-#     old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
-#     update_storage_with_reencryption(old_key, new_key, new_version, "src/db/pii_storage.json")

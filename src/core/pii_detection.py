@@ -84,7 +84,3 @@ async def detect_pii_llm(text: str):
 
     pii_setter = pii_prompt | structured_llm
     pii = await pii_setter.ainvoke(text)
-
-
-text = "Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789."
-print(detect_all_pii(text))
