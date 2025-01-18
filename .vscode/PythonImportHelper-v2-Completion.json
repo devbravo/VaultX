@@ -24,11 +24,27 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "decrypt_pii",
         "importPath": "src.core.pii_decryption",
         "description": "src.core.pii_decryption",
         "isExtraImport": true,
         "detail": "src.core.pii_decryption",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_records",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
@@ -40,7 +56,7 @@
         "documentation": {}
     },
     {
-        "label": "store_record_by_id",
+        "label": "store_all_records",
         "importPath": "src.db.record_repository",
         "description": "src.db.record_repository",
         "isExtraImport": true,
@@ -48,7 +64,7 @@
         "documentation": {}
     },
     {
-        "label": "get_all_records",
+        "label": "store_record_by_id",
         "importPath": "src.db.record_repository",
         "description": "src.db.record_repository",
         "isExtraImport": true,
@@ -72,11 +88,11 @@
         "documentation": {}
     },
     {
-        "label": "KeyRotationManager",
-        "importPath": "src.core.key_rotation",
-        "description": "src.core.key_rotation",
+        "label": "update_pii_with_reencryption",
+        "importPath": "src.core.pii_update_on_key_rotate",
+        "description": "src.core.pii_update_on_key_rotate",
         "isExtraImport": true,
-        "detail": "src.core.key_rotation",
+        "detail": "src.core.pii_update_on_key_rotate",
         "documentation": {}
     },
     {
@@ -114,14 +130,6 @@
     },
     {
         "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -186,22 +194,6 @@
         "documentation": {}
     },
     {
-        "label": "KeyManager",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
-        "label": "KeyManager",
-        "importPath": "src.core.encryption",
-        "description": "src.core.encryption",
-        "isExtraImport": true,
-        "detail": "src.core.encryption",
-        "documentation": {}
-    },
-    {
         "label": "EncryptionUtils",
         "importPath": "src.core.encryption",
         "description": "src.core.encryption",
@@ -228,6 +220,14 @@
     },
     {
         "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -273,6 +273,22 @@
         "importPath": "re",
         "description": "re",
         "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain_core.prompts",
+        "description": "langchain_core.prompts",
+        "isExtraImport": true,
+        "detail": "langchain_core.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
         "documentation": {}
     },
     {
@@ -623,12 +639,12 @@
         "documentation": {}
     },
     {
-        "label": "load_generate_encryption_key",
+        "label": "update_pii_with_reencryption",
         "kind": 2,
-        "importPath": "src.db.key_repository",
-        "description": "src.db.key_repository",
-        "peekOfCode": "def load_generate_encryption_key() -> bytes:\n    \"\"\"\n    Load the latest encryption key or generate a new one if none exists.\n    Returns the encryption key as bytes.\n    \"\"\"\n    try:\n        metadata = KeyManager.load_keys_metadata()\n        if not metadata:  # Check if metadata is empty\n            logging.info(\"No metadata found. Generating a new key.\")\n            new_version = KeyManager.add_new_key()",
-        "detail": "src.db.key_repository",
+        "importPath": "src.core.pii_update_on_key_rotate",
+        "description": "src.core.pii_update_on_key_rotate",
+        "peekOfCode": "def update_pii_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, records: dict):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    # Iterate through records and re-encrypt PII\n    for record_id, record in records.items():\n        encrypted_pii = record.get(\"encrypted_pii\")\n        if not encrypted_pii:\n            continue\n        for pii_type, items in encrypted_pii.items():\n            for item in items:\n                try:",
+        "detail": "src.core.pii_update_on_key_rotate",
         "documentation": {}
     },
     {
@@ -637,6 +653,15 @@
         "importPath": "src.db.record_repository",
         "description": "src.db.record_repository",
         "peekOfCode": "def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict) -> str:\n  \"\"\"Store a new record in the storage file.\"\"\"\n  record_id = str(uuid.uuid4())\n  new_record = {\n        \"text_with_hashes\": text_with_hashes,\n        \"encrypted_pii\": encrypted_pii  # Store with key versions\n    }\n  # Since we are using json as a storage format, we need to load the existing data first\n  try:\n    with open(file_path, \"r\") as f:",
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "store_all_records",
+        "kind": 2,
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "peekOfCode": "def store_all_records(file_path: str, records: Dict) -> None:\n  \"\"\"Store all records in the storage file.\"\"\"\n  try:\n    with open(file_path, \"w\") as f:\n      json.dump(records, f, indent=4)\n    logging.info(\"Storage file updated with new key version.\")\n  except Exception as e:\n    raise ValueError(f\"Failed to update storage file: {e}\")\ndef get_record_by_id(record_id: str, file_path: str) -> Dict:\n    \"\"\"Retrieve a specific record by ID from the storage file.\"\"\"",
         "detail": "src.db.record_repository",
         "documentation": {}
     },
@@ -656,24 +681,6 @@
         "description": "src.db.record_repository",
         "peekOfCode": "def get_all_records(file_path: str) -> Dict:\n  \"\"\"Retrieve all records from the storage file.\"\"\"\n  try:\n    with open(file_path, \"r\") as f:\n      storage_data = json.load(f)\n  except FileNotFoundError:\n    raise ValueError(\"Storage file not found.\")\n  except json.JSONDecodeError:\n    raise ValueError(f\"Invalid JSON format in {file_path}\")\n  return storage_data",
         "detail": "src.db.record_repository",
-        "documentation": {}
-    },
-    {
-        "label": "update_all_records",
-        "kind": 2,
-        "importPath": "src.db.record_repository",
-        "description": "src.db.record_repository",
-        "peekOfCode": "def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:\n  pass",
-        "detail": "src.db.record_repository",
-        "documentation": {}
-    },
-    {
-        "label": "update_storage_with_reencryption",
-        "kind": 2,
-        "importPath": "src.simulation.simulate_key_rotation",
-        "description": "src.simulation.simulate_key_rotation",
-        "peekOfCode": "def update_storage_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, file_path: str):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    storage_data = get_all_records(file_path)\n    # Iterate through records and re-encrypt PII\n    for record_id, record in storage_data.items():\n        encrypted_pii = record.get(\"encrypted_pii\")\n        if not encrypted_pii:\n            continue\n        for pii_type, items in encrypted_pii.items():\n            for item in items:",
-        "detail": "src.simulation.simulate_key_rotation",
         "documentation": {}
     },
     {
