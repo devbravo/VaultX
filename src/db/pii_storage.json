@@ -450,5 +450,27 @@
     "c1825592-2c64-4380-94fd-dbfa8afee3c2": {
         "text_with_hashes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855he3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855ie3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "encrypted_pii": {}
+    },
+    "3faace07-35cf-4e39-a59f-edfab1a79a15": {
+        "text_with_hashes": "dit is mijn telefoon nummer 03dec1b6379a35cbe10edb6ca30cf987b00116202c3825dece1d98c7a0718a09978420295",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABni-Z_vKAfa7sICCsXXF05a_VmL3lTf_sXgEyInmhbw7AUdRzmEJGMHPN1w6F4DWiIUtZ0M9jn557Wfpibz31QdjhFPw==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "3ca24fa4-8070-48a0-a4b6-2b520f4ff15f": {
+        "text_with_hashes": "My phonenumber is 03dec1b6379a35cbe10edb6ca30cf987b00116202c3825dece1d98c7a0718a09978420295\n",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABni-8gC4MNIpd-OdxLG2WoalWgaiwZKIYraDiWh_C_bxM13joQWo6xZkLGQK_jkew60Qgda2KaQb1hqfSw4AjlvCwUZQ==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }

@@ -47,6 +47,7 @@ class State(InputState):
     encrypted_pii: dict = field(default=None)
     decrypted_pii: dict = field(default=None)
     message: str = field(default=None)
+    summary: str = field(default=None)
     is_last_step: IsLastStep = field(default=False)
     """
     Indicates whether the current step is the last one before the graph raises an error.
