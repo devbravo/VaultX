@@ -40,6 +40,14 @@
         "documentation": {}
     },
     {
+        "label": "store_record_by_id",
+        "importPath": "src.db.pii_repository",
+        "description": "src.db.pii_repository",
+        "isExtraImport": true,
+        "detail": "src.db.pii_repository",
+        "documentation": {}
+    },
+    {
         "label": "get_record_by_id",
         "importPath": "src.db.pii_repository",
         "description": "src.db.pii_repository",
@@ -48,7 +56,7 @@
         "documentation": {}
     },
     {
-        "label": "process_text_and_store_in_file",
+        "label": "encrypt_pii",
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
         "isExtraImport": true,
@@ -260,15 +268,6 @@
         "documentation": {}
     },
     {
-        "label": "uuid",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "uuid",
-        "description": "uuid",
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
         "label": "ThreadPoolExecutor",
         "importPath": "concurrent.futures",
         "description": "concurrent.futures",
@@ -282,6 +281,15 @@
         "description": "src.core.pii_detection",
         "isExtraImport": true,
         "detail": "src.core.pii_detection",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -306,7 +314,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
+        "peekOfCode": "class EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -315,7 +323,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    record_id, processed_text = process_text_and_store_in_file(request.text, PII_STORAGE_FILE)",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    # record_id, processed_text = encrypt_data(request.text)",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -342,7 +350,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data(request: EncryptRequest):",
+        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -572,11 +580,11 @@
         "documentation": {}
     },
     {
-        "label": "encrypt_pii",
+        "label": "encryption",
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def encrypt_pii(pii_data: Dict[str, List[str]], \n                key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:\n    encrypted_pii = {}\n    with ThreadPoolExecutor() as executor:\n        for pii_type, values in pii_data.items():\n            encrypted_pii[pii_type] = [\n                {\"encrypted\": encrypted.decode(), \"key_version\": key_version}\n                for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)\n            ]\n    return encrypted_pii",
+        "peekOfCode": "def encryption(pii_data: Dict[str, List[str]], \n                key: bytes, key_version: str) -> Dict[str, List[Dict[str, str]]]:\n    encrypted_pii = {}\n    with ThreadPoolExecutor() as executor:\n        for pii_type, values in pii_data.items():\n            encrypted_pii[pii_type] = [\n                {\"encrypted\": encrypted.decode(), \"key_version\": key_version}\n                for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)\n            ]\n    return encrypted_pii",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
@@ -585,7 +593,7 @@
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:\n    pii_values = [value for values in pii_data.values() for value in values]\n    return re.compile(r\"|\".join(re.escape(value) for value in pii_values))\ndef replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:",
+        "peekOfCode": "def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:\n    pii_values = [value for values in pii_data.values() for value in values]\n    return re.compile(r\"|\".join(re.escape(value) for value in pii_values))\ndef replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
@@ -594,43 +602,25 @@
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:\n    decoded_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decoded_pii[pii_type] = [item[\"encrypted\"] for item in items]",
+        "peekOfCode": "def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
     {
-        "label": "decode_encrypted_pii",
+        "label": "encrypt_pii",
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def decode_encrypted_pii(\n  encrypted_pii: Dict[str, List[Dict[str, str]]]) -> Dict[str, List[str]]:\n    decoded_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decoded_pii[pii_type] = [item[\"encrypted\"] for item in items]\n    return decoded_pii\ndef process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:\n    # Step 1: Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")",
+        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    # Encrypt PII",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
     {
-        "label": "process_text_and_store_in_file",
-        "kind": 2,
-        "importPath": "src.core.pii_encryption",
-        "description": "src.core.pii_encryption",
-        "peekOfCode": "def process_text_and_store_in_file(text: str, file_path: str) -> Tuple[str, str]:\n    # Step 1: Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Step 2: Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    # Step 3: Encrypt PII with the loaded key\n    encrypted_pii = encrypt_pii(pii_data, encryption_key, latest_version)",
-        "detail": "src.core.pii_encryption",
-        "documentation": {}
-    },
-    {
-        "label": "text",
-        "kind": 5,
-        "importPath": "src.core.pii_encryption",
-        "description": "src.core.pii_encryption",
-        "peekOfCode": "text = \"Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789.\"\nrecord_id, processed_text = process_text_and_store_in_file(text, \"src/db/pii_storage.json\")\nprint(\"Record ID:\", record_id)\nprint(\"Processed Text:\", processed_text)",
-        "detail": "src.core.pii_encryption",
-        "documentation": {}
-    },
-    {
-        "label": "store_record",
+        "label": "store_record_by_id",
         "kind": 2,
         "importPath": "src.db.pii_repository",
         "description": "src.db.pii_repository",
-        "peekOfCode": "def store_record(record: dict) -> str:\n  pass\ndef get_record_by_id(record_id: str, file_path: str) -> Dict:\n    \"\"\"Retrieve a specific record by ID from the storage file.\"\"\"\n    try:\n        with open(file_path, \"r\") as f:\n            storage_data = json.load(f)\n    except FileNotFoundError:\n        raise ValueError(\"Storage file not found.\")\n    # Find the record by ID",
+        "peekOfCode": "def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict) -> str:\n  \"\"\"Store a new record in the storage file.\"\"\"\n  record_id = str(uuid.uuid4())\n  new_record = {\n        \"text_with_hashes\": text_with_hashes,\n        \"encrypted_pii\": encrypted_pii  # Store with key versions\n    }\n  # Since we are using json as a storage format, we need to load the existing data first\n  try:\n    with open(file_path, \"r\") as f:",
         "detail": "src.db.pii_repository",
         "documentation": {}
     },
