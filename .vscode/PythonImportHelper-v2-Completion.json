@@ -966,7 +966,7 @@
         "kind": 5,
         "importPath": "src.core.pii_detection",
         "description": "src.core.pii_detection",
-        "peekOfCode": "EMAIL_REGEX = r\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\"\n# PHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nPHONE_REGEX = r\"(\\+?\\d{1,4}[\\s-]?)?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}|\\b\\d{7}\\b\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"",
+        "peekOfCode": "EMAIL_REGEX = r\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\"\nPHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"",
         "detail": "src.core.pii_detection",
         "documentation": {}
     },
@@ -975,7 +975,7 @@
         "kind": 5,
         "importPath": "src.core.pii_detection",
         "description": "src.core.pii_detection",
-        "peekOfCode": "PHONE_REGEX = r\"(\\+?\\d{1,4}[\\s-]?)?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}|\\b\\d{7}\\b\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:",
+        "peekOfCode": "PHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:",
         "detail": "src.core.pii_detection",
         "documentation": {}
     },
