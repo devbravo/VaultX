@@ -41,6 +41,12 @@ def encrypt_pii(text: str) -> Tuple[str, Dict]:
     # Detect PII
     pii_data = detect_all_pii(text)
     logging.info(f"Detected PII: {pii_data}")
+    print("PII_detection", pii_data)
+    
+    if not pii_data:
+      logging.info("No PII detected. Skipping encryption.")
+      return None, None
+      
 
     # Load or generate the latest encryption key
     encryption_key = load_generate_encryption_key()
@@ -58,6 +64,6 @@ def encrypt_pii(text: str) -> Tuple[str, Dict]:
   
 # # Example usage
 # text = "Contact me at john.doe@example.com or +1-123-456-7890. My SSN is 123-45-6789."
-# record_id, processed_text = encrypt_data(text, "src/db/pii_storage.json")
+# record_id, processed_text = encrypt_pii(text)
 # print("Record ID:", record_id)
 # print("Processed Text:", processed_text)

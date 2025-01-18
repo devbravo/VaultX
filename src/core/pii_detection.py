@@ -6,7 +6,8 @@ from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
 EMAIL_REGEX = r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
-PHONE_REGEX = r"\+?\d{1,4}[\s-]?\(?\d{2,4}\)?[\s-]?\d{3}[\s-]?\d{4}"
+# PHONE_REGEX = r"\+?\d{1,4}[\s-]?\(?\d{2,4}\)?[\s-]?\d{3}[\s-]?\d{4}"
+PHONE_REGEX = r"(\+?\d{1,4}[\s-]?)?\(?\d{2,4}\)?[\s-]?\d{3}[\s-]?\d{4}|\b\d{7}\b"
 SSN_REGEX = r"\b\d{3}-\d{2}-\d{4}\b"
 CREDIT_CARD_REGEX = r"\b(?:\d[ -]*?){13,16}\b"
 DATE_REGEX = r"\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\d{4})\b"

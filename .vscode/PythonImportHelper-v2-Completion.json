@@ -813,7 +813,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    # record_id, processed_text = encrypt_data(request.text)",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    text_with_hashes, encrypted_pii = encrypt_pii(request.text)",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -966,7 +966,7 @@
         "kind": 5,
         "importPath": "src.core.pii_detection",
         "description": "src.core.pii_detection",
-        "peekOfCode": "EMAIL_REGEX = r\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\"\nPHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"",
+        "peekOfCode": "EMAIL_REGEX = r\"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\"\n# PHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nPHONE_REGEX = r\"(\\+?\\d{1,4}[\\s-]?)?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}|\\b\\d{7}\\b\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"",
         "detail": "src.core.pii_detection",
         "documentation": {}
     },
@@ -975,7 +975,7 @@
         "kind": 5,
         "importPath": "src.core.pii_detection",
         "description": "src.core.pii_detection",
-        "peekOfCode": "PHONE_REGEX = r\"\\+?\\d{1,4}[\\s-]?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:",
+        "peekOfCode": "PHONE_REGEX = r\"(\\+?\\d{1,4}[\\s-]?)?\\(?\\d{2,4}\\)?[\\s-]?\\d{3}[\\s-]?\\d{4}|\\b\\d{7}\\b\"\nSSN_REGEX = r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\"\nCREDIT_CARD_REGEX = r\"\\b(?:\\d[ -]*?){13,16}\\b\"\nDATE_REGEX = r\"\\b(0?[1-9]|1[0-2])[/-](0?[1-9]|[12][0-9]|3[01])[/-](\\d{4})\\b\"\nIPV4_REGEX = r\"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b\"\nIPV6_REGEX = r\"\\b([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\\b\"\nPASSPORT_REGEX = r\"\\b[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]\\b\"\nNATIONAL_ID_REGEX = r\"\\b\\d{2}-\\d{4}-\\d{4}\\b\"\nPOSTAL_CODE_REGEX = r\"\\b\\d{5}(-\\d{4})?\\b\"\ndef detect_emails(text: str) -> List[str]:",
         "detail": "src.core.pii_detection",
         "documentation": {}
     },
@@ -1092,7 +1092,7 @@
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    # Load or generate the latest encryption key\n    encryption_key = load_generate_encryption_key()\n    latest_metadata = KeyManager.load_keys_metadata()\n    latest_version = max(latest_metadata.keys())  # Get the latest key version\n    # Encrypt PII",
+        "peekOfCode": "def encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")\n    print(\"PII_detection\", pii_data)\n    if not pii_data:\n      logging.info(\"No PII detected. Skipping encryption.\")\n      return None, None\n    # Load or generate the latest encryption key",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
