@@ -1,9 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel 
 from src.core.pii_decryption import decrypt_pii
-from src.db.record_repository import get_record_by_id, store_record_by_id
+from src.db.record_repository import (get_all_records, get_record_by_id, store_all_records,
+  store_record_by_id)
 from src.core.pii_encryption import encrypt_pii
 from src.core.key_rotation import KeyRotationManager
+from src.core.pii_update_on_key_rotate import update_pii_with_reencryption
 
 app = FastAPI() 
 
@@ -28,7 +30,7 @@ async def encrypt_data_endpoint(request: EncryptRequest):
     # record_id, processed_text = encrypt_data(request.text)
     text_with_hashes, encrypted_pii = encrypt_pii(request.text)
     record_id = store_record_by_id(PII_STORAGE_FILE, text_with_hashes, encrypted_pii )
-    return {"record_id": record_id, "processed_text": text_with_hashes}
+    return {"record_id": record_id, "processed_text": text_with_hashes, "encrypted_pii": encrypted_pii} 
   except Exception as e:
     raise HTTPException(status_code=500, detail=f'Error processing PII: {e}')
   
@@ -44,10 +46,12 @@ async def decrypt_data_endpoint(request: DecryptRequest):
     raise HTTPException(status_code=404, detail=f'Error decrypting PII: {e}')
   
 
-@app.post('rotate-keys/')
+@app.post('/rotate-keys/')
 async def rotate_keys():
   """Rotate encryption keys and re-encrypt data"""
+  records = get_all_records(PII_STORAGE_FILE)
   old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
-  update_storage_with_reencryption(old_key, new_key, new_version, PII_STORAGE_FILE)
+  updated_records = update_pii_with_reencryption(old_key, new_key, new_version, records)
+  store_all_records(PII_STORAGE_FILE, updated_records)
   
   

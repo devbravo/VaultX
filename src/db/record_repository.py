@@ -40,6 +40,17 @@ def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict
   logging.info(f"Processed text stored with Record ID: {record_id}")
   
   return record_id
+
+
+def store_all_records(file_path: str, records: Dict) -> None:
+  """Store all records in the storage file."""
+  try:
+    with open(file_path, "w") as f:
+      json.dump(records, f, indent=4)
+    logging.info("Storage file updated with new key version.")
+  except Exception as e:
+    raise ValueError(f"Failed to update storage file: {e}")
+  
   
   
 def get_record_by_id(record_id: str, file_path: str) -> Dict:
@@ -57,6 +68,7 @@ def get_record_by_id(record_id: str, file_path: str) -> Dict:
     
     return record
   
+  
 def get_all_records(file_path: str) -> Dict:
   """Retrieve all records from the storage file."""
   try:
@@ -70,7 +82,5 @@ def get_all_records(file_path: str) -> Dict:
   return storage_data
 
 
-
-  
-def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:
-  pass
+# def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:
+#   pass

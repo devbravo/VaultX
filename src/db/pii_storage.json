@@ -1,45 +1,22 @@
 {
-    "002af585-03cc-4bf9-9f9d-d9543795242d": {
+    "73d0ed41-99f7-4b7e-bc67-7112410a33a8": {
         "text_with_hashes": "Contact me at 836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f or c5d818339e54853b26998bd02d1a393cd9e688858f72fe9538a382d85937efc0. My SSN is 01a54629efb952287e554eb23ef69c52097a75aecc0e3a93ca0855ab6d7a31a0.",
         "encrypted_pii": {
             "emails": [
                 {
-                    "encrypted": "gAAAAABni8TxmpZRRXiHLkLdpkaNhH-E4-FaK0ZDvM-eB-SEzqIeUOO6ZFcS4KiKtK--olDUNXQO6a9roXyIpi2NurBBpxP4XRUXWGzFg5aUO4Ky8MXpFeo=",
-                    "key_version": "key_1"
-                }
-            ],
-            "phone_numbers": [
-                {
-                    "encrypted": "gAAAAABni8Txpd1OGKRS5y2nxFI1xfTbsyWQweE4jpWvQok8l5UyUYqW_UvLG-H08bphvnzyLoEf6PN1GHvzGAECVtZ81Kvm7g==",
-                    "key_version": "key_1"
-                }
-            ],
-            "ssns": [
-                {
-                    "encrypted": "gAAAAABni8Tx64atM5xxG2lZxifWC9jOxvTkqoy7tNmr0eo309AmSexf0KGn0cIoxxlSZk14N7dkYPFCS5hFFG9inKjRDAGdLA==",
-                    "key_version": "key_1"
-                }
-            ]
-        }
-    },
-    "74e79b40-d443-481a-a06e-e9d093e845da": {
-        "text_with_hashes": "Contact me at 836f82db99121b3481011f16b49dfa5fbc714a0d1b1b9f784a1ebbbf5b39577f or c5d818339e54853b26998bd02d1a393cd9e688858f72fe9538a382d85937efc0. My SSN is 01a54629efb952287e554eb23ef69c52097a75aecc0e3a93ca0855ab6d7a31a0.",
-        "encrypted_pii": {
-            "emails": [
-                {
-                    "encrypted": "gAAAAABni8z9g96CUulK2GcWvvNTVshP9EXEvnmeeyS_SZPvcxAA6jySauCHMkrlwRqmdpXbLxJAypTFuuiOG9tWYn66ejmec1ziPA9stp4lFGDsBYVbfVg=",
+                    "encrypted": "gAAAAABni9md_BFW6F4JpHKoruXMmnL6sLx2Z1wNJFYj6CUTPmnYXbgE6OxII2ubqxa0wzZ6GRTTvHkEC76B3Hkw50HVU5CUkzbX3j9NIA_zp0baOk4Oz34=",
                     "key_version": "key_2"
                 }
             ],
             "phone_numbers": [
                 {
-                    "encrypted": "gAAAAABni8z9LZMzTwTVqU6sU0q-6oXINOMZ3SkeG72QSpURk_4CAgiOA66OgxEmKPK9s_VcttVDoylRROCHWIp7-mV5HdpFYA==",
+                    "encrypted": "gAAAAABni9mdIxFpdXZaj2X2u-Q5V9lTM4eXF7kgQ_iKApkveSFm82_R8sj9Ao63HNcJh1p0lMYZB45ZoRHKfpKH2xtpjvaJeg==",
                     "key_version": "key_2"
                 }
             ],
             "ssns": [
                 {
-                    "encrypted": "gAAAAABni8z9dhcru2baV0b1o_D9SklUgpNgRPoJSMKpTWID-EBLlisscQF1RJ9PGYo9xSj55FkpsYovNogRot9_JZ_cOlKz6Q==",
+                    "encrypted": "gAAAAABni9md0f_fjwZsxUA37gX4Ub9glcNdqkVoxwWQGSA8mEafR4V-Muf8GQLnT_seZlAAqlSmz1PvpiQJQZW4ugdEhRF5tg==",
                     "key_version": "key_2"
                 }
             ]
