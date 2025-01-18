@@ -202,6 +202,14 @@
         "documentation": {}
     },
     {
+        "label": "KeyManager",
+        "importPath": "src.core.encryption",
+        "description": "src.core.encryption",
+        "isExtraImport": true,
+        "detail": "src.core.encryption",
+        "documentation": {}
+    },
+    {
         "label": "logging",
         "kind": 6,
         "isExtraImport": true,
@@ -645,6 +653,15 @@
         "description": "src.core.pii_update_on_key_rotate",
         "peekOfCode": "def update_pii_with_reencryption(old_key: bytes, new_key: bytes, new_key_version: str, records: dict):\n    \"\"\"Re-encrypt data in storage and update the key version.\"\"\"\n    # Iterate through records and re-encrypt PII\n    for record_id, record in records.items():\n        encrypted_pii = record.get(\"encrypted_pii\")\n        if not encrypted_pii:\n            continue\n        for pii_type, items in encrypted_pii.items():\n            for item in items:\n                try:",
         "detail": "src.core.pii_update_on_key_rotate",
+        "documentation": {}
+    },
+    {
+        "label": "load_generate_encryption_key",
+        "kind": 2,
+        "importPath": "src.db.key_repository",
+        "description": "src.db.key_repository",
+        "peekOfCode": "def load_generate_encryption_key() -> bytes:\n    \"\"\"\n    Load the latest encryption key or generate a new one if none exists.\n    Returns the encryption key as bytes.\n    \"\"\"\n    try:\n        metadata = KeyManager.load_keys_metadata()\n        if not metadata:  # Check if metadata is empty\n            logging.info(\"No metadata found. Generating a new key.\")\n            new_version = KeyManager.add_new_key()",
+        "detail": "src.db.key_repository",
         "documentation": {}
     },
     {
