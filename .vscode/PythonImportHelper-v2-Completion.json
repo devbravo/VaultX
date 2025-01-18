@@ -1070,20 +1070,11 @@
         "documentation": {}
     },
     {
-        "label": "compile_pii_pattern",
+        "label": "replace_pii_with_placeholder",
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:\n    pii_values = [value for values in pii_data.values() for value in values]\n    return re.compile(r\"|\".join(re.escape(value) for value in pii_values))\ndef replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"",
-        "detail": "src.core.pii_encryption",
-        "documentation": {}
-    },
-    {
-        "label": "replace_pii_with_hash",
-        "kind": 2,
-        "importPath": "src.core.pii_encryption",
-        "description": "src.core.pii_encryption",
-        "peekOfCode": "def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:\n    pattern = compile_pii_pattern(pii_data)\n    def replacer(match):\n        return EncryptionUtils.hash_data(match.group(0))\n    return pattern.sub(replacer, text)\ndef encrypt_pii(text: str) -> Tuple[str, Dict]:\n    \"\"\"Detect PII in text and encrypt it.\"\"\"\n    # Detect PII\n    pii_data = detect_all_pii(text)\n    logging.info(f\"Detected PII: {pii_data}\")",
+        "peekOfCode": "def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:\n    \"\"\"Replace PII with placeholders in the given text.\"\"\"\n    placeholders = {\n        \"emails\": \"[email]\",\n        \"phone_numbers\": \"[phone-number]\",\n        \"ssns\": \"[ssn]\",\n        # Add more PII types and their placeholders as needed\n    }\n    for pii_type, values in pii_data.items():\n        placeholder = placeholders.get(pii_type, \"[pii]\")  # Default placeholder for unknown types",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },

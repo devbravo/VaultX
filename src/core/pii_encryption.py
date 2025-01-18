@@ -22,18 +22,34 @@ def encryption(pii_data: Dict[str, List[str]],
     return encrypted_pii
       
 
-def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:
-    pii_values = [value for values in pii_data.values() for value in values]
-    return re.compile(r"|".join(re.escape(value) for value in pii_values))
+# def compile_pii_pattern(pii_data: Dict[str, List[str]]) -> re.Pattern:
+#     pii_values = [value for values in pii_data.values() for value in values]
+#     return re.compile(r"|".join(re.escape(value) for value in pii_values))
   
 
-def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:
-    pattern = compile_pii_pattern(pii_data)
+# def replace_pii_with_hash(text: str, pii_data: Dict[str, List[str]]) -> str:
+#     pattern = compile_pii_pattern(pii_data)
 
-    def replacer(match):
-        return EncryptionUtils.hash_data(match.group(0))
+#     def replacer(match):
+#         return EncryptionUtils.hash_data(match.group(0))
 
-    return pattern.sub(replacer, text)
+#     return pattern.sub(replacer, text)
+def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:
+    """Replace PII with placeholders in the given text."""
+    placeholders = {
+        "emails": "[email]",
+        "phone_numbers": "[phone-number]",
+        "ssns": "[ssn]",
+        # Add more PII types and their placeholders as needed
+    }
+
+    for pii_type, values in pii_data.items():
+        placeholder = placeholders.get(pii_type, "[pii]")  # Default placeholder for unknown types
+        for value in values:
+            pattern = re.escape(value)
+            text = re.sub(pattern, placeholder, text)
+
+    return text
   
 
 def encrypt_pii(text: str) -> Tuple[str, Dict]:
@@ -57,9 +73,10 @@ def encrypt_pii(text: str) -> Tuple[str, Dict]:
     encrypted_pii = encryption(pii_data, encryption_key, latest_version)
 
     # Replace PII with hashes
-    text_with_hashes = replace_pii_with_hash(text, pii_data)
+    # text_with_hashes = replace_pii_with_hash(text, pii_data)
+    text_with_placeholder = replace_pii_with_placeholder(text, pii_data)
 
-    return text_with_hashes, encrypted_pii
+    return text_with_placeholder, encrypted_pii
   
   
 # # Example usage
