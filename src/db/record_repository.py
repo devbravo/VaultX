@@ -7,13 +7,13 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 
-def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict) -> str:
+def store_record_by_id(file_path:str, text_with_placeholders: str, encrypted_pii: Dict) -> str:
   """Store a new record in the storage file."""
   
   record_id = str(uuid.uuid4())
   
   new_record = {
-        "text_with_hashes": text_with_hashes,
+        "text_with_placeholders": text_with_placeholders,
         "encrypted_pii": encrypted_pii  # Store with key versions
     }
   # Since we are using json as a storage format, we need to load the existing data first

@@ -876,7 +876,7 @@
         "kind": 2,
         "importPath": "src.core.pii_decryption",
         "description": "src.core.pii_decryption",
-        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_hashes = record.get(\"text_with_hashes\")\n    if not encrypted_pii or not text_with_hashes:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
+        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_placeholders = record.get(\"text_with_placeholders\")\n    if not encrypted_pii or not text_with_placeholders:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
         "detail": "src.core.pii_decryption",
         "documentation": {}
     },
@@ -1074,7 +1074,7 @@
         "kind": 2,
         "importPath": "src.core.pii_encryption",
         "description": "src.core.pii_encryption",
-        "peekOfCode": "def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:\n    \"\"\"Replace PII with placeholders in the given text.\"\"\"\n    placeholders = {\n        \"emails\": \"[email]\",\n        \"phone_numbers\": \"[phone-number]\",\n        \"ssns\": \"[ssn]\",\n        # Add more PII types and their placeholders as needed\n    }\n    for pii_type, values in pii_data.items():\n        placeholder = placeholders.get(pii_type, \"[pii]\")  # Default placeholder for unknown types",
+        "peekOfCode": "def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:\n    \"\"\"Replace PII with placeholders in the given text.\"\"\"\n    placeholders = {\n        \"emails\": \"[email]\",\n        \"phone_numbers\": \"[phone-number]\",\n        \"ssns\": \"[ssn]\",\n        \"credit_cards\": \"[credit-card]\",\n        \"addresses\": \"[address]\",\n        \"ips\": \"[ip]\",\n        \"passport_numbers\": \"[passport]\",",
         "detail": "src.core.pii_encryption",
         "documentation": {}
     },
@@ -1110,7 +1110,7 @@
         "kind": 2,
         "importPath": "src.db.record_repository",
         "description": "src.db.record_repository",
-        "peekOfCode": "def store_record_by_id(file_path:str, text_with_hashes: str, encrypted_pii: Dict) -> str:\n  \"\"\"Store a new record in the storage file.\"\"\"\n  record_id = str(uuid.uuid4())\n  new_record = {\n        \"text_with_hashes\": text_with_hashes,\n        \"encrypted_pii\": encrypted_pii  # Store with key versions\n    }\n  # Since we are using json as a storage format, we need to load the existing data first\n  try:\n    with open(file_path, \"r\") as f:",
+        "peekOfCode": "def store_record_by_id(file_path:str, text_with_placeholders: str, encrypted_pii: Dict) -> str:\n  \"\"\"Store a new record in the storage file.\"\"\"\n  record_id = str(uuid.uuid4())\n  new_record = {\n        \"text_with_placeholders\": text_with_placeholders,\n        \"encrypted_pii\": encrypted_pii  # Store with key versions\n    }\n  # Since we are using json as a storage format, we need to load the existing data first\n  try:\n    with open(file_path, \"r\") as f:",
         "detail": "src.db.record_repository",
         "documentation": {}
     },

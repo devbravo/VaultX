@@ -40,7 +40,10 @@ def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> s
         "emails": "[email]",
         "phone_numbers": "[phone-number]",
         "ssns": "[ssn]",
-        # Add more PII types and their placeholders as needed
+        "credit_cards": "[credit-card]",
+        "addresses": "[address]",
+        "ips": "[ip]",
+        "passport_numbers": "[passport]",
     }
 
     for pii_type, values in pii_data.items():

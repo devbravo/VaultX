@@ -1,23 +1,23 @@
 {
-    "0bc6879f-f5c1-48d9-a0cb-da20ff0ac327": {
-        "text_with_hashes": "Contact me at [email] or [phone-number]. My SSN is [ssn].",
+    "bf5750d2-1a6b-4d3f-82bb-ab7b4d84e24c": {
+        "text_with_placeholders": "Contact me at [email] or [phone-number]. My SSN is [ssn].",
         "encrypted_pii": {
             "emails": [
                 {
-                    "encrypted": "gAAAAABni_IAjM2sTBFNpNMMfYHvKl6ub148xBLan_W4pvSvJ2nA8S8QISd9gKOD8BHm7Zdl0FKZQsdP-KDKSGRIWQTxiKyfFcbGyly_FzkIt1OKXgX-xjw=",
-                    "key_version": "key_1"
+                    "encrypted": "gAAAAABni_RTWh8x43R-PIX3V8vSoVEw-JEPOZeWpudqBKLjy6GQzRkb-tdhpUsYdaxzHbftxSYweCmYUjOXCyF7hQLaz8-UDnoCFOPmDao3q-lf4LNzz5E=",
+                    "key_version": "key_2"
                 }
             ],
             "phone_numbers": [
                 {
-                    "encrypted": "gAAAAABni_IAP1HCi7QDa0CFk4QXt1rgmRdfmpTWkl_t2n5lujnnd3L9Zdxg4yFjI8JKsidJ8qfCx0rLRNp1BPgTWqVOzj6B5w==",
-                    "key_version": "key_1"
+                    "encrypted": "gAAAAABni_RTa1-r0nupEDqeCT9UEpFc53DGme1BUEg0KKpLBZC5t3wYW24i-Z5t10U6Q9qMitbt3uZ2A6kslS8yXPpU2FxBzQ==",
+                    "key_version": "key_2"
                 }
             ],
             "ssns": [
                 {
-                    "encrypted": "gAAAAABni_IAAMBN2YLHHjPTHAipE2wIBeiUEBcfyeHRJYeioN6hhhWYTkYik2QLmNXM7Ts5bz-fUaduXVZrJwPRMUbNIrbBfw==",
-                    "key_version": "key_1"
+                    "encrypted": "gAAAAABni_RTABbTMq0vs7dENSiwtUrwXBUpyVh9g6ps1REQ6tG3PjQHsLKfJVkVP7akJJE_1JgufupSbmrbcgYa22_pxiD_Ng==",
+                    "key_version": "key_2"
                 }
             ]
         }
