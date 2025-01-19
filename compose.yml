@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    # Uncomment below lines if you want to persist data on the host:
+    # volumes:
+    #   - mongo_data:/data/db
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi  # Point to the Dockerfile for the FastAPI app
+    container_name: fastapi_app
+    command: uvicorn src.app.main:app --host 0.0.0.0 --port 8000
+    environment:
+      # Example env var that the FastAPI app might use to connect to MongoDB
+      MONGO_URI: mongodb://mongo:27017
+    depends_on:
+      - mongo
+    ports:
+      - "8000:8000"
+
+#  vaultx_agent:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.langgraph  # Point to the Dockerfile for the LangGraph agent
+#    container_name: vaultx_agent
+#    environment:
+#      MONGO_URI: mongodb://mongo:27017  # If your agent also needs Mongo
+#    depends_on:
+#      - mongo
+#    ports:
+#      - "2024:2024"  # Adjust if your agent listens on a different port
+
+# Uncomment if using volumes for persistent data:
+# volumes:
+#   mongo_data:

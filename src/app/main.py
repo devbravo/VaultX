@@ -1,6 +1,8 @@
+import os
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
+from mongoengine import connect
 from pydantic import BaseModel
 
 from src.core.key_rotation import KeyRotationManager
@@ -24,7 +26,17 @@ class DecryptRequest(BaseModel):
     record_id: str
     text: Optional[str] = None
 
-
+@app.on_event("startup")
+def startup_db_client():
+    """
+    Connect to MongoDB using mongoengine. Adjust the URI/database name
+    to your environment or Docker Compose settings.
+    """
+    connect(
+        db="vaultx",
+        host=os.environ.get("MONGO_URI"),  # or 'mongodb://mongo:27017/mydb' in Docker
+        alias="default"
+    )
 @app.get("/")
 async def root():
     return {"message": "Welcome to VaultX Technologies"}

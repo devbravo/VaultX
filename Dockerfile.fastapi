@@ -1,0 +1,19 @@
+# Use a lightweight Python base image
+FROM python:3.11-slim
+
+# Create a working directory
+WORKDIR /app
+
+# Copy and install dependencies
+# Replace 'requirements.txt' with your actual requirements filename
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your FastAPI source code into the container
+COPY . .
+
+# Expose the port FastAPI will listen on
+EXPOSE 8000
+
+# Run the FastAPI server with Uvicorn
+CMD ["uvicorn", "src.app.main:app", "--host", "0.0.0.0", "--port", "8000"]

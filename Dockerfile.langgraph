@@ -1,0 +1,15 @@
+# Use a lightweight Python base image
+FROM python:3.11-slim
+
+# Create a working directory
+WORKDIR /agent
+
+# Copy your LangGraph agent code
+COPY /src/vaultx_agent .
+RUN pip install -e .
+
+# Expose the port on which the agent will listen (if relevant)
+EXPOSE 2024
+
+# Start the LangGraph development server
+CMD ["langgraph", "dev"]
