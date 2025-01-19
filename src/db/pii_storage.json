@@ -488,5 +488,22 @@
                 }
             ]
         }
+    },
+    "f46dde42-2419-4315-a270-77c79fb44efc": {
+        "text_with_placeholders": "My name is Egbert, [email], [phone-number]",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnjTHP9ms6ZpURYaynQ7k4xSCnFMhgMU55k1QsvKCyAopm-QgtW6IMn5NjtREbs1N5o0ybdVo5kxy8pTP6IV0n_wgb12Szr1LxWXOrwK4Px7BiKTg=",
+                    "key_version": "key_1"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjTHPw0Pj2XiBbSMhOkqrM_EEnR06NKBIXFq8kk_2yE-Wd163Kmiv7zKQCveSolh0muTfBUVXdRXTuWtO4A5n5kBfVg==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }

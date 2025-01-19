@@ -28,14 +28,12 @@ def summarize_conversation(state: State):
                    "never store any actual PII in the summary"
                    " below to the summary the pii is encrypted"
                    "and will be used for decryption later"
-                   "possible placeholders"
-                   "[email]"
-                   "[phone-number]"
-                   "[ssn]"
-                   "[credit-card]"
-                   "[address]"
-                   "[ip]"
-                   "[passport]")
+                   "possible placeholders examples:"
+                   "[EMAIL]"
+                   "[PHONE_NUMBER]"
+                   "[NAME]"
+                   "[ADDRESS]"
+                   )
 
     if summary:
         # If a summary already exists, we use a different system prompt
