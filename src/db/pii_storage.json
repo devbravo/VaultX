@@ -90,5 +90,129 @@
                 }
             ]
         }
+    },
+    "b8fd7886-b7ca-49c9-a9c2-d6285d3ed1d9": {
+        "text_with_placeholders": "My internet protocol address is [IP_ADDRESS], and my passport number is [PASSPORT_NUMBER]",
+        "encrypted_pii": {
+            "IP_ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnjTUwkYOfQkvq15LoMtXnGlBEq7IELkkhKHYRyiddNFJ6Bkrl64p5qutGawLsRMB2_TvxE_2S9KOZN0e6QRfV92Ki9Q==",
+                    "key_version": "key_1"
+                }
+            ],
+            "PASSPORT_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTUwxzTW1kWGOcwNMG6DWfPU4r_YTzrl-NGsTdqce_VvREhH0q5T-Ph36Ukl8qF9A9nfOYDQ6RUB1UXxESpTYwuX7Q==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "5ca30516-3547-499c-9cf5-fff4f1e18651": {
+        "text_with_placeholders": "Call me at +44 20 7946 0958 or send an email to [EMAIL] Also, my social security number is [SOCIAL_SECURITY_NUMBER].",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTVFZiBrskyAYaLTaj1-CtZSDLCZOu7wtsZjwdrL4CmxqP--oDg_yru8mcu2DYf1u1YvD4IZjhIxbDZAsaAO1Oy96RUy_3uYFLLVTsRXK4nW31Y=",
+                    "key_version": "key_1"
+                }
+            ],
+            "SOCIAL_SECURITY_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTVFtmF-vwQcgZBsc7ppziwpoRLegoP3--N2vM9CpWWkon-m26H7dmpkaG-no-mU9hOBET--FKBPx3FxpHt-ZNghlA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "dd7d0487-b137-4da5-a020-87aa259324e0": {
+        "text_with_placeholders": "Call me at [PHONE_NUMBER] or send an email to [EMAIL] Also, my social security number is [PHONE_NUMBER].",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTXqosu9_jNT9TkBUjauzGdQL1fLIqMBJTTX84ezZDTm8eJkJxs1TU38rRJeOdOV_1LaU0dTJe92Zlz9pY38rW4mizhPwPDqfirs54fUNQ6s0ps=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTXqq24dGklkU_pDlI9zCs-VqX-RSZEu3odewC3Eu2PbbSR3znpxTXKiTngWq6wL6R37hmCzpyL1cPS-WaCxS_4RT8NdIPMhSrZ1CP1biKOZkfo=",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTXqEPCwE4gN5GFppNc0pGQMYRApdtB0sgWkJuYWKCQlUIUIR790hoCUvG8NIVbEz9mdUJQ9h-VFjtlpEcOmp498QQ==",
+                    "key_version": "key_1"
+                }
+            ],
+            "SOCIAL_SECURITY_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTXqIoSDWu9Kj92rXRwd-lV1RrVgyXSZO2C4baasP8ZqzldNenR6MloqOFiOcRCa2E5MFTpESr6jtdSuxo5-zQceiA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "968b782b-8625-4960-b0b8-c5254ebf5102": {
+        "text_with_placeholders": "Call me at [PHONE_NUMBER] or send an email to [EMAIL] Also, my social security number is [PHONE_NUMBER].",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTY8VMwdNni0AEVtlNFH5fI6cY3_b6EjQYmOqQSaVy3hVMumq8eJBUwGjnHXa3DUmS3KXtjyb8ml7mZGLC5Da88Mj24Tdn4nc6jPaXdjJJyVsfg=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTY886sRy9s-jS9igvt7Cl9AvKG1HAy-o3-udmUUC99jddBZDZjppTtQqkyWvgN-NHYy-m3252y4zyC6oBL_qJLXOQ==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTY8eAocGUdQeBivbUW8i0ny-SGJ-eNm1JVo1cknWXsl78tMv9ZVXQrlEs-lg7yu4nnlg4mS9d328CjrAsl2t_fD-A==",
+                    "key_version": "key_1"
+                }
+            ],
+            "SOCIAL_SECURITY_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTY8YAUQFb5_JgbjkqNUx2aTJPBQRyISuArtBXFbBwAeVQ1h2uhrKywZuLwqTZ0JDf7JhskWRvZJdBDScipjowIabA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "ef32b6c3-217b-4294-b475-bf918334f3aa": {
+        "text_with_placeholders": "[NAME] account number is [PHONE_NUMBER], not [PHONE_NUMBER], and his phone is [PHONE_NUMBER].",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTZreR4_-CfBRqG5P1nBWkQLt3GC6Ju24InMQBeulOhPzBJuCbCu0NsrCy9fUMYR9AhoH41j7M1Gfj7yBNGWZZ-p4Q==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTZrBA1QfgVrTC949Yl7j_2Xe2_j-DdyUWZR39Y19BGMOmLE3B4In3ngsqgE03sIGSQ4XyMTouQCDz7Trw1eEUrSXw==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTZr4wB_txvr2L4fTKUqJ4n9aUxLBtrlmECFRNuuQfCFksGQ6SOSO1x0cvS5hD4WdKj4I8kkWPxXHS_hxEGmV_MnfA==",
+                    "key_version": "key_1"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjTZroU4tUTCxNGUQZ_4rVnETCo2rrFzmh5FFDvtIqS8Lt9SEs_OTflV1KEE6RHhSYMJjUwKaNrRRWUlB7s4S6aRdOg==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "350ada05-7a0a-4154-9729-13dce32706c2": {
+        "text_with_placeholders": "Reach out to [PHONE_NUMBER] for assistance or visit the website www.example.com",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTa_O6sRGr983yM4rNa4G7r03_dWgw3Ohqg9wwSmSbdXVBON2aKcfspPCP56oaSp312ZhWOc-C1x2KOpJo48V7iAIg==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }
