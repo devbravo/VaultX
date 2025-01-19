@@ -145,13 +145,13 @@ VaultX Technologies is at the forefront of developing AI-powered solutions to up
    - Integration with chat platforms (e.g., Slack, Microsoft Teams).
 
 3. **Future Enhancements**:
-  1. **Advanced PII Anonymization Options**: 
+  - **Advanced PII Anonymization Options**: 
     - Feature: Add support for automated PII anonymization in text (e.g., replacing names or addresses with pseudonyms).
     - Use Case: Allows businesses to work with anonymized datasets for analytics while ensuring compliance.
-  2. **Multi-Language PII Detection**
+  - **Multi-Language PII Detection**
     - Feature: Expand PII detection capabilities to include multi-language support using pre-trained multilingual NER models like SpaCy’s or Hugging Face’s models.
     - Use Case: Enables global businesses to comply with regional regulations (e.g., GDPR, CCPA) in non-English markets.
-  3. **Integration with Cloud Platforms**
+  - **Integration with Cloud Platforms**
 	  - Feature: Build integrations for cloud services like AWS, Azure, and GCP to detect and encrypt PII in their storage solutions (e.g., S3 buckets, Google Cloud Storage).
 	  - Use Case: Automates compliance for companies storing PII in the cloud
 
