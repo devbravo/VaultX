@@ -1,14 +1,14 @@
 # VaultX Technologies
 
 ## Overview
-VaultX Technologies is dedicated to creating AI-powered solutions that ensure compliance with data privacy regulations like GDPR while safeguarding sensitive information. Our flagship product uses AI agents to detect, encrypt, and securely manage Personally Identifiable Information (PII) in real time, providing seamless integration for businesses across various industries.
+VaultX Technologies is at the forefront of developing AI-powered solutions to uphold data privacy and regulatory compliance, including GDPR and similar frameworks. Our innovative platform combines rule-based techniques (such as regular expressions) with advanced machine learning models (NER) to accurately detect and identify Personally Identifiable Information (PII) in chats, documents, and other data streams. PII is then encrypted and securely managed in real-time, ensuring robust protection while seamlessly integrating into business operations across diverse industries.
 
 ## Features
 
 ### Core Features:
 1. **PII Detection**:
-   - Real-time identification of PII in text inputs such as chatbot messages, Excel sheets, and Word documents.
-   - Supports regex-based detection and advanced NLP models (e.g., OpenAI or LLama3).
+   - Real-time identification of PII in text inputs such as chatbot messages, web forms, email communication, file-uploads and shared documents.
+   - Supports regex-based detection and advanced NLP models.
 
 2. **PII Encryption**:
    - AES-256 encryption to secure sensitive information before storage.
@@ -16,43 +16,35 @@ VaultX Technologies is dedicated to creating AI-powered solutions that ensure co
 
 3. **Secure Storage**:
    - Encrypted databases (PostgreSQL or MongoDB) for PII.
-   - Role-Based Access Control (RBAC) to restrict unauthorized access.
 
 4. **PII Decryption**:
    - Secure session tokens for retrieving and decrypting PII.
    - Automatic session expiration to prevent unauthorized reuse.
 
-5. **Compliance Tools**:
-   - Detailed audit logs for tracking PII access and modifications.
-   - Automated reporting for GDPR compliance.
+5. **Key Rotation**:
+   - Regular key rotation and secure key management.
 
 ---
 
 ## Use Cases
-1. **Chatbot Integrations**:
-   - Real-time PII detection and redaction for chat applications.
-   - Seamless compliance with GDPR during customer interactions.
-
-2. **Document Processing**:
-   - Detect and encrypt PII in uploaded documents like Excel sheets and Word files.
-
-3. **Secure Backend Operations**:
-   - Middleware to ensure encrypted storage and retrieval of sensitive customer data.
+1. **Customer Support Tickets**
+  - Detect and encrypt PII in customer service interactions, such as emails or support tickets, ensuring sensitive information like account numbers, addresses, or payment details are securely managed while maintaining compliance with data privacy regulations.
+2. **Financial Transactions and Reports**
+  - Identify and secure PII in financial documents, such as invoices, transaction logs, or tax reports, to protect sensitive client and account information during processing, sharing, or storage.
+3. **Healthcare Records and Forms**
+  - Extract and anonymize PII in medical records, insurance claims, or patient forms to safeguard sensitive health data, enabling healthcare providers to comply with regulations like HIPAA while sharing data for analysis or collaboration.
 
 ---
 
 ## Technical Stack
-- **Frameworks**: FastAPI for building APIs.
-- **Libraries**: LangGraph for PII detection, OpenAI/LLama3 for NLP.
+- **Programming Languages**: Python.
+- **Frameworks**: FastAPI.
+- **Libraries**: Spacy, Langgraph.
 - **Database**:
-  - Primary: PostgreSQL or MongoDB (encrypted).
-  - Secondary: Redis for caching.
+  - Locat storage (JSON) (encrypted).
 - **Encryption**: AES-256 with secure key management.
-- **Languages**: Python.
 - **Deployment**:
   - Docker for containerization.
-  - Kubernetes for orchestration.
-  - Cloud Providers: AWS, Azure, or GCP.
 
 ---
 
@@ -63,11 +55,10 @@ VaultX Technologies is dedicated to creating AI-powered solutions that ensure co
 
 2. **PII Encryption**:
    - Implement AES-256 encryption.
-   - Use secure key rotation policies with cloud key management services (e.g., AWS KMS).
+   - Use secure key rotation policies based on time and key usage.
 
 3. **Secure Data Storage**:
    - Segregate PII from general user data.
-   - Implement RBAC and detailed logging.
 
 4. **Decryption Protocols**:
    - Use secure session tokens for linking PII.
@@ -93,45 +84,54 @@ VaultX Technologies is dedicated to creating AI-powered solutions that ensure co
 ### Prerequisites
 1. Python 3.10+
 2. Docker and Docker Compose
-3. PostgreSQL or MongoDB
 
-### Setup Instructions
+### Setup Instructions 
+#### With Docker
 1. Clone the repository:
    ```bash
    git clone https://github.com/vaultx-technologies/vaultx.git
    cd vaultx
    ```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Configure environment variables:
-   - Create a `.env` file:
-     ```env
-     DATABASE_URL=postgresql://user:password@localhost:5432/vaultx
-     OPENAI_API_KEY=your_openai_api_key
-     SECRET_KEY=your_secret_key
-     ```
-
-4. Run the application:
-   ```bash
-   uvicorn src.app.main:app --reload
-   ```
-
-5. Run Docker (optional):
+2. Run Docker (optional):
    ```bash
    docker-compose up --build
    ```
 
----
+#### Without Docker
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vaultx-technologies/vaultx.git
+   cd vaultx
+   ```
 
-## Contribution Guidelines
-1. Fork the repository and create a feature branch.
-2. Write clean, well-documented code.
-3. Add unit tests for new features.
-4. Submit a pull request for review.
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install dependencies:
+   ```bash
+    pip install -r requirements.txt
+   ```
+
+4. Configure environment variables:
+   - Create a `.env` file:
+     ```env
+     OPENAI_API_KEY=your_openai_api_key
+     LANGSMITH_API_KEY=your_langsmith_api_key
+     ```
+
+5. Run the application:
+   ```bash
+   uvicorn src.app.main:app --reload
+   ```
+
+6. Run langraph server:
+   ```bash
+   pip install --upgrade "langgraph-cli[inmem]"
+   ```
 
 ---
 
@@ -145,15 +145,21 @@ VaultX Technologies is dedicated to creating AI-powered solutions that ensure co
    - Integration with chat platforms (e.g., Slack, Microsoft Teams).
 
 3. **Future Enhancements**:
-   - Real-time dashboard for monitoring PII interactions.
-   - Security expansion into Docker container protection.
+  1. **Advanced PII Anonymization Options**: 
+    - Feature: Add support for automated PII anonymization in text (e.g., replacing names or addresses with pseudonyms).
+    - Use Case: Allows businesses to work with anonymized datasets for analytics while ensuring compliance.
+  2. **Multi-Language PII Detection**
+    - Feature: Expand PII detection capabilities to include multi-language support using pre-trained multilingual NER models like SpaCy’s or Hugging Face’s models.
+    - Use Case: Enables global businesses to comply with regional regulations (e.g., GDPR, CCPA) in non-English markets.
+  3. **Integration with Cloud Platforms**
+	  - Feature: Build integrations for cloud services like AWS, Azure, and GCP to detect and encrypt PII in their storage solutions (e.g., S3 buckets, Google Cloud Storage).
+	  - Use Case: Automates compliance for companies storing PII in the cloud
 
 ---
 
 ## Contact
 - **Team Name**: VaultX Technologies
-- **Email**: support@vaultx.com
-- **Website**: [www.vaultx.com](http://www.vaultx.com)
+- **Email**: diegofranco711@gmail.com
 
 ---
 
