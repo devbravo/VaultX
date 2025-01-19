@@ -1,3 +1,10 @@
+"""Record Management Module
+
+This module provides functionalities to handle the secure storage and retrieval of records, particularly 
+those containing sensitive or encrypted data. The storage operations are designed to work seamlessly 
+with JSON-based files, making it easier to manage structured data persistently.
+"""
+
 import json 
 from typing import Dict
 import uuid
@@ -80,7 +87,3 @@ def get_all_records(file_path: str) -> Dict:
     raise ValueError(f"Invalid JSON format in {file_path}")
   
   return storage_data
-
-
-# def update_all_records(record_id: str, updated_record: dict, file_path: str) -> str:
-#   pass

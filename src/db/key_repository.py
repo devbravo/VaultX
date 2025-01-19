@@ -1,3 +1,11 @@
+"""
+Key Loading and Generation Module
+
+This module ensures secure and efficient handling of encryption keys by either loading 
+the latest available key or generating a new one if no keys exist. It plays a pivotal role 
+in maintaining up-to-date encryption mechanisms for secure data handling.
+"""
+
 import logging
 from src.core.encryption import KeyManager
 

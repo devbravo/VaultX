@@ -1,3 +1,11 @@
+"""
+SpaCy-based PII Detection Module
+
+This module provides functionality to detect Personally Identifiable Information (PII) 
+using SpaCy's Named Entity Recognition (NER) capabilities. It specifically includes 
+mechanisms to exclude placeholders that may interfere with PII detection.
+"""
+
 import spacy
 from typing import Dict, List
 import re
@@ -17,7 +25,3 @@ class SpaCyPIIDetector:
         label = "NAME" if ent.label_ == "PERSON" else ent.label_
         entities.setdefault(label, []).append(ent.text)
     return entities
-      
-# spacy_detector = SpaCyPIIDetector()
-# pii_data = spacy_detector.detect_pii("John Doe's SSN is 123-45-6789 and his email is doe@gmail.com, the amount to be paid is $10000")
-# print(pii_data)

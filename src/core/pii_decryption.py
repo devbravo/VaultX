@@ -1,3 +1,10 @@
+"""PII Decryption Module
+
+This module provides functionality to securely decrypt sensitive information (PII) using stored encryption keys. 
+It supports reconstructing original text by replacing placeholders with their corresponding decrypted values 
+and integrates seamlessly with key management for tracking key usage.
+"""
+
 from typing import Dict
 from src.core.encryption import KeyManager, EncryptionUtils
 import logging
@@ -46,11 +53,6 @@ def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str,
             # Replace the first occurrence of the placeholder with the decrypted value
             reconstructed_text = reconstructed_text.replace(placeholder, value, 1)
             
-    # original_text = text_with_hashes
-    # for pii_type, values in decrypted_pii.items():
-    #     for value, hash_value in zip(values, [EncryptionUtils.hash_data(v) for v in values]):
-    #         original_text = original_text.replace(hash_value, value)
-
     # Increment key usage
     for item in encrypted_pii.values():
         for entry in item:

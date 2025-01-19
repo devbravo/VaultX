@@ -1,3 +1,11 @@
+"""
+Re-encryption Module
+
+This module provides functionality to update encrypted PII data with a new encryption key. 
+It is used to enhance security by periodically rotating encryption keys and ensuring that 
+all stored data remains protected with the latest key version.
+"""
+
 import logging
 from src.core.encryption import EncryptionUtils
 

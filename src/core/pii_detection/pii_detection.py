@@ -1,3 +1,11 @@
+"""
+PII Detection Pipeline Module
+
+This module integrates regex-based PII detection and SpaCy-based Named Entity Recognition (NER)
+for comprehensive identification and masking of Personally Identifiable Information (PII). It also
+provides support for integrating a Language Model (LLM) for advanced PII detection.
+"""
+
 from typing import Optional, Tuple, Dict, List
 from src.core.pii_detection.pii_regex import detect_pii_regex
 from src.core.pii_detection.pii_spacy import SpaCyPIIDetector
@@ -100,7 +108,7 @@ test_list = [
              ]
 
       
-
+### LMM PII DETECTION
 async def detect_pii_llm(text: str):
     llm = ChatOpenAI(model="gpt-4o-mini")
 
