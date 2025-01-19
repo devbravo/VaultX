@@ -1,7 +1,7 @@
 from cryptography.fernet import Fernet
 from hashlib import sha256
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 
 class EncryptionUtils:
