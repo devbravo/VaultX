@@ -3,7 +3,7 @@ import logging
 from typing import Tuple, Dict, List
 from src.core.encryption import EncryptionUtils, KeyManager
 from concurrent.futures import ThreadPoolExecutor
-from src.core.pii_detection import detect_all_pii
+from src.core.pii_detection.pii_detection import PiiDetectionPipeline
 from src.db.key_repository import load_generate_encryption_key
 
 # Configure logging
@@ -20,33 +20,16 @@ def encryption(pii_data: Dict[str, List[str]],
                 for encrypted in executor.map(lambda value: EncryptionUtils.encrypt_data(key, value), values)
             ]
     return encrypted_pii
-      
-
-def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:
-    """Replace PII with placeholders in the given text."""
-    placeholders = {
-        "email": "[email]",
-        "phone_number": "[phone-number]",
-        "ssn": "[ssn]",
-        "credit_card": "[credit-card]",
-        "address": "[address]",
-        "ip": "[ip]",
-        "passport_number": "[passport]",
-    }
-
-    for pii_type, values in pii_data.items():
-        placeholder = placeholders.get(pii_type, "[pii]")  # Default placeholder for unknown types
-        for value in values:
-            pattern = re.escape(value)
-            text = re.sub(pattern, placeholder, text)
-
-    return text
   
 
 def encrypt_pii(text: str) -> Tuple[str, Dict]:
     """Detect PII in text and encrypt it."""
     # Detect PII
-    pii_data = detect_all_pii(text)
+    pii_detection_pipeline = PiiDetectionPipeline()
+    pii_data = pii_detection_pipeline.detect_all_pii(text)
+    merged_pii = pii_detection_pipeline.merge_pii_data(pii_data["regex_results"], pii_data["spacy_results"])
+    
+    print('PII', pii_data)
     logging.info(f"Detected PII: {pii_data}")
     print("PII_detection", pii_data)
     
@@ -61,10 +44,9 @@ def encrypt_pii(text: str) -> Tuple[str, Dict]:
     latest_version = max(latest_metadata.keys())  # Get the latest key version
 
     # Encrypt PII
-    encrypted_pii = encryption(pii_data, encryption_key, latest_version)
+    encrypted_pii = encryption(merged_pii, encryption_key, latest_version)
+    
+    masked_text = pii_data['masked_text']
 
-    # Replace PII with hashes
-    text_with_placeholder = replace_pii_with_placeholder(text, pii_data)
-
-    return text_with_placeholder, encrypted_pii
+    return masked_text, encrypted_pii
   

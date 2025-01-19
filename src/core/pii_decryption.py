@@ -35,6 +35,9 @@ def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:
         "IP_ADDRESS": "[IP_ADDRESS]",
         "PASSPORT_NUMBER": "[PASSPORT_NUMBER]",
         "NATIONAL_ID": "[NATIONAL_ID]",
+        "NAME": "[NAME]",
+        "MONEY": "[MONEY]",
+        "DATE": "[DATE]",
     }
 
     for pii_type, values in decrypted_pii.items():

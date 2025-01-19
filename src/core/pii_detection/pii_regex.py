@@ -1,9 +1,6 @@
-import re
-from typing import List, Optional
+import re 
+from typing import List
 
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
-from pydantic import BaseModel
 
 EMAIL_REGEX = r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
 PHONE_REGEX = r"\+?\d{1,4}[\s-]?\(?\d{2,4}\)?[\s-]?\d{3}[\s-]?\d{4}"
@@ -40,7 +37,7 @@ def detect_ip(text: str) -> List[str]:
 def detect_passport_number(text: str) -> List[str]:
     return re.findall(PASSPORT_REGEX, text)
   
-def detect_all_pii(text: str) -> dict:
+def detect_pii_regex(text: str) -> dict:
     results = {
         "EMAIL": detect_email(text),
         "PHONE_NUMBER": detect_phone_number(text),
@@ -50,35 +47,3 @@ def detect_all_pii(text: str) -> dict:
         "PASSPORT_NUMBER": detect_passport_number(text),
     }
     return {key: value for key, value in results.items() if value}
-
-
-async def detect_pii_llm(text: str):
-    llm = ChatOpenAI(model="gpt-4o-mini")
-
-    class PII(BaseModel):
-        telephone_number: Optional[str]
-        email_address: Optional[str]
-        ssn: Optional[str]
-        credit_card_number: Optional[str]
-        date: Optional[str]
-        ip_address: Optional[str]
-        passport_number: Optional[str]
-        national_id: Optional[str]
-
-    structured_llm = llm.with_structured_output(PII)
-
-    system_prompt = """
-        Given the following text, identify any personally identifiable information (PII) 
-        such as email addresses, phone numbers, social security numbers, credit card numbers, 
-        dates, IP addresses, passport numbers, and national IDs.
-    """
-
-    pii_prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", system_prompt),
-            ("user", text),
-        ]
-    )
-
-    pii_setter = pii_prompt | structured_llm
-    pii = await pii_setter.ainvoke(text)
