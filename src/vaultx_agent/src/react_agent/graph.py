@@ -21,7 +21,7 @@ from react_agent.utils import load_chat_model
 
 
 # Define the function that calls the model
-def summarize_conversation(state):
+def summarize_conversation(state: State):
     # First, we summarize the conversation
     summary = state.summary if state.summary else ""
     pii_message = ("add all the encrypted PII available"
@@ -41,16 +41,16 @@ def summarize_conversation(state):
         # If a summary already exists, we use a different system prompt
         # to summarize it than if one didn't
         summary_message = (
-            f"This is summary of the conversation to date: {summary}\n\n"
-            "Extend the summary by taking into account the new messages above:"
-            + pii_message +
-            f"{state.encrypted_pii.encrypted_pii}"
+                f"This is summary of the conversation to date: {summary}\n\n"
+                "Extend the summary by taking into account the new messages above:"
+                + pii_message +
+                f"{state.encrypted_pii.encrypted_pii}"
         )
     else:
         summary_message = (
-            "Create a summary of the conversation above:"
-            + pii_message +
-            f"{state.encrypted_pii.encrypted_pii}"
+                "Create a summary of the conversation above:"
+                + pii_message +
+                f"{state.encrypted_pii.encrypted_pii}"
         )
 
     messages = state.messages + [HumanMessage(content=summary_message)]
@@ -62,7 +62,7 @@ def summarize_conversation(state):
     return {"summary": response.content, "messages": delete_messages}
 
 
-async def encrypt(state):
+async def encrypt(state: State):
     async with httpx.AsyncClient() as client:
         message = state.messages[-1].content
         data = {"text": message}
@@ -77,7 +77,7 @@ async def encrypt(state):
     }
 
 
-async def decrypt(state):
+async def decrypt(state: State):
     message = state.messages[-1].content
     if state.encrypted_pii:
         async with httpx.AsyncClient() as client:
@@ -122,17 +122,6 @@ async def call_model(
                 {"role": "human", "content": state.message}], config
         ),
     )
-
-    # Handle the case when it's the last step and the model still wants to use a tool
-    if state.is_last_step and response.tool_calls:
-        return {
-            "messages": [
-                AIMessage(
-                    id=response.id,
-                    content="Sorry, I could not find an answer to your question in the specified number of steps.",
-                )
-            ]
-        }
 
     # Return the model's response as a list to be added to existing messages
     return {"messages": [response]}

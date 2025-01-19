@@ -427,5 +427,66 @@
                 }
             ]
         }
+    },
+    "f67ca77c-2cd0-473b-8b98-70b14c7cdaba": {
+        "text_with_placeholders": "My name is egbert, [email], [phone-number]",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnjRReQaZTWSE1ym1cJ0rOwUEpwIXGxP3uRi7HZqUjASp6NcNh4U_w6LMyhPBsFZDIkYYI8Xdkkv8EcOgEjJ4gXGdftDcwJowLJx3bRIg91S4Onio=",
+                    "key_version": "key_1"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjRReGUBmu_0hgrshv223-sPjdFBUFSxqHXAX66AT32cTNdOwsxWtiUwNp2MDuhug30UfEtpCMPl1iEuk9DbsolnYhA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "3aec3725-2763-4e05-9bf8-87f856dda8d9": {
+        "text_with_placeholders": "Hi me phonenumber is [phone-number]\n",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjRVd3oRGvaLDeXa9lmw_mz9y3d-A5e8IfvDBiqWpezTRgznzT32DSZPDcXXutEnprStywzHfT_s1iigQuOmijNnSVQ==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "f2af7c58-c1eb-4a99-8b4f-8ef426ec19f8": {
+        "text_with_placeholders": "Hi me phonenumber is [phone-number]\n",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjRV44CRLYzNGHSbVrTnPONMjBf81jelDiK4JPd11TE-YGWYHRi3VXe3kOIRtRfd7pTl2X-v2IHHGQpuy09QSpqL4Fg==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "69593bd8-6ed0-4948-8108-ade3fd2c43f8": {
+        "text_with_placeholders": "Hi me phonenumber is [phone-number]\n",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjRXaoJEC8wbM2aIvK47psAmI6aAWpVzuci4eWvasFgJ1TRCXQfkp2qhz__2-wKprvif2dxyFmJQlPblu6ylJVO4gcA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "c528090a-524c-41b7-8cd0-30ebb32edbc9": {
+        "text_with_placeholders": "Hi me phonenumber is [phone-number]\n",
+        "encrypted_pii": {
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjRXpQ9-ZWNCnnCoVfcf9l8TJHplg7BSN3DVFEUlNeTO-_xQY4OgFS-1cSGg0YPB3kjkkmqaduUo3aKj8H4T6BGjTWA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }

@@ -34,6 +34,6 @@ class PlaceHolder:
     ORGANIZATION = '[organization]'
     IDENTIFIER = '[identifier]'
     URL = '[url]'
-    IP_ADDRESS = '[ip-address]'
+    IP_ADDRESS = '[ip]'
     CREDIT_CARD = '[credit-card]'
     SSN = '[ssn]'
