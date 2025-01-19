@@ -1,3 +1,11 @@
+"""
+Encryption and Key Management Module
+
+This module provides utilities for handling encryption, decryption, hashing, 
+and managing encryption keys. It is designed to ensure data security and 
+simplify the handling of sensitive information like PII (Personally Identifiable Information).
+"""
+
 from cryptography.fernet import Fernet
 from hashlib import sha256
 import json

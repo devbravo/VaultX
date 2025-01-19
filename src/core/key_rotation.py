@@ -1,3 +1,9 @@
+""" Key Rotation Management Module
+
+This module provides utilities for managing the lifecycle of encryption keys by monitoring their age and usage. 
+It ensures compliance with security best practices by implementing key rotation policies and supporting re-encryption of data with newly generated keys.
+"""
+
 from datetime import datetime
 from src.core.encryption import KeyManager
 import logging
@@ -21,4 +27,3 @@ class KeyRotationManager:
                 # Example: Re-encrypt all data with the new key
                 logging.info(f"Rotating key: {key_version} -> {new_version}")
                 return old_key, new_key, new_version
-                # reencrypt_data_with_new_key(old_key, new_key)

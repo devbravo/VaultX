@@ -1,3 +1,9 @@
+"""
+Regex-based PII Detection Module
+
+This module provides predefined regular expressions and utility functions for detecting
+various types of Personally Identifiable Information (PII) in text."""
+
 import re 
 from typing import List
 

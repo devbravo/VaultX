@@ -1,4 +1,11 @@
-import re
+"""
+PII Detection and Encryption Module
+
+This module integrates PII detection and encryption functionalities. It uses 
+a combination of regex-based and SpaCy-based PII detection techniques, followed 
+by encryption of detected sensitive information.
+"""
+
 import logging
 from typing import Tuple, Dict, List
 from src.core.encryption import EncryptionUtils, KeyManager
