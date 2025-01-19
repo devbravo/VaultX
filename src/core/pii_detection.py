@@ -16,40 +16,38 @@ PASSPORT_REGEX = r"\b[A-PR-WY][1-9]\d\s?\d{4}[1-9]\b"
 NATIONAL_ID_REGEX = r"\b\d{2}-\d{4}-\d{4}\b"
 POSTAL_CODE_REGEX = r"\b\d{5}(-\d{4})?\b"
 
-def detect_emails(text: str) -> List[str]:
-    return re.findall(EMAIL_REGEX, text)
 
-def detect_emails(text: str) -> List[str]:
+def detect_email(text: str) -> List[str]:
     return re.findall(EMAIL_REGEX, text)
   
-def detect_phone_numbers(text: str) -> List[str]:
+def detect_phone_number(text: str) -> List[str]:
     return re.findall(PHONE_REGEX, text)
   
-def detect_ssns(text: str) -> List[str]:
+def detect_ssn(text: str) -> List[str]:
     return re.findall(SSN_REGEX, text)
   
-def detect_credit_cards(text: str) -> List[str]:
+def detect_credit_card(text: str) -> List[str]:
     return re.findall(CREDIT_CARD_REGEX, text)
   
-def detect_dates(text: str) -> List[str]:
+def detect_date(text: str) -> List[str]:
     return re.findall(DATE_REGEX, text)
   
-def detect_ips(text: str) -> List[str]:
+def detect_ip(text: str) -> List[str]:
     ipv4 = re.findall(IPV4_REGEX, text)
     ipv6 = re.findall(IPV6_REGEX, text)
     return ipv4 + ipv6
   
-def detect_passport_numbers(text: str) -> List[str]:
+def detect_passport_number(text: str) -> List[str]:
     return re.findall(PASSPORT_REGEX, text)
   
 def detect_all_pii(text: str) -> dict:
     results = {
-        "emails": detect_emails(text),
-        "phone_numbers": detect_phone_numbers(text),
-        "ssns": detect_ssns(text),
-        "credit_cards": detect_credit_cards(text),
-        "ips": detect_ips(text),
-        "passport_numbers": detect_passport_numbers(text),
+        "EMAIL": detect_email(text),
+        "PHONE_NUMBER": detect_phone_number(text),
+        "SOCIAL_SECURITY_NUMBER": detect_ssn(text),
+        "CREDIT_CARD": detect_credit_card(text),
+        "IP_ADDRESS": detect_ip(text),
+        "PASSPORT_NUMBER": detect_passport_number(text),
     }
     return {key: value for key, value in results.items() if value}
 

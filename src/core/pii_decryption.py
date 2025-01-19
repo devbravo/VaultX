@@ -27,13 +27,14 @@ def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:
     # Reconstruct the original text
     reconstructed_text = text_with_placeholders
     placeholders = {
-        "emails": "[email]",
-        "phone_numbers": "[phone-number]",
-        "ssns": "[ssn]",
-        "credit_cards": "[credit-card]",
-        "addresses": "[address]",
-        "ips": "[ip]",
-        "passport_numbers": "[passport]",
+        "EMAIL": "[EMAIL]",
+        "PHONE_NUMBER": "[PHONE_NUMBER]",
+        "SOCIAL_SECURITY_NUMBER": "[SOCIAL_SECURITY_NUMBER]",
+        "CREDIT_CARD": "[CREDIT_CARD]",
+        "ADDRESS": "[ADDRESS]",
+        "IP_ADDRESS": "[IP_ADDRESS]",
+        "PASSPORT_NUMBER": "[PASSPORT_NUMBER]",
+        "NATIONAL_ID": "[NATIONAL_ID]",
     }
 
     for pii_type, values in decrypted_pii.items():

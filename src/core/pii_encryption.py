@@ -25,13 +25,13 @@ def encryption(pii_data: Dict[str, List[str]],
 def replace_pii_with_placeholder(text: str, pii_data: Dict[str, List[str]]) -> str:
     """Replace PII with placeholders in the given text."""
     placeholders = {
-        "emails": "[email]",
-        "phone_numbers": "[phone-number]",
-        "ssns": "[ssn]",
-        "credit_cards": "[credit-card]",
-        "addresses": "[address]",
-        "ips": "[ip]",
-        "passport_numbers": "[passport]",
+        "email": "[email]",
+        "phone_number": "[phone-number]",
+        "ssn": "[ssn]",
+        "credit_card": "[credit-card]",
+        "address": "[address]",
+        "ip": "[ip]",
+        "passport_number": "[passport]",
     }
 
     for pii_type, values in pii_data.items():
