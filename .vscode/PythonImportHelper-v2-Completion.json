@@ -1,98 +1,10 @@
 [
     {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "decrypt_pii",
-        "importPath": "src.core.pii_decryption",
-        "description": "src.core.pii_decryption",
-        "isExtraImport": true,
-        "detail": "src.core.pii_decryption",
-        "documentation": {}
-    },
-    {
-        "label": "get_all_records",
-        "importPath": "src.db.record_repository",
-        "description": "src.db.record_repository",
-        "isExtraImport": true,
-        "detail": "src.db.record_repository",
-        "documentation": {}
-    },
-    {
-        "label": "get_record_by_id",
-        "importPath": "src.db.record_repository",
-        "description": "src.db.record_repository",
-        "isExtraImport": true,
-        "detail": "src.db.record_repository",
-        "documentation": {}
-    },
-    {
-        "label": "store_all_records",
-        "importPath": "src.db.record_repository",
-        "description": "src.db.record_repository",
-        "isExtraImport": true,
-        "detail": "src.db.record_repository",
-        "documentation": {}
-    },
-    {
-        "label": "store_record_by_id",
-        "importPath": "src.db.record_repository",
-        "description": "src.db.record_repository",
-        "isExtraImport": true,
-        "detail": "src.db.record_repository",
-        "documentation": {}
-    },
-    {
-        "label": "encrypt_pii",
-        "importPath": "src.core.pii_encryption",
-        "description": "src.core.pii_encryption",
-        "isExtraImport": true,
-        "detail": "src.core.pii_encryption",
-        "documentation": {}
-    },
-    {
-        "label": "KeyRotationManager",
-        "importPath": "src.core.key_rotation",
-        "description": "src.core.key_rotation",
-        "isExtraImport": true,
-        "detail": "src.core.key_rotation",
-        "documentation": {}
-    },
-    {
-        "label": "update_pii_with_reencryption",
-        "importPath": "src.core.pii_update_on_key_rotate",
-        "description": "src.core.pii_update_on_key_rotate",
-        "isExtraImport": true,
-        "detail": "src.core.pii_update_on_key_rotate",
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -301,6 +213,102 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "KeyRotationManager",
+        "importPath": "src.core.key_rotation",
+        "description": "src.core.key_rotation",
+        "isExtraImport": true,
+        "detail": "src.core.key_rotation",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt_pii",
+        "importPath": "src.core.pii_decryption",
+        "description": "src.core.pii_decryption",
+        "isExtraImport": true,
+        "detail": "src.core.pii_decryption",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_pii",
+        "importPath": "src.core.pii_encryption",
+        "description": "src.core.pii_encryption",
+        "isExtraImport": true,
+        "detail": "src.core.pii_encryption",
+        "documentation": {}
+    },
+    {
+        "label": "update_pii_with_reencryption",
+        "importPath": "src.core.pii_update_on_key_rotate",
+        "description": "src.core.pii_update_on_key_rotate",
+        "isExtraImport": true,
+        "detail": "src.core.pii_update_on_key_rotate",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_records",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_record_by_id",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "store_all_records",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
+        "documentation": {}
+    },
+    {
+        "label": "store_record_by_id",
+        "importPath": "src.db.record_repository",
+        "description": "src.db.record_repository",
+        "isExtraImport": true,
+        "detail": "src.db.record_repository",
         "documentation": {}
     },
     {
@@ -519,10 +527,10 @@
     },
     {
         "label": "BaseModel",
-        "importPath": "anthropic",
-        "description": "anthropic",
+        "importPath": "pydantic.v1",
+        "description": "pydantic.v1",
         "isExtraImport": true,
-        "detail": "anthropic",
+        "detail": "pydantic.v1",
         "documentation": {}
     },
     {
@@ -679,15 +687,15 @@
         "documentation": {}
     },
     {
-        "label": "START",
-        "importPath": "langgraph.constants",
-        "description": "langgraph.constants",
+        "label": "MemorySaver",
+        "importPath": "langgraph.checkpoint.memory",
+        "description": "langgraph.checkpoint.memory",
         "isExtraImport": true,
-        "detail": "langgraph.constants",
+        "detail": "langgraph.checkpoint.memory",
         "documentation": {}
     },
     {
-        "label": "END",
+        "label": "START",
         "importPath": "langgraph.constants",
         "description": "langgraph.constants",
         "isExtraImport": true,
@@ -735,6 +743,46 @@
         "documentation": {}
     },
     {
+        "label": "Encrypted",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Decrypted",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "PlaceHolder",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Encrypted",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Decrypted",
+        "importPath": "react_agent.models.pii",
+        "description": "react_agent.models.pii",
+        "isExtraImport": true,
+        "detail": "react_agent.models.pii",
+        "documentation": {}
+    },
+    {
         "label": "InputState",
         "importPath": "react_agent.state",
         "description": "react_agent.state",
@@ -764,14 +812,6 @@
         "description": "react_agent.utils",
         "isExtraImport": true,
         "detail": "react_agent.utils",
-        "documentation": {}
-    },
-    {
-        "label": "IsLastStep",
-        "importPath": "langgraph.managed",
-        "description": "langgraph.managed",
-        "isExtraImport": true,
-        "detail": "langgraph.managed",
         "documentation": {}
     },
     {
@@ -861,7 +901,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
+        "peekOfCode": "class EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -870,7 +910,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n  \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n  try:\n    text_with_hashes, encrypted_pii = encrypt_pii(request.text)",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n    \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n    try:",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -879,7 +919,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "app = FastAPI() \nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}",
+        "peekOfCode": "app = FastAPI()\nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -888,7 +928,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')",
+        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -897,7 +937,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n  text: str \nclass DecryptRequest(BaseModel):\n  record_id: str\n@app.get(\"/\")\nasync def root():\n  return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):",
+        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -1122,7 +1162,7 @@
         "kind": 2,
         "importPath": "src.core.pii_decryption",
         "description": "src.core.pii_decryption",
-        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_placeholders = record.get(\"text_with_placeholders\")\n    if not encrypted_pii or not text_with_placeholders:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
+        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_placeholders = text if text else record.get(\"text_with_placeholders\")\n    if not encrypted_pii or not text_with_placeholders:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
         "detail": "src.core.pii_decryption",
         "documentation": {}
     },
@@ -1199,20 +1239,29 @@
         "documentation": {}
     },
     {
-        "label": "Encrypted",
+        "label": "DecryptedPii",
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.models.pii",
         "description": "src.vaultx_agent.src.react_agent.models.pii",
-        "peekOfCode": "class Encrypted(BaseModel):\n    record_id: Optional[str] = None\n    processed_text: Optional[str] = None\nclass Pii(BaseModel):\n    phone_numbers: Optional[List[str]] = None\nclass Decrypted(BaseModel):\n    original_text: Optional[str] = None\n    decrypted_pii: Optional[Pii] = None",
+        "peekOfCode": "class DecryptedPii(BaseModel):\n    phone_numbers: Optional[List[str]] = None\nclass EncryptedPii(BaseModel):\n    phone_numbers: Optional[List[dict]] = None\nclass Encrypted(BaseModel):\n    message: Optional[str] = None\n    record_id: Optional[str] = None\n    processed_text: Optional[str] = None\n    encrypted_pii: Optional[EncryptedPii] = None\nclass Decrypted(BaseModel):",
         "detail": "src.vaultx_agent.src.react_agent.models.pii",
         "documentation": {}
     },
     {
-        "label": "Pii",
+        "label": "EncryptedPii",
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.models.pii",
         "description": "src.vaultx_agent.src.react_agent.models.pii",
-        "peekOfCode": "class Pii(BaseModel):\n    phone_numbers: Optional[List[str]] = None\nclass Decrypted(BaseModel):\n    original_text: Optional[str] = None\n    decrypted_pii: Optional[Pii] = None",
+        "peekOfCode": "class EncryptedPii(BaseModel):\n    phone_numbers: Optional[List[dict]] = None\nclass Encrypted(BaseModel):\n    message: Optional[str] = None\n    record_id: Optional[str] = None\n    processed_text: Optional[str] = None\n    encrypted_pii: Optional[EncryptedPii] = None\nclass Decrypted(BaseModel):\n    message: Optional[str] = None\n    reconstructed_text: Optional[str] = None",
+        "detail": "src.vaultx_agent.src.react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "Encrypted",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.models.pii",
+        "description": "src.vaultx_agent.src.react_agent.models.pii",
+        "peekOfCode": "class Encrypted(BaseModel):\n    message: Optional[str] = None\n    record_id: Optional[str] = None\n    processed_text: Optional[str] = None\n    encrypted_pii: Optional[EncryptedPii] = None\nclass Decrypted(BaseModel):\n    message: Optional[str] = None\n    reconstructed_text: Optional[str] = None\n    decrypted_pii: Optional[DecryptedPii] = None\nclass PlaceHolder:",
         "detail": "src.vaultx_agent.src.react_agent.models.pii",
         "documentation": {}
     },
@@ -1221,7 +1270,16 @@
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.models.pii",
         "description": "src.vaultx_agent.src.react_agent.models.pii",
-        "peekOfCode": "class Decrypted(BaseModel):\n    original_text: Optional[str] = None\n    decrypted_pii: Optional[Pii] = None",
+        "peekOfCode": "class Decrypted(BaseModel):\n    message: Optional[str] = None\n    reconstructed_text: Optional[str] = None\n    decrypted_pii: Optional[DecryptedPii] = None\nclass PlaceHolder:\n    PHONE_NUMBER = '[PHONE_NUMBER]'\n    EMAIL = '[EMAIL]'\n    ADDRESS = '[ADDRESS]'\n    NAME = '[NAME]'\n    DATE = '[DATE]'",
+        "detail": "src.vaultx_agent.src.react_agent.models.pii",
+        "documentation": {}
+    },
+    {
+        "label": "PlaceHolder",
+        "kind": 6,
+        "importPath": "src.vaultx_agent.src.react_agent.models.pii",
+        "description": "src.vaultx_agent.src.react_agent.models.pii",
+        "peekOfCode": "class PlaceHolder:\n    PHONE_NUMBER = '[PHONE_NUMBER]'\n    EMAIL = '[EMAIL]'\n    ADDRESS = '[ADDRESS]'\n    NAME = '[NAME]'\n    DATE = '[DATE]'\n    LOCATION = '[LOCATION]'\n    ORGANIZATION = '[ORGANIZATION]'\n    IP_ADDRESS = '[IP_ADDRESS]'\n    CREDIT_CARD = '[CREDIT_CARD]'",
         "detail": "src.vaultx_agent.src.react_agent.models.pii",
         "documentation": {}
     },
@@ -1239,7 +1297,7 @@
         "kind": 2,
         "importPath": "src.vaultx_agent.src.react_agent.graph",
         "description": "src.vaultx_agent.src.react_agent.graph",
-        "peekOfCode": "def summarize_conversation(state):\n    # First, we summarize the conversation\n    summary = state.summary if state.summary else \"\"\n    if summary:\n        # If a summary already exists, we use a different system prompt\n        # to summarize it than if one didn't\n        summary_message = (\n            f\"This is summary of the conversation to date: {summary}\\n\\n\"\n            \"Extend the summary by taking into account the new messages above:\"\n        )",
+        "peekOfCode": "def summarize_conversation(state: State):\n    # First, we summarize the conversation\n    summary = state.summary if state.summary else \"\"\n    pii_message = (\"add all the encrypted PII available\"\n                   \"never store any actual PII in the summary\"\n                   \" below to the summary the pii is encrypted\"\n                   \"and will be used for decryption later\"\n                   \"possible placeholders examples:\"\n                   \"[EMAIL]\"\n                   \"[PHONE_NUMBER]\"",
         "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
@@ -1248,7 +1306,7 @@
         "kind": 2,
         "importPath": "src.vaultx_agent.src.react_agent.graph",
         "description": "src.vaultx_agent.src.react_agent.graph",
-        "peekOfCode": "def route_model_output(state: State) -> Literal[\"__end__\", \"tools\"]:\n    \"\"\"Determine the next node based on the model's output.\n    This function checks if the model's last message contains tool calls.\n    Args:\n        state (State): The current state of the conversation.\n    Returns:\n        str: The name of the next node to call (\"__end__\" or \"tools\").\n    \"\"\"\n    last_message = state.messages[-1]\n    if not isinstance(last_message, AIMessage):",
+        "peekOfCode": "def route_model_output(state: State) -> Literal[\"__end__\", \"decrypt\"]:\n    \"\"\"Determine the next node based on the model's output.\n    This function checks if the model's last message contains tool calls.\n    Args:\n        state (State): The current state of the conversation.\n    Returns:\n        str: The name of the next node to call (\"__end__\" or \"decrypt\").\n    \"\"\"\n    last_message = state.messages[-1]\n    if not isinstance(last_message, AIMessage):",
         "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
@@ -1266,7 +1324,7 @@
         "kind": 5,
         "importPath": "src.vaultx_agent.src.react_agent.graph",
         "description": "src.vaultx_agent.src.react_agent.graph",
-        "peekOfCode": "graph = builder.compile(\n    interrupt_before=[],  # Add node names here to update state before they're called\n    interrupt_after=[],  # Add node names here to update state after they're called\n)\ngraph.name = \"VaultX Agent\"  # This customizes the name in LangSmith",
+        "peekOfCode": "graph = builder.compile(\n    interrupt_before=[],  # Add node names here to update state before they're called\n    interrupt_after=[],\n    checkpointer=MemorySaver()  # Add node names here to update state after they're called\n)\ngraph.name = \"VaultX Agent\"  # This customizes the name in LangSmith",
         "detail": "src.vaultx_agent.src.react_agent.graph",
         "documentation": {}
     },
@@ -1284,7 +1342,7 @@
         "kind": 5,
         "importPath": "src.vaultx_agent.src.react_agent.prompts",
         "description": "src.vaultx_agent.src.react_agent.prompts",
-        "peekOfCode": "SYSTEM_PROMPT = \"\"\"\n    You are a helpful AI assistant. that can handle anonymized text in the message you will \n    find hashes don't respond to this try to understand the underlying intent of the message \n    even with the missing information\n    below is the conversation flow you need to follow\n    conversation example: \n    Human: Hi, I would like to sign up for the trip\n    AI: Hello! To better assist you, may I ask for your name?\n    Human: Sure, it's Alex.\n    AI: Nice to meet you, Alex. Can you tell me where you're from?",
+        "peekOfCode": "SYSTEM_PROMPT = \"\"\"\n    You are a helpful AI assistant. that can handle anonymized text in the message you will \n    find placeholders don't respond to this. Try to understand the underlying intent of the message \n    even with the missing information, if there is PII in the context use the place holder \n    for the PII in your response. if someone asks for their PII send back only the place holder \n    example \n    User: Can you tell me my phone number?\n    Agent: Sure, I can help with that. Your PII is [phone-number]\n    When the conversation starts you ask the user for their name and email address and phone number \n    example ",
         "detail": "src.vaultx_agent.src.react_agent.prompts",
         "documentation": {}
     },
@@ -1293,7 +1351,7 @@
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.state",
         "description": "src.vaultx_agent.src.react_agent.state",
-        "peekOfCode": "class InputState:\n    \"\"\"Defines the input state for the agent, representing a narrower interface to the outside world.\n    This class is used to define the initial state and structure of incoming data.\n    \"\"\"\n    messages: Annotated[Sequence[AnyMessage], add_messages] = field(\n        default_factory=list\n    )\n    \"\"\"\n    Messages tracking the primary execution state of the agent.\n    Typically accumulates a pattern of:",
+        "peekOfCode": "class InputState:\n    \"\"\"Defines the input state for the agent, representing a narrower interface to the outside world.\n    This class is used to define the initial state and structure of incoming data.\n    \"\"\"\n    messages: Annotated[Sequence[AnyMessage], add_messages] = field(\n        default_factory=list\n    )\n@dataclass\nclass State(InputState):\n    \"\"\"Represents the complete state of the agent, extending InputState with additional attributes.",
         "detail": "src.vaultx_agent.src.react_agent.state",
         "documentation": {}
     },
@@ -1302,7 +1360,7 @@
         "kind": 6,
         "importPath": "src.vaultx_agent.src.react_agent.state",
         "description": "src.vaultx_agent.src.react_agent.state",
-        "peekOfCode": "class State(InputState):\n    \"\"\"Represents the complete state of the agent, extending InputState with additional attributes.\n    This class can be used to store any information needed throughout the agent's lifecycle.\n    \"\"\"\n    encrypted_pii: dict = field(default=None)\n    decrypted_pii: dict = field(default=None)\n    message: str = field(default=None)\n    summary: str = field(default=None)\n    is_last_step: IsLastStep = field(default=False)\n    \"\"\"",
+        "peekOfCode": "class State(InputState):\n    \"\"\"Represents the complete state of the agent, extending InputState with additional attributes.\n    This class can be used to store any information needed throughout the agent's lifecycle.\n    \"\"\"\n    encrypted_pii: Encrypted = field(default_factory=Encrypted)\n    decrypted_pii: Decrypted = field(default_factory=Decrypted)\n    message: str = field(default=None)\n    summary: str = field(default=None)\n    record_id: str = field(default=None)\n    # Additional attributes can be added here as needed.",
         "detail": "src.vaultx_agent.src.react_agent.state",
         "documentation": {}
     },
@@ -1320,7 +1378,7 @@
         "kind": 2,
         "importPath": "src.vaultx_agent.src.react_agent.utils",
         "description": "src.vaultx_agent.src.react_agent.utils",
-        "peekOfCode": "def load_chat_model(fully_specified_name: str) -> BaseChatModel:\n    \"\"\"Load a chat model from a fully specified name.\n    Args:\n        fully_specified_name (str): String in the format 'provider/model'.\n    \"\"\"\n    provider, model = fully_specified_name.split(\"/\", maxsplit=1)\n    return init_chat_model(model, model_provider=provider)",
+        "peekOfCode": "def load_chat_model(fully_specified_name: str) -> BaseChatModel:\n    \"\"\"Load a chat model from a fully specified name.\n    Args:\n        fully_specified_name (str): String in the format 'provider/model'.\n    \"\"\"\n    provider, model = fully_specified_name.split(\"/\", maxsplit=1)\n    return init_chat_model(model, model_provider=provider, temperature=0.1)",
         "detail": "src.vaultx_agent.src.react_agent.utils",
         "documentation": {}
     },

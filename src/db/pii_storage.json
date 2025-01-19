@@ -613,5 +613,195 @@
                 }
             ]
         }
+    },
+    "d4fe6eed-c2f0-4a30-92d8-cb83a31b8ab9": {
+        "text_with_placeholders": "Hi my name is diego my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer [LAW][PHONE_NUMBER]",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT1fgCUxy93XLIP1ujaM0ZumpZCyU1qoaExaoEOr5ljQ-JACU7sf88bQZwHEZnXq8cnHYMrgHGJbM0lXSQ_-Dd7fPydTd-dlxBPLDRTm-f0P1KM=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT1ff3itKyt0xbEeE5nAGjaq9ot1Mt4bT4W_BftlbkGsXoqITRw-4HIZO2W1_iN22PcQvR-0AQi1_VuWRGSUVL-MVQ==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjT1fQYC80Ym5g8yqcFoArR8JwtAUrTYebUHMsUCxlUoU5-BVFJSu-O7SzRje3IWWDfhXrLFCnpm8BBB99yQP5cWpFA==",
+                    "key_version": "key_1"
+                }
+            ],
+            "LAW": [
+                {
+                    "encrypted": "gAAAAABnjT1f0Mi_wjc4P7S66R67Pna7pgqDT5u50PYt-VnU8ckbs5cFE_OwbvdHll7GGFvLmu79zNIJhq5HWnq6bEqHIw_fYA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "41a6d114-52f3-44ec-80db-c5e28663fc4a": {
+        "text_with_placeholders": "Hi my name is diego my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer $[PHONE_NUMBER]",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT2MxiGqq30RpNAjurrWR6pcGvK51nGiY1h2l9KNu27W-Ynq45sIWmmKZWQlGyQcOv4D-5Ge30oWZT1nE7DVSJzLKx5E7Lu49zSa2Fvb8Tlc67w=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT2MUVsCZu4fmtrDGXAasIOYLXZIuzazX-Mpo6KGSIVEIXCBbTHWjnoqRzr-epMlQzmj5vF1BX1WrcHw1QVfFM2INg==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjT2MEmkeyc3YKMP-WU7dL1nleDrhZNau5QCKUuZxPfvjwBGcpiOmYYS16Lo9oEYpfEV5tZEQGqjBdtuwdEF0wFNnvA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "7366d9a9-19a0-479f-8c21-f32976f0141d": {
+        "text_with_placeholders": "Hi my name is diego my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer [LAW][PHONE_NUMBER]",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT3sCDSCXHmuDfwO4ipmTyTO2hx8Sjof0Eb_5ICIiXZpzFPg61BS4nMNMnhcJCREa-8ghF--HS8EGFkSNd2Ha3JKXZYxS8r90kuyAbcnKMBTIhQ=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT3sJFhbKwYK97SZthonMaCseaA5jIdueHmc2_BC0WioQ14XpsCx-SYx-LQ-1Rt4kCCQPghZ_Bfw99pqxlONv7W6aA==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjT3scCypiQ2EBf7-PeVAHpk1rK-bEWuFCcN-_I8lZNarnEMSGAfyOisdqqrYDYguuZW_Sj4XQKjnxwbg0rM0Ukcx_Q==",
+                    "key_version": "key_1"
+                }
+            ],
+            "LAW": [
+                {
+                    "encrypted": "gAAAAABnjT3sYq_C3XsKJHD3BwxDWQu6XNzGwyC9j7jc13kZ1A6F6xuxQg14Pn_Z6K2-SwZ54zh-HIETsbJ2cySjVQvKRaBPqA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "e3aa38e6-e67a-4447-b011-55adddc1bd36": {
+        "text_with_placeholders": "Hi my name is diego my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer us$10,000",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT4TeNgPzDxyjjDmibiV4x5abCLq-XpVQopJVD-esR2btf6_d52yI6mCDwpjZtwcQOPootPuW2Miwech81YrMIdxbmtn12ZfAhkrZKVUxcgi-bI=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT4T5G5RzC3hRUpprhRw2XpDMeKqhhJX7NQmzDV1dH7ljz71mgLGTDmUfI7rss_XjGtEDagg2tfGiW9LnLLzK-JSVA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "2b37a75f-ef15-423b-97b6-8fa8e48fcf40": {
+        "text_with_placeholders": "Hi my name is diego my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer $[MONEY]",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT4s6eb8T04-dNlISqE9Di1TwLgL2Yrv83gD5kG9v-QWWVzFVjXZDjh7iJVGg9FdZaR_pIL_Ep41XddI_5GaNj-zOkrWld7HU4z0BStB0JuS-GU=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT4sAMyyi2u7V1MjHLONolusd3v6r6C4mbdVb2UFt50RIZeYvnREnzTbvpLHGXgfn3qf3gttAHdxe6IpXjG5uiXBZA==",
+                    "key_version": "key_1"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnjT4sdMITuE7xKtfX6cJiJpVxMNiRBiAE_md8sk-fdc_DRXUt0lhnWfC_ILTVdVUn6TqHJhAngVzQtEOoWVmbnNNPEQ==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "16749ac3-ee77-4a5b-ae07-055837f6b0db": {
+        "text_with_placeholders": "Hi my name is diego my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer $[MONEY]. Repeat the data back to me\n",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT5VTS5ArInGIwCM27JGJf3XvjRSRLNfgUJWFN1mItnPzklEn_jNOOzvcicI3hj93NQ42Vks3uisePUdN1gQfJzbd_gys1qwt1dLk09p8fLdnr8=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT5V1--FzekLmwmWvWHQRn3smmL7rbH2by0sDWA6JKw-UyXv98eDpZdjmLfekH9GwQezdz_D0E80m5z4mmsslaVMLw==",
+                    "key_version": "key_1"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnjT5Vn4JTzxaS_HBL59gmxmNok_-3X5_6ciX8zg7lWb_0AVLJZzdobgQWAMxdhq-27theVWDQLt0svO3D7H881ckQrQ==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "4cd11d51-2b42-4033-b1f9-823c2b2e0832": {
+        "text_with_placeholders": "Hi my name is diego sabajp my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer $[MONEY]",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT7-ryHVMN6WG7CG7N-1G8JK6wEAOzpXMSasp7s9fVHBJlqQdS_WX1Wvl0-GedEA268-715jUNxfKVmHrOAGcQJLiCbyzJI2i1a8pDEAbBD5pd8=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT7-xOj_rIybfS975tFjU5anv8ohbVta1zczmkYDbIc3LFc6pffLj0sIDyVEoZ3Wn60mKLyUmdEAcmdzDQmlB1VJ_Q==",
+                    "key_version": "key_1"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnjT7-NGsQnAT2SfiKAHzA6fGS0EXMa2MBnmUJmVb2nvRpcjlUbfSGDieZcJuRiVmq5-BCnnIvaNG9L9B9zIFlOAeNGA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "91318511-220b-4d96-9df6-3d53ae5faf42": {
+        "text_with_placeholders": "Hi my name is [NAME] my phone number is [PHONE_NUMBER] and my email is [EMAIL] I would like to transfer $[MONEY]. Repeat the data back to me.",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjT8nB9aF1ZSdCCpxhA0fPEPEtpa_z6XSM5HymEziuVSu7w6I9TvF4lIm5DtXoh9LhNxt7GOm0ayBTRp9IYWYGQJqc7vYl3uajn54_MayHQaxyNc=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjT8nfAGBUCV4_s5ezQtrZZwYo9f_wCWXJmgynzAWHT3ve-G9h9GOciIJWet-ZXWTEBlUonhkzcbXZzf-IupMsokd9A==",
+                    "key_version": "key_1"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjT8ngoJJeRQlsvx-j0AnVsygcFH-kBlaYc1te6HG565roiEpOD5uWc1Y1mdPssld9yLlVS4_kkubN2Omw6EJAQYfmw==",
+                    "key_version": "key_1"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnjT8nfCWlhPqoMHXeJCKU4e1tCH4_ewP0IJVazvgF_qBAoYAkNBR3ZRLBbgk68K5nd5BNIkEg1Xqt7jQ7y6jtYf94bw==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }
