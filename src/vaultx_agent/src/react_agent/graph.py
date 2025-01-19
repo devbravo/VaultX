@@ -33,6 +33,7 @@ def summarize_conversation(state: State):
                    "[PHONE_NUMBER]"
                    "[NAME]"
                    "[ADDRESS]"
+                   "[MONEY]"
                    )
 
     if summary:
