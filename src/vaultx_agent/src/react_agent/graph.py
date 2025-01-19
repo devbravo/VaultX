@@ -9,10 +9,12 @@ from typing import Dict, List, Literal, cast
 import httpx
 from langchain_core.messages import AIMessage, HumanMessage, RemoveMessage
 from langchain_core.runnables import RunnableConfig
-from langgraph.constants import START, END
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.constants import START
 from langgraph.graph import StateGraph
 
 from react_agent.configuration import Configuration
+from react_agent.models.pii import Encrypted, Decrypted, PlaceHolder
 from react_agent.state import InputState, State
 from react_agent.tools import TOOLS
 from react_agent.utils import load_chat_model
@@ -28,9 +30,24 @@ def summarize_conversation(state):
         summary_message = (
             f"This is summary of the conversation to date: {summary}\n\n"
             "Extend the summary by taking into account the new messages above:"
+            "add all the PII available below to the summary "
+            "add all the encrypted PII available"
+            "never store any actual PII in the summary"
+            "the pii is encrypted"
+            "and will be used for decryption later"
+            "PII: [phone-number]"
+            f"{state.encrypted_pii.encrypted_pii}"
         )
     else:
-        summary_message = "Create a summary of the conversation above:"
+        summary_message = (
+            "Create a summary of the conversation above:"
+            "add all the encrypted PII available"
+            "never store any actual PII in the summary"
+            " below to the summary the pii is encrypted"
+            "and will be used for decryption later"
+            "PII: [phone-number]"
+            f"{state.encrypted_pii.encrypted_pii}"
+        )
 
     messages = state.messages + [HumanMessage(content=summary_message)]
     llm = load_chat_model("openai/gpt-4o-mini")
@@ -43,27 +60,28 @@ def summarize_conversation(state):
 
 async def encrypt(state):
     async with httpx.AsyncClient() as client:
-        data = {"text": state.messages[-1].content}
+        message = state.messages[-1].content
+        data = {"text": message}
         print(data)
         response = await client.post("http://localhost:8000/encrypt/", json=data)
-        data = response.json()
+        encrypted: Encrypted = Encrypted.parse_obj(response.json())
 
     return {
-        "encrypted_pii": data if "message" not in data else None,
-        "message": data["processed_text"] if "message" not in data else state.messages[-1].content
+        "record_id": encrypted.record_id if not None else encrypted.record_id,
+        "encrypted_pii": encrypted,
+        "message": encrypted.processed_text if encrypted.processed_text else message,
     }
 
 
 async def decrypt(state):
+    message = state.messages[-1].content
     if state.encrypted_pii:
         async with httpx.AsyncClient() as client:
-            data = {"record_id": state.encrypted_pii['record_id']}
+            data = {"record_id": state.record_id, "text": message}
             response = await client.post("http://localhost:8000/decrypt/", json=data)
-            data = response.json()
+            decrypted: Decrypted = Decrypted.parse_obj(response.json())
 
-        return {"decrypted_pii": data}
-
-    return {}
+    return {"decrypted_pii": decrypted}
 
 
 async def call_model(
@@ -116,6 +134,33 @@ async def call_model(
     return {"messages": [response]}
 
 
+def route_model_output(state: State) -> Literal["__end__", "decrypt"]:
+    """Determine the next node based on the model's output.
+
+    This function checks if the model's last message contains tool calls.
+
+    Args:
+        state (State): The current state of the conversation.
+
+    Returns:
+        str: The name of the next node to call ("__end__" or "decrypt").
+    """
+
+    last_message = state.messages[-1]
+
+    if not isinstance(last_message, AIMessage):
+        raise ValueError(
+            f"Expected AIMessage in output edges, but got {type(last_message).__name__}"
+        )
+
+    for key, value in vars(PlaceHolder).items():
+        if not key.startswith('__'):
+            if value in last_message.content:
+                return "decrypt"
+
+    return "__end__"
+
+
 # Define a new graph
 
 builder = StateGraph(State, input=InputState, config_schema=Configuration)
@@ -130,41 +175,14 @@ builder.add_node("decrypt", decrypt)
 # This means that this node is the first one called
 builder.add_edge(START, "encrypt")
 builder.add_edge("encrypt", "call_model")
-builder.add_edge("call_model", "decrypt")
+builder.add_conditional_edges("call_model", route_model_output)
 builder.add_edge("call_model", "summarize")
-builder.add_edge("decrypt", END)
-
-
-def route_model_output(state: State) -> Literal["__end__", "tools"]:
-    """Determine the next node based on the model's output.
-
-    This function checks if the model's last message contains tool calls.
-
-    Args:
-        state (State): The current state of the conversation.
-
-    Returns:
-        str: The name of the next node to call ("__end__" or "tools").
-    """
-    last_message = state.messages[-1]
-    if not isinstance(last_message, AIMessage):
-        raise ValueError(
-            f"Expected AIMessage in output edges, but got {type(last_message).__name__}"
-        )
-    # If there is no tool call, then we finish
-    if not last_message.tool_calls:
-        return "__end__"
-    # Otherwise we execute the requested actions
-    return "tools"
-
-
-# Add a normal edge from `tools` to `call_model`
-# This creates a cycle: after using tools, we always return to the model
 
 # Compile the builder into an executable graph
 # You can customize this by adding interrupt points for state updates
 graph = builder.compile(
     interrupt_before=[],  # Add node names here to update state before they're called
-    interrupt_after=[],  # Add node names here to update state after they're called
+    interrupt_after=[],
+    checkpointer=MemorySaver()  # Add node names here to update state after they're called
 )
 graph.name = "VaultX Agent"  # This customizes the name in LangSmith

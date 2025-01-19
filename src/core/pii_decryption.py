@@ -3,10 +3,10 @@ from src.core.encryption import KeyManager, EncryptionUtils
 import logging
 
 
-def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:
+def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str, str]:
     """Decrypt PII from a given record using the appropriate keys."""
     encrypted_pii = record.get("encrypted_pii")
-    text_with_placeholders = record.get("text_with_placeholders")
+    text_with_placeholders = text if text else record.get("text_with_placeholders")
     if not encrypted_pii or not text_with_placeholders:
         raise ValueError("Record does not contain valid data.")
 

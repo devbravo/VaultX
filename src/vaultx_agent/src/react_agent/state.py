@@ -10,6 +10,8 @@ from langgraph.graph import add_messages
 from langgraph.managed import IsLastStep
 from typing_extensions import Annotated
 
+from react_agent.models.pii import Encrypted, Decrypted
+
 
 @dataclass
 class InputState:
@@ -44,10 +46,11 @@ class State(InputState):
 
     This class can be used to store any information needed throughout the agent's lifecycle.
     """
-    encrypted_pii: dict = field(default=None)
-    decrypted_pii: dict = field(default=None)
+    encrypted_pii: Encrypted = field(default_factory=Encrypted)
+    decrypted_pii: Decrypted = field(default_factory=Decrypted)
     message: str = field(default=None)
     summary: str = field(default=None)
+    record_id: str = field(default=None)
     is_last_step: IsLastStep = field(default=False)
     """
     Indicates whether the current step is the last one before the graph raises an error.
