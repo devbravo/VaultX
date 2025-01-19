@@ -376,5 +376,56 @@
                 }
             ]
         }
+    },
+    "1fa7dae3-3cc4-4350-aa64-f3aeec5506f1": {
+        "text_with_placeholders": "My name is Egbert, [email], [phone-number]",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnjQ-mVPR75EVKmHKdeUAdC5WHPKs0mH212MYHh-9LWc54z43V7vfGx9BpBvkGDdoNjPuBm8yIGn-Z_tSTP7z7YWNDgUm9hTPQrpj0w8tCOHeoKQM=",
+                    "key_version": "key_1"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjQ-mJ7lSu6UcIeerQJlCsVjwenHSCugKM1FcNbldYsqWyTLUAlhVYtZ31-PozcaaUV5uXICKX7paUyPaF_OdiHezLg==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "edc1f237-5df7-4e97-8ebc-33d7ccb07e23": {
+        "text_with_placeholders": "My name is Egbert and and email is [email] and my phone number is [phone-number]",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnjREup-m1ptXr47L-nHfllxqE2wYiaGE2X1fRsACOe6qEFD_-gNMjGVp93Vt9MUFoyq1WaYYk_tRAFwsIaMCQ5YF2G4RYEpKN_pzyXY-g1VRuM9I=",
+                    "key_version": "key_1"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjREuORPLuVLc9tHwXp7vIqriPiZx1OAXqIdfP_27zk37LDdzuwHAUgAGdT05dyzlkTIOfpoANXT0EOxwNPllNyDi4w==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "5c34c9cb-2257-4610-b394-8b365020b042": {
+        "text_with_placeholders": "Egbert, [email], [phone-number]",
+        "encrypted_pii": {
+            "emails": [
+                {
+                    "encrypted": "gAAAAABnjRJ4w8Su_h9fY_FsrRshbeYVJQ4yd7W1lRq0bKjajkb5IhMX4lSUBqp5wKiP4ZPWkehMmlxVAwVWU7ZTbfaBVfGKMP1CC6OBu8JDE3bbYkVfHUo=",
+                    "key_version": "key_1"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "encrypted": "gAAAAABnjRJ4_1wLnv9JZQg1UqdwUGHKD4h5JVKs6v67b26dF5bq3KCD6uFPVUA13Cy4YlfPrtbQth9TAOV3fjuiDJeYe6cpFw==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }

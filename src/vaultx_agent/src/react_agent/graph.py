@@ -24,28 +24,32 @@ from react_agent.utils import load_chat_model
 def summarize_conversation(state):
     # First, we summarize the conversation
     summary = state.summary if state.summary else ""
+    pii_message = ("add all the encrypted PII available"
+                   "never store any actual PII in the summary"
+                   " below to the summary the pii is encrypted"
+                   "and will be used for decryption later"
+                   "possible placeholders"
+                   "[email]"
+                   "[phone-number]"
+                   "[ssn]"
+                   "[credit-card]"
+                   "[address]"
+                   "[ip]"
+                   "[passport]")
+
     if summary:
         # If a summary already exists, we use a different system prompt
         # to summarize it than if one didn't
         summary_message = (
             f"This is summary of the conversation to date: {summary}\n\n"
             "Extend the summary by taking into account the new messages above:"
-            "add all the PII available below to the summary "
-            "add all the encrypted PII available"
-            "never store any actual PII in the summary"
-            "the pii is encrypted"
-            "and will be used for decryption later"
-            "PII: [phone-number]"
+            + pii_message +
             f"{state.encrypted_pii.encrypted_pii}"
         )
     else:
         summary_message = (
             "Create a summary of the conversation above:"
-            "add all the encrypted PII available"
-            "never store any actual PII in the summary"
-            " below to the summary the pii is encrypted"
-            "and will be used for decryption later"
-            "PII: [phone-number]"
+            + pii_message +
             f"{state.encrypted_pii.encrypted_pii}"
         )
 
@@ -67,7 +71,7 @@ async def encrypt(state):
         encrypted: Encrypted = Encrypted.parse_obj(response.json())
 
     return {
-        "record_id": encrypted.record_id if not None else encrypted.record_id,
+        "record_id": encrypted.record_id if encrypted.record_id else state.encrypted_pii.record_id,
         "encrypted_pii": encrypted,
         "message": encrypted.processed_text if encrypted.processed_text else message,
     }
