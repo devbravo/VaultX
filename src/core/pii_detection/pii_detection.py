@@ -1,10 +1,6 @@
-from typing import Optional, Tuple, Dict, List
+from typing import Tuple, Dict, List
 from src.core.pii_detection.pii_regex import detect_pii_regex
 from src.core.pii_detection.pii_spacy import SpaCyPIIDetector
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
-from pydantic import BaseModel
-
 
 class PiiDetectionPipeline:
     def __init__(self):
@@ -101,34 +97,34 @@ test_list = [
 
       
 
-async def detect_pii_llm(text: str):
-    llm = ChatOpenAI(model="gpt-4o-mini")
-
-    class PII(BaseModel):
-        telephone_number: Optional[str]
-        email_address: Optional[str]
-        ssn: Optional[str]
-        credit_card_number: Optional[str]
-        date: Optional[str]
-        ip_address: Optional[str]
-        passport_number: Optional[str]
-        national_id: Optional[str]
-
-    structured_llm = llm.with_structured_output(PII)
-
-    system_prompt = """
-        Given the following text, identify any personally identifiable information (PII) 
-        such as email addresses, phone numbers, social security numbers, credit card numbers, 
-        dates, IP addresses, passport numbers, and national IDs.
-    """
-
-    pii_prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", system_prompt),
-            ("user", text),
-        ]
-    )
-
-    pii_setter = pii_prompt | structured_llm
-    pii = await pii_setter.ainvoke(text)
+# async def detect_pii_llm(text: str):
+#     llm = ChatOpenAI(model="gpt-4o-mini")
+#
+#     class PII(BaseModel):
+#         telephone_number: Optional[str]
+#         email_address: Optional[str]
+#         ssn: Optional[str]
+#         credit_card_number: Optional[str]
+#         date: Optional[str]
+#         ip_address: Optional[str]
+#         passport_number: Optional[str]
+#         national_id: Optional[str]
+#
+#     structured_llm = llm.with_structured_output(PII)
+#
+#     system_prompt = """
+#         Given the following text, identify any personally identifiable information (PII)
+#         such as email addresses, phone numbers, social security numbers, credit card numbers,
+#         dates, IP addresses, passport numbers, and national IDs.
+#     """
+#
+#     pii_prompt = ChatPromptTemplate.from_messages(
+#         [
+#             ("system", system_prompt),
+#             ("user", text),
+#         ]
+#     )
+#
+#     pii_setter = pii_prompt | structured_llm
+#     pii = await pii_setter.ainvoke(text)
 

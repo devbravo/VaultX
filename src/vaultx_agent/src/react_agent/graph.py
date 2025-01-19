@@ -65,7 +65,7 @@ async def encrypt(state: State):
         message = state.messages[-1].content
         data = {"text": message}
         print(data)
-        response = await client.post("http://localhost:8000/encrypt/", json=data)
+        response = await client.post("http://fastapi:8000/encrypt/", json=data)
         encrypted: Encrypted = Encrypted.parse_obj(response.json())
 
     return {
@@ -80,7 +80,7 @@ async def decrypt(state: State):
     if state.encrypted_pii:
         async with httpx.AsyncClient() as client:
             data = {"record_id": state.record_id, "text": message}
-            response = await client.post("http://localhost:8000/decrypt/", json=data)
+            response = await client.post("http://fastapi:8000/decrypt/", json=data)
             decrypted: Decrypted = Decrypted.parse_obj(response.json())
 
     return {"decrypted_pii": decrypted}

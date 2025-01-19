@@ -7,9 +7,9 @@ WORKDIR /agent
 # Copy your LangGraph agent code
 COPY /src/vaultx_agent .
 RUN pip install -e .
-
+RUN pip install --upgrade "langgraph-cli[inmem]"
 # Expose the port on which the agent will listen (if relevant)
 EXPOSE 2024
 
 # Start the LangGraph development server
-CMD ["langgraph", "dev"]
+CMD ["langgraph", "dev", "--host", "0.0.0.0"]
