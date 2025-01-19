@@ -25,15 +25,8 @@ class PiiDetectionPipeline:
           marker = f"__PLACEHOLDER_{i}__"
           placeholder_map[placeholder] = marker
           text = text.replace(placeholder, "")  # Remove placeholders
-      print('TEXT FOR SPACY:', text)
       return text, placeholder_map
-    
-    def postprocess_from_spacy(self, text: str, placeholder_map: Dict[str, str]) -> str:
-      """Revert markers back to original placeholders."""
-      for marker, placeholder in placeholder_map.items():
-          text = text.replace(marker, placeholder)
-      return text
-    
+  
       
     def postprocess_from_spacy(self, spacy_results: Dict[str, List[str]], placeholder_map: Dict[str, str]) -> Dict[str, List[str]]:
       """Revert markers back to original placeholders in spacy_results."""
@@ -52,6 +45,7 @@ class PiiDetectionPipeline:
 
           reverted_results[label] = reverted_entities
       return reverted_results
+    
 
     def detect_with_spacy(self, text: str, exclude_labels: List[str]) -> Dict[str, List[str]]:
         """Detect PII using spaCy while skipping placeholders."""
@@ -90,30 +84,21 @@ class PiiDetectionPipeline:
           merged_data[key] = values
       return merged_data
 
-
-# # Example usage
-pii_pipeline = PiiDetectionPipeline()
-
-# Run unified PII detection
 test_list = [
             "HI John Doe, Call me at +5978144939 or send an email to alice@company.co.uk. Also, my social security number is 987-65-4321."
             "John Doe's social security number is 123-45-6789, his email is john.doe@example.com, and his phone is +5978100000.",
              f"Jane’s social security number is 123-45-6789, her credit card is 4111-1111-1111-1111, and she lives in California.", 
-            #  f"Robert Johnson sent a payment of $10,000 yesterday.", 
-            #  f"Contact Priya at priya.123@example.co.in or call her on +91 9876543210",
-            #  f"My internet protocol address is 192.168.0.1, and my passport number is AB1234567",
-            #  f"Call me at +44 20 7946 0958 or send an email to alice@company.co.uk. Also, my social security number is 987-65-4321.",
-            #  f"John’s account number is 12345678, not 87654321, and his phone is 555-5555.",
-            #  f"My bank details are top secret and not for sharing.",
-            #  f"Reach out to +5978000000 for assistance or visit the website www.example.com",
-            #  f"Hi, I’m Sara. Call me at 9876543210 or email me at sara@gmail.com. Let’s meet tomorrow.",
-            #  f"123-45-6789"
+             f"Robert Johnson sent a payment of $10,000 yesterday.", 
+             f"Contact Priya at priya.123@example.co.in or call her on +91 9876543210",
+             f"My internet protocol address is 192.168.0.1, and my passport number is A12345678",
+             f"Call me at +44 20 7946 0958 or send an email to alice@company.co.uk. Also, my social security number is 987-65-4321.",
+             f"John’s account number is 12345678, not 87654321, and his phone is 555-5555.",
+             f"My bank details are top secret and not for sharing.",
+             f"Reach out to +5978000000 for assistance or visit the website www.example.com",
+             f"Hi, I’m Sara. Call me at 9876543210 or email me at sara@gmail.com. Let’s meet tomorrow.",
+             f"123-45-6789"
              ]
 
-# add to above to a list and create a loop to test each of them 
-for text in test_list:
-  pii_results = pii_pipeline.detect_all_pii(text)
-  print(pii_results)
       
 
 async def detect_pii_llm(text: str):
