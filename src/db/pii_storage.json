@@ -505,5 +505,113 @@
                 }
             ]
         }
+    },
+    "a42553bf-edb2-47e3-b48c-e6aeea095ec0": {
+        "text_with_placeholders": "[NAME] is [NAME] [NAME] is [PHONE_NUMBER] en email adres is [EMAIL] herhaal deze gegevens ",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTiEb7lOaGknSCIzBkDzwnE4O_4pfTEGZoEpBJBilTDJkhOEiZmS7Txom41bgb4nE75ZFZ_Oef3eRPtkvrRLdilDBVWpELjhuklfSZjXQzPjwFo=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTiENR9S0-CdnnoSSd745d7P2qYV4KM1m5YjYdpOzSGSGda14opYdiBoBYAZ6JeddpvLL41vFzPMtplik582yzhr7Q==",
+                    "key_version": "key_1"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjTiEHPBoB23FKyie3vZ5_7OCZMsnvGy583vVfaVoCZhQAVQM-LNiMozjVPiub0Z6lvY27262YgZTxUe8qnA5mXVUbg==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTiE-ZQSoree7noV9sU7eB-5BE6a6Y7N683_rKQDwiwNulARO7h74O8gSqJhf5EADM7ERazHJEQu-kBRcJjo8XsiQQ==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTiENF6kg3zyRzAi-FwW2TyfnNJfsh5OzjQKsnUBi95O-aaPUMsfusU7eSZH5elAUgC9CVSNss77BSUNf1QfHHvFbA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "e81caf91-b24a-40e0-afa8-0521cf6cf893": {
+        "text_with_placeholders": "[NAME] is [NAME] [NAME] is [PHONE_NUMBER] en email adres is [EMAIL] herhaal deze gegevens ",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTi7t9h78jdBTsj9Xm6TOoL7mETeKbnyeJjuD0jTxxPKKZlWCLWvQmlmh1WxdEL3BomZXeOaprFIfFDMJh6xKGDuBUQNBc9zUR9tEW6tJqZrfZ4=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTi8hvPWaiyiEYttZfFaCMsrfvCc1KKPBcKf-oBjX9GznEnImrbg6T9nCz-WcB0YaaSBu8eMfvQj5EUfbu1W4JeKIw==",
+                    "key_version": "key_1"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjTi8Mr3KfXj4TOGtgycgs4OcbnK3nmg2m1m5kAaNExapp4PU4ML2tBE_rlmJLXLfEOD6ZGj1D5_pbMt_kSvCsazqIw==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTi8Rnq4LU8uXPJ2lJRpcnwy8tDBwLisxs2fwXU8c6LjGg8K4Qi1FrvejDZq6cCloO365BKTplHRzaxRVXVos57ivw==",
+                    "key_version": "key_1"
+                },
+                {
+                    "encrypted": "gAAAAABnjTi8XaSO8pL9MFI8xGQvdMsLr2Yx6-feSs_oqjCsbyc5J_ZfFSk16iXQW552zATuEIwGXi2Uz6oSap2nlBCBj5eYkQ==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "aa75206a-5b21-495f-9588-03d0314169f6": {
+        "text_with_placeholders": "My name is [NAME] and my phone number is [PHONE_NUMBER] and my email address is [EMAIL] repeat my data back to me",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTjkR9YCT42hnjeJKFEczAteDWGEvAVOqAWbyUBEowED8beIaW1A_3dVc4-oaJ6ax1VDNkhdPB1zL6zeQLNfREilfr-rPVFySiYqSOB4YsFwLWA=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTjk3iILyKIrovXgdRV_brhBETANBk16LXV5cwFtcGw-5t39-hntSoxP9YUgTVzo96cAuLsEyc87yILgAIWPb9qk8g==",
+                    "key_version": "key_1"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjTjkOQL8IX78FD_-IKAAjIKq-pV_j6FZObJhe22exHVu5W7REWxeH5fYeDrHzx8hhsIMmV2wKFNYNnhIeZQnFFuksw==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
+    },
+    "0d701d04-3ad1-4e96-898c-7a0a1d5e6f8e": {
+        "text_with_placeholders": "My name is [NAME] and my phone number is [PHONE_NUMBER] and my email address is [EMAIL] repeat my data back to me",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjTlgPLmSkuRZesMHzpkVdBfsypmQ0d13pNpNY9oxJS75Ct2w030oA97DlzVFcynQPRxtFV1Tmy9X_5HtcQPtv7TTBcFO3jdD2S6igVQMUVmwj-Y=",
+                    "key_version": "key_1"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjTlg9qjZGT5wHEffFyy-D-tO_FD6DtSeh8gzFxjHPPDsppNAjhIGJVnf5vSnsDRYJbVlM8xSTQ-p-57XdZ7Cz61yhg==",
+                    "key_version": "key_1"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjTlgyLv5xKewrIC_Z1DQCrEShQ5I-aFubSb5FPE1IodpWUjTCPgxueWSTN9RcKwKeH9wW3n9YJ0aWNriqrgy9ZG6kA==",
+                    "key_version": "key_1"
+                }
+            ]
+        }
     }
 }
