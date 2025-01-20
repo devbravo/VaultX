@@ -1,5 +1,7 @@
 # VaultX Technologies
 
+Demonstration LINK Video: https://www.loom.com/share/3aef69bb13fd43da932db9467841ec27?sid=5eb64bed-30f2-42ae-b1ee-5d3a387c84a5
+
 ## Overview
 VaultX Technologies is at the forefront of developing AI-powered solutions to uphold data privacy and regulatory compliance, including GDPR and similar frameworks. Our innovative platform combines rule-based techniques (such as regular expressions) with advanced machine learning models (NER) to accurately detect and identify Personally Identifiable Information (PII) in chats, documents, and other data streams. PII is then encrypted and securely managed in real-time, ensuring robust protection while seamlessly integrating into business operations across diverse industries.
 
