@@ -65,7 +65,6 @@ async def encrypt(state: State):
     async with httpx.AsyncClient() as client:
         message = state.messages[-1].content
         data = {"text": message}
-        print(data)
         response = await client.post("http://fastapi:8000/encrypt/", json=data)
         encrypted: Encrypted = Encrypted.parse_obj(response.json())
 

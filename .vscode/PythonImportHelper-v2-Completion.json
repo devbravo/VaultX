@@ -1,10 +1,11 @@
 [
     {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "os",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "typing",
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
         "documentation": {}
     },
     {
@@ -240,14 +241,6 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
         "label": "KeyRotationManager",
         "importPath": "src.core.key_rotation",
         "description": "src.core.key_rotation",
@@ -328,22 +321,6 @@
         "documentation": {}
     },
     {
-        "label": "ChatPromptTemplate",
-        "importPath": "langchain_core.prompts",
-        "description": "langchain_core.prompts",
-        "isExtraImport": true,
-        "detail": "langchain_core.prompts",
-        "documentation": {}
-    },
-    {
-        "label": "ChatOpenAI",
-        "importPath": "langchain_openai",
-        "description": "langchain_openai",
-        "isExtraImport": true,
-        "detail": "langchain_openai",
-        "documentation": {}
-    },
-    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -416,15 +393,6 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -901,7 +869,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):",
+        "peekOfCode": "class EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n    \"\"\"Encrypt PII data and store it with metadata.\"\"\"",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -910,7 +878,7 @@
         "kind": 6,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "class DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n    \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n    try:",
+        "peekOfCode": "class DecryptRequest(BaseModel):\n    record_id: str\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):\n    \"\"\"Encrypt PII data and store it with metadata.\"\"\"\n    try:\n        text_with_hashes, encrypted_pii = encrypt_pii(request.text)",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -919,7 +887,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "app = FastAPI()\nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():",
+        "peekOfCode": "app = FastAPI()\nPII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -928,7 +896,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}",
+        "peekOfCode": "PII_STORAGE_FILE = \"src/db/pii_storage.json\"\nKEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -937,7 +905,7 @@
         "kind": 5,
         "importPath": "src.app.main",
         "description": "src.app.main",
-        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n    text: Optional[str] = None\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')",
+        "peekOfCode": "KEY_METADATA_FILE = \"src/db/keys_metadata.json\"\nclass EncryptRequest(BaseModel):\n    text: str\nclass DecryptRequest(BaseModel):\n    record_id: str\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Welcome to VaultX Technologies\"}\n@app.post('/encrypt/')\nasync def encrypt_data_endpoint(request: EncryptRequest):",
         "detail": "src.app.main",
         "documentation": {}
     },
@@ -1162,7 +1130,7 @@
         "kind": 2,
         "importPath": "src.core.pii_decryption",
         "description": "src.core.pii_decryption",
-        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_placeholders = text if text else record.get(\"text_with_placeholders\")\n    if not encrypted_pii or not text_with_placeholders:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
+        "peekOfCode": "def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:\n    \"\"\"Decrypt PII from a given record using the appropriate keys.\"\"\"\n    encrypted_pii = record.get(\"encrypted_pii\")\n    text_with_placeholders = record.get(\"text_with_placeholders\")\n    if not encrypted_pii or not text_with_placeholders:\n        raise ValueError(\"Record does not contain valid data.\")\n    decrypted_pii = {}\n    for pii_type, items in encrypted_pii.items():\n        decrypted_pii[pii_type] = []\n        for item in items:",
         "detail": "src.core.pii_decryption",
         "documentation": {}
     },

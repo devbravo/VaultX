@@ -27,3 +27,5 @@ class KeyRotationManager:
                 # Example: Re-encrypt all data with the new key
                 logging.info(f"Rotating key: {key_version} -> {new_version}")
                 return old_key, new_key, new_version
+        logging.info("No keys required rotation (low usage and recent creation).")
+        return None, None, None

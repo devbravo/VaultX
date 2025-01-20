@@ -2,7 +2,6 @@ import os
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
-from mongoengine import connect
 from pydantic import BaseModel
 
 from src.core.key_rotation import KeyRotationManager
@@ -24,19 +23,8 @@ class EncryptRequest(BaseModel):
 
 class DecryptRequest(BaseModel):
     record_id: str
-    text: Optional[str] = None
 
-@app.on_event("startup")
-def startup_db_client():
-    """
-    Connect to MongoDB using mongoengine. Adjust the URI/database name
-    to your environment or Docker Compose settings.
-    """
-    connect(
-        db="vaultx",
-        host=os.environ.get("MONGO_URI"),  # or 'mongodb://mongo:27017/mydb' in Docker
-        alias="default"
-    )
+
 @app.get("/")
 async def root():
     return {"message": "Welcome to VaultX Technologies"}
@@ -62,7 +50,7 @@ async def decrypt_data_endpoint(request: DecryptRequest):
     """Decrypt PII data."""
     try:
         record = get_record_by_id(request.record_id, PII_STORAGE_FILE)
-        result = decrypt_pii(record, KEY_METADATA_FILE, request.text)
+        result = decrypt_pii(record, KEY_METADATA_FILE)
         return result
     except Exception as e:
         raise HTTPException(status_code=404, detail=f'Error decrypting PII: {e}')
@@ -73,5 +61,9 @@ async def rotate_keys():
     """Rotate encryption keys and re-encrypt data"""
     records = get_all_records(PII_STORAGE_FILE)
     old_key, new_key, new_version = KeyRotationManager.rotate_keys(days_threshold=30, usage_threshold=1)
+    if not old_key or not new_key or not new_version:
+        return {"message": "No key rotation required. All keys are within usage and age thresholds."}
     updated_records = update_pii_with_reencryption(old_key, new_key, new_version, records)
     store_all_records(PII_STORAGE_FILE, updated_records)
+    return {"message": f"Keys rotated successfully. New key version: {new_version}"}
+    

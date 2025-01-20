@@ -1,19 +1,12 @@
-"""PII Decryption Module
-
-This module provides functionality to securely decrypt sensitive information (PII) using stored encryption keys. 
-It supports reconstructing original text by replacing placeholders with their corresponding decrypted values 
-and integrates seamlessly with key management for tracking key usage.
-"""
-
 from typing import Dict
 from src.core.encryption import KeyManager, EncryptionUtils
 import logging
 
 
-def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str, str]:
+def decrypt_pii(record: Dict, metadata_file: str) -> Dict[str, str]:
     """Decrypt PII from a given record using the appropriate keys."""
     encrypted_pii = record.get("encrypted_pii")
-    text_with_placeholders = text if text else record.get("text_with_placeholders")
+    text_with_placeholders = record.get("text_with_placeholders")
     if not encrypted_pii or not text_with_placeholders:
         raise ValueError("Record does not contain valid data.")
 
@@ -32,6 +25,7 @@ def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str,
                 raise ValueError(f"Decryption failed. Invalid token for {item['encrypted']}")
 
     # Reconstruct the original text
+    print('text with placeholders', text_with_placeholders)
     reconstructed_text = text_with_placeholders
     placeholders = {
         "EMAIL": "[EMAIL]",
@@ -50,9 +44,8 @@ def decrypt_pii(record: Dict, metadata_file: str, text: str = None) -> Dict[str,
     for pii_type, values in decrypted_pii.items():
         placeholder = placeholders.get(pii_type, "[pii]")
         for value in values:
-            # Replace the first occurrence of the placeholder with the decrypted value
             reconstructed_text = reconstructed_text.replace(placeholder, value, 1)
-            
+
     # Increment key usage
     for item in encrypted_pii.values():
         for entry in item:
