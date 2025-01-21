@@ -105,34 +105,34 @@ test_list = [
 
       
 ### LMM PII DETECTION
-# async def detect_pii_llm(text: str):
-#     llm = ChatOpenAI(model="gpt-4o-mini")
-#
-#     class PII(BaseModel):
-#         telephone_number: Optional[str]
-#         email_address: Optional[str]
-#         ssn: Optional[str]
-#         credit_card_number: Optional[str]
-#         date: Optional[str]
-#         ip_address: Optional[str]
-#         passport_number: Optional[str]
-#         national_id: Optional[str]
-#
-#     structured_llm = llm.with_structured_output(PII)
-#
-#     system_prompt = """
-#         Given the following text, identify any personally identifiable information (PII)
-#         such as email addresses, phone numbers, social security numbers, credit card numbers,
-#         dates, IP addresses, passport numbers, and national IDs.
-#     """
-#
-#     pii_prompt = ChatPromptTemplate.from_messages(
-#         [
-#             ("system", system_prompt),
-#             ("user", text),
-#         ]
-#     )
-#
-#     pii_setter = pii_prompt | structured_llm
-#     pii = await pii_setter.ainvoke(text)
+async def detect_pii_llm(text: str):
+    llm = ChatOpenAI(model="gpt-4o-mini")
+
+    class PII(BaseModel):
+        telephone_number: Optional[str]
+        email_address: Optional[str]
+        ssn: Optional[str]
+        credit_card_number: Optional[str]
+        date: Optional[str]
+        ip_address: Optional[str]
+        passport_number: Optional[str]
+        national_id: Optional[str]
+
+    structured_llm = llm.with_structured_output(PII)
+
+    system_prompt = """
+        Given the following text, identify any personally identifiable information (PII)
+        such as email addresses, phone numbers, social security numbers, credit card numbers,
+        dates, IP addresses, passport numbers, and national IDs.
+    """
+
+    pii_prompt = ChatPromptTemplate.from_messages(
+        [
+            ("system", system_prompt),
+            ("user", text),
+        ]
+    )
+
+    pii_setter = pii_prompt | structured_llm
+    pii = await pii_setter.ainvoke(text)
 

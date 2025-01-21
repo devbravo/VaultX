@@ -1,28 +1,469 @@
 {
-    "593a3ce5-0127-4116-b14a-eb2583ad009a": {
+    "561201a7-54c2-4d52-94ff-232579f7c0c3": {
         "text_with_placeholders": "Hi my name is [NAME], my phone number is [PHONE_NUMBER] and my email address is [EMAIL], I would like to transfer $[MONEY]",
         "encrypted_pii": {
             "EMAIL": [
                 {
-                    "encrypted": "gAAAAABnjdFyjg1h1IbpPQO3NKuxEhqpoTKdsfH6tNLmfpBSU4GePHLDtXBekyimFZrpS0beIhHD5ivVNvt5ItosiZqPik5hdu7rubwfIttxa9Y5TPq-so8=",
+                    "encrypted": "gAAAAABnjecuXq5EVvyFUFLm7pjhTySVN9hkzTlnajE79lG09vh6Qr0NsF6Rhpp7PNEHqMNeKdVBmtwgcETGvG8jpcWUXJyWnDWG6yFk9iY4IDLye-4rz_Y=",
                     "key_version": "key_2"
                 }
             ],
             "PHONE_NUMBER": [
                 {
-                    "encrypted": "gAAAAABnjdFyHjN1at_9el2_xoTC5PIWjt2C726lzVe8TVVOPjxEMNb9WGjS0Dc48rLrA0_9GUm1dFZxoC3oNtz8hkHC_OPiGA==",
+                    "encrypted": "gAAAAABnjecuFFvIsxS7o3HlkxeRMZBJ28XcHOkiMWsSyA1wTcGpqIFch4-lNn2JYBd4d_M5RhM3tWq3RsWxMZc2pWXj7WCcTA==",
                     "key_version": "key_2"
                 }
             ],
             "NAME": [
                 {
-                    "encrypted": "gAAAAABnjdFyigrueXISpk2PhxSj7WQSGpk8FZ6sSxSWxQHZShuLS8MOrspCGAYXENq2Y88G9wBFPchFhDYWg27OXtq6jUvE_Q==",
+                    "encrypted": "gAAAAABnjecu0cS1zzrQzz9iOvM1us_Nm9vUiQtML6vtpuuCR1WmUkk1QIvyBeSfvQgOXVJwNu9CnX0xqBPt9fPEiZ3hSDP9Pw==",
                     "key_version": "key_2"
                 }
             ],
             "MONEY": [
                 {
-                    "encrypted": "gAAAAABnjdFy6TTZ0eq5pY4fG_Bmkw_VJq4Hu0ZBJbRymeWJXM2dkQocvOWcp1k6v7KsRDmD30AOQJWcfJ-9Qvnk0w9WanURWg==",
+                    "encrypted": "gAAAAABnjecuE6Ck6hJO6I8a4muMzql6BmG3SNusQLewXraajzbV5B2pxUuEaopvPbv8QUs8diQdPEQShacNW3XuyX1BXO5EPg==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "9b366c0c-1b53-4be0-9244-d7d8e2bfa383": {
+        "text_with_placeholders": "Hi my name is [NAME], my phone number is [PHONE_NUMBER] and my email address is [EMAIL], I would like to transfer $[MONEY]",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnjecuZYkRT7W20eXSrl51LRjr5tQVEH1gFO_jINvQjnNCuFkxLWsdZVe5mqFu5Id5NvOR741mSPdQNozb8RErogQLSO41pV6DWELFMe-qNBhGPZU=",
+                    "key_version": "key_2"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnjecu-UHBrY3WKLUYcHZgn5Z26Y-N3XMXvPC4AttYzAgGUCN9tcX-L_AnzMYPGMWLu_rSt2Jzo3SOL3TnCaJbjrP5SA==",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnjecu7MHAXgpdMIrClN3Skg-hrgWpJoEMsMHFOFEw0CrIfYj60Sw_fiZ2E2G59KochGd7xJxK6oF0Kgivu8DfzoOuTQ==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnjecuM8dCX7p-J3zbFK-UU_82pVtZvahPMOCdcQZ5iE7Hh5yBi6t0VLcVWTbmf3hhv8pP-l8E_eRP4LCZF18pO3L5HQ==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "fef57447-8c1c-43dc-a961-8f01b980d0f0": {
+        "text_with_placeholders": "Hi [NAME], please contact me at [EMAIL] or [PHONE_NUMBER] thanks!",
+        "encrypted_pii": {
+            "EMAIL": [
+                {
+                    "encrypted": "gAAAAABnj68XlPWw6G1KWHL9o9_y2_Jhp0h-BeLegcwB4uQmazIr0KT172rRx_KmYNA1Abkt8pgpetX7q-_WwJ0AThvtcAjPRqF0HPlbo-pa5fvpAsNjoHY=",
+                    "key_version": "key_2"
+                }
+            ],
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj68X3-YKIsGf7h0gu8-Wck2YZVyfPvU9CHq0cAQ-_dzANGBWP2kiLWmvdNGI3zXM3nm9jb1elhsJLb9PCbCJwZihkA==",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj68XWn14LIZvDdTGmmiBZ7ABc0u6DzsWZQ7Bx6bUcyWHG-wdQIvXiH-NQ3BZJQGDahrz9yhCWNRhsEaACw1TXf8l0A==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "4a046127-7937-4da2-be67-9d5b382d153c": {
+        "text_with_placeholders": "Here is my address [CARDINAL] Westminster Blvd the payment I like to make is $[PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj6-Ai-5ZtkSisoJrKGSs9y9MrcvEucPnhOxTZYorCGKV5YWzV5JooIgrFXliBdup4_ev-DDvZGBAS09m4HFxfNneHA==",
+                    "key_version": "key_2"
+                }
+            ],
+            "CARDINAL": [
+                {
+                    "encrypted": "gAAAAABnj6-AyS1iM3m48EPuRRxK_FtUovYJzTGl6fszYaWWNc58JmVsDpUkZeieFsFNz5xwmA6QDbLe7IIkIfqML_VJC8kEPQ==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "d23178dd-23d5-46e7-be0d-c145417820a2": {
+        "text_with_placeholders": "I see the order cost [MONEY], here is my address: '[ADDRESS]' here is my credit card: [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7EgDFJSweJxg8h4R6QX1l7UmFfN59_jWbqxDOh9zX7R-BkXMGVKFgp_2LZr9BVn_YobWs_uELz-8dN4unvVqbSjzc966Y6V2Mpje8TcjYp4Oog=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CREDIT_CARD": [
+                {
+                    "encrypted": "gAAAAABnj7Egpdif1Q7WbWHn5dnIarYsjObiP5_9cUU_QLv50F-hxQgwIP2ch9fEYvsYUa6ux7z6BUsby9yELSCeqLORPmuKeSW87oGwV1Fcy60XgIOgT7M=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7EgbjW56zBtlwbF43JDbg54AqygMuiPWBDYN9d1-HFaj7dm5OIURCxfz7pPVVodOGpgtt5QzoR8ALCxx6vXBAAQzA==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7EgmsRnO3Qtjf_3nO2nwm5u1l2db6cQLH_SGreaY5sdUYBhvlbqtZ8CRfnHcfEpizbNFUZoZ5wGFybN_RVYZ1Zj2w==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "5fdc0d33-715f-4a85-8474-fd0b79a4e9f0": {
+        "text_with_placeholders": "I see the order cost [MONEY], here is my address: '[ADDRESS]' here is my credit card: [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7GXnirTWRr5TssEtTwb1HailvrdeRlxF_CXw_m7COp44h1ZB6ZYTog0xIVMf3AvWIiLiLgegooauCuFCDMdvQ7oG87VfgfSlhMMFD36gmezqvw=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CREDIT_CARD": [
+                {
+                    "encrypted": "gAAAAABnj7GXx9bhO9obHpOzwvwJe84bw0Tb6CKBZjxSajuJV7nWhJjXABtUJ7st58ABYULUUtDanowSnRV5OvEayV2eVL0nUS4vqkPcNAmjl738cIYACqE=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7GXTte90I-EsVeHvy9FLteWB900Rj5FQgMPfZsNBzQ-8BnLnahN_V3gz6m2XdBcYjqcCcRITUbbh3390mlOAzR5BQ==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7GXbHgptDeh0wWU_0D4kjsUIlN642LkVp-LonOH-yYOq4Ln79Nbrr3TWhIIXMoj1odcCqYJs4jIJMCXFaiNZfK53w==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "71ac0889-7360-4ec1-8270-502240d17759": {
+        "text_with_placeholders": "I see the order cost [MONEY], here is my address: '[ADDRESS]' here is my credit card: [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7Gx8cemWGiWvsq7ENmPFbHf6su-PZwJV-ST_TNKOrctdeKgL9OCsY9uD3z9wkhUAv8yX7ORbRAAQvVYVpMTjGG-8MqJLF0l70DDINu9QkIoHm0=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CREDIT_CARD": [
+                {
+                    "encrypted": "gAAAAABnj7GxOtfKshjRmtrTY07yVxVKopMJ2wqPjNlzO0K3EI5ZkGAAprVcOLp-pyZrNBwxTGSpjbstGkrJgqPkxBxHU8WRx_GXWZ-ruty9WNKUpiH6tbc=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7GxfevSfZ9jMa9QkJwPXQNEw9IIENQiU1kSEHVkWQZtOMqTWEdTdPt-DKzixtCGf6bC7l8lFA5QKX4DR_620nJg2A==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7Gx52VSuFXjb9VmrzmfS7n77xLiS3EJWY8n2i6zoJ4sRftSvMKG0L8shDYWMCW9oC9DO01e8ZUjJlEGgst0e7h_bQ==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "51e22e7a-b164-4c53-a8c2-d898dbbc91b1": {
+        "text_with_placeholders": "I see the order cost [MONEY], here is my address: '[ADDRESS]' here is my credit card: [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7GzwkqNYOWGjrDEJZ2X0WLLupQxx-nDMU6DiKBxpgF5SNy__Wy0STpK95gPWxCfWX5BQTbLKCr9hhhSE74BlxAaNfZvdpD60V4k_ELglVMJPVE=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CREDIT_CARD": [
+                {
+                    "encrypted": "gAAAAABnj7Gzl1i41FWqkn0yLzkEq_fKuB0_AkSh6g5JubJVfR7G-DL5-KQz6kO3Acb1Q4nrTAZUiQxKMN9NQNXArbyqLmTcdgqMTv7EJShYjBkwq1G_dTE=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7GzWdO5IyUyg1HyfOA7cGp-F82_I37XoGWAxA395w4_shTkq_J5oSM-3K2KWUeLLGlL0Ojv7Zf2h7xxtTVBskEM0A==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7Gzw6DfSfsoGvzAb2LvVNFYhNSJCF2DJOSm0D_XpZQzExBuPrmKWCVTWrhQHnOGJxPCkeaij2wEpBIBBQFYFYnQEg==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "da4a535d-59b8-4b2d-bdd1-8d6e26b21dfb": {
+        "text_with_placeholders": "I see the order cost [MONEY], here is my address: '[ADDRESS]' here is my credit card: [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7KrrmdwksscM8yHvGUdZBbDlKcWtAnrE6843hOe1X7QJLRbX05S32sEZ4udGsZ5uIa6nMiB91QCc3ZLJcVlf21xeJIsjJ_Lf7QBLoTC_RAlhXE=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7KrRalg6HxvQoaE9EebycjGQx173I3tPpMKswp450zsQb4aytjDACIhStkosqA87l7g4bVCxiLeNYl19GyrFfw1Xw==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7KrvrAheTiMN90UPnEMQ1kPNu17z3reM5j21kTL1u9UWtRTWKGVYQysv2Ix55mR3RUSg5pOabV4nxLaER8EKthE3w==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "2ef8c2c6-2bfe-43f2-9955-eab9a41138d9": {
+        "text_with_placeholders": "I see the order cost [MONEY], here is my address: '[ADDRESS]' here is my credit card: [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7Kr837dtLTcr_3QtOBPcttJL7XiugRvRLtmq2b-ysK2tSGiZ40MG8SCgNSMjoU9siE925U9qp2C7yEpD9J2fKmlPiAXK2LykUSCwTg9BwvHqX8=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7KrhvAWHBRpU6iNSlIzCXpt6pFjGdwL6zrhW1AmMJiTQ2lXOv25_6-LuxWavt9DNEuYyOkYpCIpoLicY3-JyfCecQ==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7Kr99nfPQkH43chvb1gY3wXk6OakSSX374oFY2GOfeUq4paAvJULIJ7an8ZqXMIeU8QztkHT1Y4hPsKkWB_hAe5Lg==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "bebd3a07-85eb-4700-a40d-2c2f8bac7be1": {
+        "text_with_placeholders": "HI my name is [NAME], my order cost $[MONEY], my address is, [ADDRESS] and here is my credit card [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7MjXnagbG8iclMzTCYomL_x_qfx8fTVL8-WSuUokQTq1OYNf_scCJ-q5tWN4MIHEIqp7l9VOU3faoYGVjeZnZFCpQiEN3gs928BjpBLflkNczQ=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7MjRKqVCvq4hI7QKa5CcvcXsShI9tfI_ddnFgLKEHFAcxNJxutaqzjJUHUArDK5s_5piW0IAud70T4-uSjgjbw1E0rvjgWkral-IxqDFUQqn90=",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj7MjSY8pRlPO1ruw2BdC3jsVmHTOfPwN8kjFJFAvdKd2B9HZkPAJggyufvJzS0RfWMmfEf8FX9YuUd7HV1mW_yT1Lw==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7Mj9kaKAQdYhNVe-PIC3hQnYJCqIMf2FXIDXEGsJZZ9oVgUWk1ZVdhBDFhR89v3X-0QnpmIeK1sXyW8I88hoEDxiA==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "a614e405-1f6b-4932-b170-41ad97388ac1": {
+        "text_with_placeholders": "HI my name is [NAME], my order cost $[MONEY], my address is, [ADDRESS] and here is my credit card [PHONE_NUMBER]",
+        "encrypted_pii": {
+            "PHONE_NUMBER": [
+                {
+                    "encrypted": "gAAAAABnj7Ne9gtLE9QmUR3MegK0V0yFCVR_fIiRkaeKpkYbBrIYZFPMzVyKzI9hZ_3K2J2vyZoC5jFdL_3iRB3AduXpQAnQOTZlcXOBsQoaWMJLvghdqdU=",
+                    "key_version": "key_2"
+                }
+            ],
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7Ne9k308jDWrspXKLJ0jdrrwySFNwaAdw5Cop0Zmi5VDDHIMu1g05OKS3DiDyKWTMbb2cZI7QYRCsM5iGh37rYxby4tsMQv8Uqegn1KAxAlQWU=",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj7NeUgS-DD4NqiDhSnpSnDSYHLPmGDbPLYoJhaYQ9ud-AbFSesvmrLyjiIZfCT_KsjNVnKaKZ2hflGmpl3qzDdnKdQ==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7NezZ_2b4AyY_a8HiZM2x4LpoUyDcpDaYeQXGBI5i9I1nCBlzBHlRgMp8mgEz_mKXMyNaQm3JBzPdlk9LzIz-30rw==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "4060b3df-29a4-4d01-8313-ce0b4c0b4152": {
+        "text_with_placeholders": "HI my name is [NAME], my order cost $[MONEY], my address is, [ADDRESS] and here is my credit card 5109 9005 [DATE] and here is my phone number: +1 ([CARDINAL]) [CARDINAL]-7890",
+        "encrypted_pii": {
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7O_4NX7uPa-cdWaR0ULwJiE5k6F8sAdp2mbk5batYwXRKWSxZoOKlejQ9SflYwtRIL1UO0J7zJlUlDWlgmTF41VxIaPvLi3IyLS4qIt783NT-M=",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj7O_8CWVc69VjdxyQzdrT1vEnWVNWWsYx63onyTUkdhmBRvgB3xK67LUCFBBxtYh5vgGjZ6RqsBOTx1serLHYjmF4A==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7O_uR6oNChjnxxz4kG9RGFZSWzfZQOYtCWnmUDbdSUMQqpOQ6qh5D7vKz8T9wdAilqaoNs8AyXwxs0Dov8jkYzDjQ==",
+                    "key_version": "key_2"
+                }
+            ],
+            "DATE": [
+                {
+                    "encrypted": "gAAAAABnj7O_Z-jd7AV5sj4BhD2GXOQVeBPnqgkDG9-alKt0hXC7pExsd9zeMNvgqAsMONVAoWOXcAbFWfkCDTOvs12js7gcGg==",
+                    "key_version": "key_2"
+                }
+            ],
+            "CARDINAL": [
+                {
+                    "encrypted": "gAAAAABnj7O_tgEaPR1hDDRXjoEJLrg9rUSGO5jZSR0re-FWnMPKbjNQ9ZkFuefbkaQQ_cgNPUZ_XdTvxMi3ror40HG4wTRqPw==",
+                    "key_version": "key_2"
+                },
+                {
+                    "encrypted": "gAAAAABnj7O_jivHboWcj9XN_I_UrfyjUPxCoLpcWZdpVXyBHYv0tkilfpcdSNHAN-v_AzDDc5iuK47wcvi2i_Cq4xtrSTjv4g==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "49c1c55c-a2bc-45bb-85ec-db88e6e454c9": {
+        "text_with_placeholders": "HI my name is [NAME], my order cost $[MONEY], my address is, [ADDRESS] and here is my credit card [DATE] and here is my phone number: +1 ([CARDINAL]) [CARDINAL]-7890",
+        "encrypted_pii": {
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7PNPNZnfIHjmzdeza1KNyJp27Y5m3nAJe19hAc59QQzdtE-BPVDygINNfYC2dkR2_W4dVPYf9964Px51R3d7QLV2Vzm89a6pc0uu2W62Wwynp8=",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj7PNsDU8c62uX7DR4-OPWE2VSYPmbm87fCDEU5ST9syih03cegl-kMgPXfPWvf7UgdshIBXR5LwmE58IDTOJREzVGg==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7PN-iOiPN2u9S_sAlOSj5nOguO2BI8ASklCsQp5BpDtdHEUdtukosJ8FBWUXxr7axXi8WGaqxFSdv2Gwu95c-yrQw==",
+                    "key_version": "key_2"
+                }
+            ],
+            "DATE": [
+                {
+                    "encrypted": "gAAAAABnj7PNEMc-y6cCgoARENBKWrhDraoKwSp9c_F45KafXidEEjpT1lbdpFWJaLQW7gcr8ZHfdujqXCrP5hSLvNEc_4CN7GjDxVgGUhGzq7PX0xt41_s=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CARDINAL": [
+                {
+                    "encrypted": "gAAAAABnj7PNrWHppWh4pnMyGuVolSKhCJRF59Hx8S9xpqurU2ygfmK5AYOkfJMfekEqz4oBoaBeZGrl2MGRh_Fqr3dDGhFXcA==",
+                    "key_version": "key_2"
+                },
+                {
+                    "encrypted": "gAAAAABnj7PNSIn_VPGiGJWB1tvwiPBxC1imk3q5J9L7gXSMLwhMupFDRT1-_n9kDAonK2eYbEEaTXRwSRO7g7NNXJlGphTySA==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "9f373d63-3078-4841-a231-bf7163d8038a": {
+        "text_with_placeholders": "HI my name is [NAME], my order cost $[MONEY], my address is, [ADDRESS] and here is my credit card [DATE] and here is my phone number: +1 ([CARDINAL]) [CARDINAL]-7890",
+        "encrypted_pii": {
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7PokgS0YPIkygjcBaRb1Zz2DLOlgOqmLFN5il7rIcWfO3IA8DIr7iw1suUDYzSLeQEHyE1DBdwHGQrysZzyyZQClHS_fjfR3FkjhwOfhB_EJpU=",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj7PoIAaAYiaXk4KZKX2Jpqz528Eu_PQIEX-d9bkKmgPcKn-SQKFq93GqBoPG0VTidTgwnk1DDqsYqPTboOquunBDsg==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7PoV_45YRbcN-BLvKD1RWWxTFfDQhemQzn8NG1BOdSpeUQII5qgLgNGwioJvR95HTbVMPeHh1VxDWaKSzUCYbeUNA==",
+                    "key_version": "key_2"
+                }
+            ],
+            "DATE": [
+                {
+                    "encrypted": "gAAAAABnj7PoD0mS3ktxNFax_E5y1kPwgpk3sKtgO-Af_hsmGDl_ZIIbbGc1bFB9Ieauffn2frCndxzDYfg1MPKt2mkIlBOzCso9jhc3iqoWQb9gWdq1Zp8=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CARDINAL": [
+                {
+                    "encrypted": "gAAAAABnj7PoZkwspQtneLJUehn3rkqCDFoDMkEYeGhbuRoJtCq3gEoDaFlXL0SOwzVzH-R2EgE75aE1oLAx1cQQiNy2nmSlhA==",
+                    "key_version": "key_2"
+                },
+                {
+                    "encrypted": "gAAAAABnj7PoS2yQPK9flKbT7SRpZFpJF7EYppQDXfG6LIs1iNarsMjTrZODUSKXBJM1eBCyNTwLEf7wJnzUZeIuvYo4tfmE9w==",
+                    "key_version": "key_2"
+                }
+            ]
+        }
+    },
+    "054b86cd-bd56-4dc2-bd26-31c12554ba61": {
+        "text_with_placeholders": "HI my name is [NAME], my order cost $[MONEY], my address is, [ADDRESS] and here is my credit card [DATE] and here is my phone number: [CARDINAL]",
+        "encrypted_pii": {
+            "ADDRESS": [
+                {
+                    "encrypted": "gAAAAABnj7QDTbi-pNOhmrrXNkGrt223diN_t0QIsFV9F3Iw3Ovq9yAIebF1hSjDAy17KjxdyOpiLcIF4Sq8U5tcAec-wPQ9FRXkcKKCjQJ5kMnbHEKdTxc=",
+                    "key_version": "key_2"
+                }
+            ],
+            "NAME": [
+                {
+                    "encrypted": "gAAAAABnj7QDc-qK0WlDPJ9i0zy4GZ_JNlWG-D4dNpgiC8mCffp-hQOOekhyfaKHYcMG3m8ye0VMOiiw4i17b9avKL7J9Szoig==",
+                    "key_version": "key_2"
+                }
+            ],
+            "MONEY": [
+                {
+                    "encrypted": "gAAAAABnj7QDNMlGFqPFvDEeEYNr0G8UePHszvg8Kek7v3lnJmnsHof704yGJYSzJd5HezOyRCw5qOyZyMDS1HTEG926g0hUEg==",
+                    "key_version": "key_2"
+                }
+            ],
+            "DATE": [
+                {
+                    "encrypted": "gAAAAABnj7QDuYgtpr8GB9sGSNBEa2xpVF0ps4HUm1so2MHvQq6XZHftQDYKk0U4kMtPPLCkq07Mw89VZNQxhu2zV5OmIzWWC1eq6C7LbX74uBx7QRmKC3I=",
+                    "key_version": "key_2"
+                }
+            ],
+            "CARDINAL": [
+                {
+                    "encrypted": "gAAAAABnj7QD4HtH64MRJce8MV4Xm85hwbWbDnjrhE7J_gGhMAvXo0zEetY_GBIFO_86C0n4QSCvS8vn2CQAgLVGQBnsuyW28g==",
                     "key_version": "key_2"
                 }
             ]
